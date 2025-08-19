@@ -1,0 +1,1 @@
+<template>Authors View</template>

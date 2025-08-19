@@ -1,14 +1,10 @@
 <template>
-  <div id="app">
-    <h1>Welcome to My Vue App</h1>
-    <p>This is a simple Vue.js application.</p>
-  </div>
+  <NavBar />
+  <router-view />
 </template>
 
-<script>
-export default {
-  name: 'App',
-}
+<script setup lang="ts">
+import NavBar from './components/Navbar.vue'
 </script>
 
 <style>
@@ -18,6 +14,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

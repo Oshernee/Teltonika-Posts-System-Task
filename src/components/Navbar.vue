@@ -1,14 +1,18 @@
 <template>
-  <nav>
-    <RouterLink to="/" custom v-slot="{ navigate }">
-      <button @click="navigate">Home</button>
-    </RouterLink>
-    <RouterLink to="/authors" custom v-slot="{ navigate }">
-      <button @click="navigate">Authors</button>
-    </RouterLink>
-    <RouterLink to="/login" custom v-slot="{ navigate }">
-      <button @click="navigate">Login</button>
-    </RouterLink>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <RouterLink to="/" class="navbar-item">
+          <span class="button is-primary">Home</span>
+        </RouterLink>
+        <RouterLink to="/authors" class="navbar-item">
+          <span class="button is-primary">Authors</span>
+        </RouterLink>
+        <RouterLink to="/login" class="navbar-item">
+          <span class="button is-primary">Login</span>
+        </RouterLink>
+      </div>
+    </div>
   </nav>
 </template>
 
@@ -17,20 +21,20 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <style scoped>
-nav {
-  display: flex;
-  gap: 2rem;
+.navbar {
+  background-color: rgba(66, 185, 131, 0.2) !important;
   justify-content: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: rgba(66, 185, 131, 0.2);
 }
-button {
+
+.navbar-menu {
+  box-shadow: none;
+}
+
+.navbar-start {
+  margin: 0 auto;
+}
+
+.navbar-item {
   padding: 0.5rem 1rem;
-  background-color: #42b983;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
 }
 </style>

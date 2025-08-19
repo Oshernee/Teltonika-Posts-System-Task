@@ -1,10 +1,12 @@
 <template>
   <NavBar />
+  <NotificationContainer />
   <router-view />
 </template>
 
 <script setup lang="ts">
 import NavBar from './components/Navbar.vue'
+import NotificationContainer from './components/Notification.vue'
 </script>
 
 <style>

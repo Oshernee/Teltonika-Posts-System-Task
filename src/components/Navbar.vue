@@ -3,7 +3,7 @@
     <div class="navbar-menu">
       <div class="navbar-start">
         <RouterLink to="/" class="navbar-item">
-          <span class="button is-primary">Home</span>
+          <span class="button is-primary">Posts</span>
         </RouterLink>
         <RouterLink to="/authors" class="navbar-item">
           <span class="button is-primary">Authors</span>
@@ -36,5 +36,23 @@ import { RouterLink } from 'vue-router'
 
 .navbar-item {
   padding: 0.5rem 1rem;
+}
+
+.button {
+  border: none !important;
+  outline: none !important;
+}
+
+.button:focus,
+.button:hover,
+.button:active {
+  box-shadow: none !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.navbar-item:focus,
+.navbar-item:hover {
+  background-color: transparent !important;
 }
 </style>

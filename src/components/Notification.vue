@@ -7,7 +7,7 @@
       class="notification mb-1"
       v-for="n in notifications"
       :key="n.id"
-      :class="`has-background-${notificationStore.getNotificationColor(n.type)}`"
+      :class="`has-background-${n.type === 'error' ? 'danger' : n.type}`"
       style="width: 350px; max-width: 350px; margin-bottom: 0.5rem"
     >
       <p>{{ n.message }}</p>

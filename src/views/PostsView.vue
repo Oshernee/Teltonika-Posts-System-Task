@@ -20,7 +20,7 @@ onMounted(async () => {
 
 const getPosts = async () => {
   try {
-    const posts = await PostService.getPosts()
+    const posts = await PostService.getPostsWithAuthors()
     return posts
   } catch (error) {
     notificationStore.addNotification({

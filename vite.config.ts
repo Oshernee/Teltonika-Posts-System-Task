@@ -12,9 +12,4 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  define: {
-    'process.env': {
-      __API_URL__: JSON.stringify('http://localhost:3000'),
-    },
-  },
 })

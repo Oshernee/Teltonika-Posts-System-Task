@@ -28,7 +28,7 @@ export const useNotificationStore = defineStore('notification', () => {
       if (notifications.value.length === 0) {
         stopGlobalTimer()
       }
-    }, 5000)
+    }, 2500)
   }
 
   const stopGlobalTimer = () => {

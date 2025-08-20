@@ -1,6 +1,6 @@
 <template>
-  <div class="card-content">
-    <RouterLink :to="`/posts/${props.post.id}`" class="card">
+  <div class="card is-clickable" @click="navigateToPost">
+    <div class="card-content">
       <div class="content">
         <p class="post-title">Title: {{ props.post.title }}</p>
         <p class="author-name">Author: {{ props.author || 'Loading...' }}</p>
@@ -12,19 +12,30 @@
           }}
         </p>
       </div>
-    </RouterLink>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import type { Post } from '@/types/Post'
-import { RouterLink } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 const props = defineProps<{
   post: Post
   author?: string
 }>()
+
+const router = useRouter()
+
+const navigateToPost = () => {
+  router.push({
+    name: 'post-detail',
+    params: {
+      id: props.post.id,
+    },
+  })
+}
 
 const formatDate = (date: Date | string | null | undefined): string => {
   if (!date) return 'N/A'

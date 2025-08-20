@@ -21,10 +21,6 @@ onMounted(async () => {
 const getAuthors = async () => {
   try {
     const authors = await AuthorService.getAuthors()
-    notificationStore.addNotification({
-      type: 'success',
-      message: 'Authors fetched successfully.',
-    })
     return authors
   } catch (error) {
     notificationStore.addNotification({

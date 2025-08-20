@@ -1,31 +1,28 @@
 import axios from 'axios'
 import type { Author } from '@/types/Author'
-import { API_BASE_URL } from '@/config/constants'
 
 export default class AuthorService {
-  private static readonly API_URL = `${API_BASE_URL}/authors`
-
   public static async getAuthors(): Promise<Author[]> {
-    const response = await axios.get<Author[]>(this.API_URL)
+    const response = await axios.get<Author[]>('base_url/authors')
     return response.data
   }
 
   public static async getAuthorById(id: number): Promise<Author> {
-    const response = await axios.get<Author>(`${this.API_URL}/${id}`)
+    const response = await axios.get<Author>(`base_url/authors/${id}`)
     return response.data
   }
 
   public static async createAuthor(author: Author): Promise<Author> {
-    const response = await axios.post<Author>(this.API_URL, author)
+    const response = await axios.post<Author>('base_url/authors', author)
     return response.data
   }
 
   public static async updateAuthor(author: Author): Promise<Author> {
-    const response = await axios.put<Author>(`${this.API_URL}/${author.id}`, author)
+    const response = await axios.put<Author>(`base_url/authors/${author.id}`, author)
     return response.data
   }
 
   public static async deleteAuthor(id: number): Promise<void> {
-    await axios.delete(`${this.API_URL}/${id}`)
+    await axios.delete(`base_url/authors/${id}`)
   }
 }

@@ -11,18 +11,4 @@ export default class AuthorService {
     const response = await axios.get<Author>(`base_url/authors/${id}`)
     return response.data
   }
-
-  public static async createAuthor(author: Author): Promise<Author> {
-    const response = await axios.post<Author>('base_url/authors', author)
-    return response.data
-  }
-
-  public static async updateAuthor(author: Author): Promise<Author> {
-    const response = await axios.put<Author>(`base_url/authors/${author.id}`, author)
-    return response.data
-  }
-
-  public static async deleteAuthor(id: number): Promise<void> {
-    await axios.delete(`base_url/authors/${id}`)
-  }
 }

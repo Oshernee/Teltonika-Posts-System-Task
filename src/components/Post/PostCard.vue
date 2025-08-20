@@ -1,6 +1,6 @@
 <template>
-  <div class="card">
-    <div class="card-content">
+  <div class="card-content">
+    <RouterLink :to="`/posts/${props.post.id}`" class="card">
       <div class="content">
         <p class="post-title">Title: {{ props.post.title }}</p>
         <p class="author-name">Author: {{ props.author || 'Loading...' }}</p>
@@ -12,13 +12,14 @@
           }}
         </p>
       </div>
-    </div>
+    </RouterLink>
   </div>
 </template>
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import type { Post } from '@/types/Post'
+import { RouterLink } from 'vue-router'
 
 const props = defineProps<{
   post: Post

@@ -1,4 +1,4 @@
-import type { Author } from './Author'
+import type { Author } from '@/types/Author'
 
 export interface Post {
   id: number

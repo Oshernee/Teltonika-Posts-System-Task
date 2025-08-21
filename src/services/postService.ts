@@ -11,4 +11,9 @@ export default class PostService {
     const response = await axios.get<Post>('/base_url/' + `posts/${id}?_expand=author`)
     return response.data
   }
+
+  public static async getPostsWithAuthors(): Promise<Post[]> {
+    const response = await axios.get<Post[]>('base_url/posts?_expand=author')
+    return response.data
+  }
 }

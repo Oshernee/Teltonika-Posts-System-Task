@@ -30,7 +30,7 @@ const checkAuthor = () => {
     return `Author: ${props.post.author.name} ${props.post.author.surname}`
   }
   if (!props.post.author) {
-    return "Author doesn't exist"
+    return 'Author not found'
   }
   return "Author doesn't have a name"
 }

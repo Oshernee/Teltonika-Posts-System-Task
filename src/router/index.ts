@@ -36,7 +36,7 @@ const router = createRouter({
       component: Login,
     },
     {
-      path: '/:catchAll(.*)',
+      path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: NotFound,
     },

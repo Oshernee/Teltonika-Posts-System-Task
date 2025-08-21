@@ -38,41 +38,55 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUpdated, ref } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 const props = defineProps<{
   totalItems: number
   itemsPerPage: number
+  currentPage?: number
 }>()
 
-const emit = defineEmits(['page-changed'])
+const emit = defineEmits(['page-changed', 'page-overflow'])
 const currentPage = ref(1)
-const totalPages = ref(1)
 const pagesToShow = 5
-const displayPages = ref<number[]>([])
 
-onUpdated(() => {
-  totalPages.value = Math.ceil(props.totalItems / props.itemsPerPage)
+const totalPages = computed(() => {
+  return Math.ceil(props.totalItems / props.itemsPerPage)
+})
+
+watch(
+  () => props.currentPage,
+  (newPage) => {
+    if (newPage && newPage !== currentPage.value) {
+      currentPage.value = newPage
+    }
+  },
+)
+
+const displayPages = computed(() => {
+  const startPage = Math.max(1, currentPage.value - Math.floor(pagesToShow / 2))
+  const endPage = Math.min(totalPages.value, startPage + pagesToShow - 1)
+
+  const pages = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i)
+
+  if (endPage < totalPages.value) {
+    pages.push(totalPages.value)
+  }
+  if (startPage > 1) {
+    pages.unshift(1)
+  }
+
+  return pages
 })
 
 const updateCurrentPage = (page: number) => {
   if (page > 0 && page <= totalPages.value) {
     currentPage.value = page
     emit('page-changed', currentPage.value)
-    updateDisplayPages()
-  }
-}
-
-const updateDisplayPages = () => {
-  const startPage = Math.max(1, currentPage.value - Math.floor(pagesToShow / 2))
-  const endPage = Math.min(totalPages.value, startPage + pagesToShow - 1)
-
-  displayPages.value = Array.from({ length: endPage - startPage + 1 }, (_, i) => startPage + i)
-  if (endPage < totalPages.value) {
-    displayPages.value.push(totalPages.value)
-  }
-  if (startPage > 1) {
-    displayPages.value.unshift(1)
+  } else if (page > totalPages.value) {
+    emit('page-overflow', page)
+    currentPage.value = totalPages.value
+    emit('page-changed', currentPage.value)
   }
 }
 </script>

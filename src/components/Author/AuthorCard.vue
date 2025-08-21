@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-content">
       <div class="content">
-        <p class="author-name">{{ props.author.name }} {{ props.author.surname }}</p>
+        <p class="author-name">{{ checkAuthor() }}</p>
         <p class="author-id">
           {{
             props.author.updated_at === props.author.created_at || !props.author.updated_at
@@ -22,6 +22,13 @@ import type { Author } from '@/types/Author'
 const props = defineProps<{
   author: Author
 }>()
+
+const checkAuthor = () => {
+  if (props.author && props.author.name && props.author.surname) {
+    return `Author: ${props.author.name} ${props.author.surname}`
+  }
+  return "Author doesn't have a name"
+}
 
 const formatDate = (date: Date | string | null | undefined): string => {
   if (!date) return 'N/A'

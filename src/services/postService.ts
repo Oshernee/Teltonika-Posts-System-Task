@@ -12,8 +12,18 @@ export default class PostService {
     return response.data
   }
 
-  public static async getPostsByPage(page: number, limit: number): Promise<[Post[], number]> {
-    const response = await axios.get<Post[]>('/base_url/posts?_page=' + page + '&_limit=' + limit)
-    return [response.data, response.headers['x-total-count']]
+  public static async getPostsByPage(
+    page: number,
+    limit: number,
+  ): Promise<[Post[], number, number]> {
+    const response = await axios.get<Post[]>(
+      '/base_url/posts?_expand=author&_page=' + page + '&_limit=' + limit,
+    )
+    if (page * (limit - 1) > parseInt(response.headers['x-total-count'])) {
+      page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
+      return this.getPostsByPage(page, limit)
+    }
+    const pageOnReturn = page
+    return [response.data, response.headers['x-total-count'], pageOnReturn]
   }
 }

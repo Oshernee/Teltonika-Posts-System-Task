@@ -2,14 +2,34 @@
   <div class="posts-view">
     <div class="container">
       <div class="content-wrapper">
-        <PostCardList :posts="posts" />
-      </div>
-      <div class="pagination-wrapper">
-        <Pagination
-          @page-changed="currentPage = $event"
-          :totalItems="Number(totalPosts)"
-          :itemsPerPage="itemsPerPage"
-        />
+        <div v-if="isLoading && posts.length === 0" class="has-text-centered p-6">
+          <div class="is-loading"></div>
+          <p class="mt-4">Loading posts...</p>
+        </div>
+        <div v-if="hasError" class="notification">
+          <p>Failed to load posts. Please try again.</p>
+        </div>
+        <template v-else-if="posts.length > 0 || isLoading">
+          <PostCardList :posts="posts" />
+          <div class="pagination-wrapper is-static">
+            <Pagination
+              @page-changed="handlePageChange"
+              @page-overflow="handlePageOverflow"
+              :currentPage="currentPage"
+              :totalItems="Number(totalPosts)"
+              :itemsPerPage="itemsPerPage"
+            />
+          </div>
+        </template>
+        <div v-else class="has-text-centered p-6">
+          <div class="empty-state">
+            <span class="icon is-large has-text-grey-light">
+              <i class="fas fa-users fa-3x"></i>
+            </span>
+            <h3 class="title is-4 has-text-grey">No Posts Found</h3>
+            <p class="has-text-grey">There are no posts to display at the moment.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -28,6 +48,9 @@ const posts = ref<Post[]>([])
 const totalPosts = ref(0)
 const itemsPerPage = 9
 const currentPage = ref(1)
+const isLoading = ref(false)
+const hasError = ref(false)
+const emit = defineEmits(['page-overflow'])
 
 onMounted(async () => {
   posts.value = await getPostsByPage()
@@ -38,19 +61,37 @@ watch(currentPage, async () => {
 })
 
 const getPostsByPage = async () => {
+  isLoading.value = true
+  hasError.value = false
+
   try {
     const page = currentPage.value
     const limit = itemsPerPage
-    const [fetchedPosts, totalCount] = await PostService.getPostsByPage(page, limit)
+    const [fetchedPosts, totalCount, pageOnReturn] = await PostService.getPostsByPage(page, limit)
     totalPosts.value = totalCount
+    if (pageOnReturn < currentPage.value) {
+      currentPage.value = pageOnReturn
+    }
     return fetchedPosts
   } catch (error) {
+    hasError.value = true
     notificationStore.addNotification({
       type: 'error',
       message: 'Failed to fetch posts.',
     })
     return []
+  } finally {
+    isLoading.value = false
   }
+}
+
+const handlePageChange = (page: number) => {
+  currentPage.value = page
+}
+
+const handlePageOverflow = () => {
+  const maxPage = Math.ceil(totalPosts.value / itemsPerPage)
+  currentPage.value = maxPage > 0 ? maxPage : 1
 }
 </script>
 

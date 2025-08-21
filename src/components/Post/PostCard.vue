@@ -28,7 +28,10 @@ const checkAuthor = () => {
   if (props.post.author && props.post.author.name && props.post.author.surname) {
     return `Author: ${props.post.author.name} ${props.post.author.surname}`
   }
-  return 'Author not found'
+  if (!props.post.author) {
+    return "Author doesn't exist"
+  }
+  return "Author doesn't have a name"
 }
 
 const formatDate = (date: Date | string | null | undefined): string => {

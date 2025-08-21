@@ -1,20 +1,24 @@
 <template>
-  <div class="container">
-    <div class="box">
-      <h1 class="title">{{ post?.title || 'Loading...' }}</h1>
+  <div class="container mt-6">
+    <div class="columns is-centered">
+      <div class="column is-8-desktop is-10-tablet">
+        <div class="box">
+          <h1 class="title">{{ post?.title || 'Loading...' }}</h1>
 
-      <p class="subtitle is-6">By {{ post?.author?.name || 'Loading author...' }}</p>
+          <p class="subtitle is-6">By {{ post?.author?.name || 'Loading author...' }}</p>
 
-      <p class="is-size-7 has-text-grey mb-4">
-        {{
-          post?.updated_at === post?.created_at || !post?.updated_at
-            ? `Created: ${formatDate(post?.created_at)}`
-            : `Updated: ${formatDate(post?.updated_at)}`
-        }}
-      </p>
+          <p class="is-size-7 has-text-grey mb-4">
+            {{
+              post?.updated_at === post?.created_at || !post?.updated_at
+                ? `Created: ${formatDate(post?.created_at)}`
+                : `Updated: ${formatDate(post?.updated_at)}`
+            }}
+          </p>
 
-      <div class="content">
-        {{ post?.body || 'Loading content...' }}
+          <div class="content">
+            {{ post?.body || 'Loading content...' }}
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -43,7 +47,7 @@ const getPostById = async (id: number) => {
   } catch (error) {
     notificationStore.addNotification({
       type: 'error',
-      message: 'Failed to fetch posts.',
+      message: 'Failed to fetch post.',
     })
     return
   }

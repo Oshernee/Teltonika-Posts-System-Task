@@ -1,27 +1,49 @@
 <template>
   <div class="posts-view">
-    <PostCardList :posts="posts" />
+    <div class="container">
+      <div class="content-wrapper">
+        <PostCardList :posts="posts" />
+      </div>
+      <div class="pagination-wrapper">
+        <Pagination
+          @page-changed="currentPage = $event"
+          :totalItems="Number(totalPosts)"
+          :itemsPerPage="itemsPerPage"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import type { Post } from '@/types/Post'
 import { useNotificationStore } from '@/store/Notification'
 import PostService from '@/services/postService'
 import PostCardList from '@/components/Post/PostCardList.vue'
+import Pagination from '@/components/Pagination.vue'
 
 const notificationStore = useNotificationStore()
 const posts = ref<Post[]>([])
+const totalPosts = ref(0)
+const itemsPerPage = 9
+const currentPage = ref(1)
 
 onMounted(async () => {
-  posts.value = await getPosts()
+  posts.value = await getPostsByPage()
 })
 
-const getPosts = async () => {
+watch(currentPage, async () => {
+  posts.value = await getPostsByPage()
+})
+
+const getPostsByPage = async () => {
   try {
-    const posts = await PostService.getPosts()
-    return posts
+    const page = currentPage.value
+    const limit = itemsPerPage
+    const [fetchedPosts, totalCount] = await PostService.getPostsByPage(page, limit)
+    totalPosts.value = totalCount
+    return fetchedPosts
   } catch (error) {
     notificationStore.addNotification({
       type: 'error',
@@ -33,9 +55,30 @@ const getPosts = async () => {
 </script>
 
 <style scoped>
-.authors-view {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+.posts-view {
+  min-height: 75vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.content-wrapper {
+  flex: 1;
+  min-height: 0;
+}
+
+.pagination-wrapper {
+  margin-top: 2rem;
+  position: static;
+  width: 100%;
 }
 
 .hero {

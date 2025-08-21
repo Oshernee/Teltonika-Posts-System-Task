@@ -11,4 +11,9 @@ export default class PostService {
     const response = await axios.get<Post>('/base_url/' + `posts/${id}?_expand=author`)
     return response.data
   }
+
+  public static async getPostsByPage(page: number, limit: number): Promise<[Post[], number]> {
+    const response = await axios.get<Post[]>('/base_url/posts?_page=' + page + '&_limit=' + limit)
+    return [response.data, response.headers['x-total-count']]
+  }
 }

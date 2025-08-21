@@ -15,6 +15,7 @@ import PostCard from './PostCard.vue'
 import type { Post } from '@/types/Post'
 import AuthorService from '@/services/authorService'
 import { ref, watchEffect } from 'vue'
+import Pagination from '../Pagination.vue'
 
 const props = defineProps<{
   posts: Post[]

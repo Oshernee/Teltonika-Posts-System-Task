@@ -3,7 +3,7 @@
     <div class="card-content">
       <div class="content">
         <p class="post-title">Title: {{ props.post.title }}</p>
-        <p class="author-name">Author: {{ props.author || 'Loading...' }}</p>
+        <p class="author-name">{{ checkAuthor() }}</p>
         <p class="post-id">
           {{
             props.post.updated_at === props.post.created_at || !props.post.updated_at
@@ -22,8 +22,14 @@ import type { Post } from '@/types/Post'
 
 const props = defineProps<{
   post: Post
-  author?: string
 }>()
+
+const checkAuthor = () => {
+  if (props.post.author && props.post.author.name && props.post.author.surname) {
+    return `Author: ${props.post.author.name} ${props.post.author.surname}`
+  }
+  return 'Author not found'
+}
 
 const formatDate = (date: Date | string | null | undefined): string => {
   if (!date) return 'N/A'

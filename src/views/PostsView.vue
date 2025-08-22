@@ -2,14 +2,11 @@
   <div class="posts-view">
     <div class="container">
       <div class="content-wrapper">
-        <div v-if="isLoading && posts.length === 0" class="has-text-centered p-6">
-          <div class="is-loading"></div>
-          <p class="mt-4">Loading posts...</p>
-        </div>
         <div v-if="hasError" class="notification">
           <p>Failed to load posts. Please try again.</p>
         </div>
-        <template v-else-if="posts.length > 0 || isLoading">
+        <template v-else-if="posts.length > 0 || searchTerm">
+          <SearchBar :count="posts.length" @input-changed="handleSearchInput" />
           <PostCardList :posts="posts" />
           <div class="pagination-wrapper is-static">
             <Pagination
@@ -42,6 +39,7 @@ import { useNotificationStore } from '@/store/Notification'
 import PostService from '@/services/postService'
 import PostCardList from '@/components/Post/PostCardList.vue'
 import Pagination from '@/components/Pagination.vue'
+import SearchBar from '@/components/SearchBar.vue'
 
 const notificationStore = useNotificationStore()
 const posts = ref<Post[]>([])
@@ -51,12 +49,13 @@ const currentPage = ref(1)
 const isLoading = ref(false)
 const hasError = ref(false)
 const emit = defineEmits(['page-overflow'])
+const searchTerm = ref('')
 
 onMounted(async () => {
   posts.value = await getPostsByPage()
 })
 
-watch(currentPage, async () => {
+watch([currentPage, searchTerm], async () => {
   posts.value = await getPostsByPage()
 })
 
@@ -67,7 +66,12 @@ const getPostsByPage = async () => {
   try {
     const page = currentPage.value
     const limit = itemsPerPage
-    const [fetchedPosts, totalCount, pageOnReturn] = await PostService.getPostsByPage(page, limit)
+    const search = searchTerm.value.trim()
+    const [fetchedPosts, totalCount, pageOnReturn] = await PostService.getPostsByPage(
+      page,
+      limit,
+      search,
+    )
     totalPosts.value = totalCount
     if (pageOnReturn < currentPage.value) {
       currentPage.value = pageOnReturn
@@ -83,6 +87,11 @@ const getPostsByPage = async () => {
   } finally {
     isLoading.value = false
   }
+}
+
+const handleSearchInput = (input: string) => {
+  searchTerm.value = input
+  currentPage.value = 1
 }
 
 const handlePageChange = (page: number) => {

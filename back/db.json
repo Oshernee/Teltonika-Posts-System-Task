@@ -5,18 +5,6 @@
       "password": "$2a$10$wrSOb2J7qq1QDNmovvT34OIReYBv6aTvD9gnb6BzsGy5AY.yAGBru",
       "name": "Regular user",
       "id": 1
-    },
-    {
-      "email": "admin@notreal.com",
-      "password": "$2a$10$wrSOb2J7qq1QDNmovvT34OIReYBv6aTvD9gnb6BzsGy5AY.yAGBru",
-      "name": "Admin user",
-      "id": 2
-    },
-    {
-      "email": "writer@notreal.com",
-      "password": "$2a$10$wrSOb2J7qq1QDNmovvT34OIReYBv6aTvD9gnb6BzsGy5AY.yAGBru",
-      "name": "Writer user",
-      "id": 3
     }
   ],
   "authors": [
@@ -1014,7 +1002,7 @@
       "updated_at": "2024-05-06T12:30:00Z"
     },
     {
-      "id": 70,
+      "id": 80,
       "title": "The Psychology of User Interface Design",
       "body": "Understanding human psychology is crucial for creating effective user interfaces. Cognitive load theory, visual hierarchy, and behavioral psychology principles guide design decisions that improve user experience. Color psychology, typography choices, and layout patterns all influence how users perceive and interact with digital products, making psychological understanding essential for designers.",
       "authorId": 1,

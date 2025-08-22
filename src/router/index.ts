@@ -14,7 +14,7 @@ const router = createRouter({
         {
           path: '',
           name: 'posts',
-          alias: ['/posts', '/'],
+          alias: ['/posts'],
           component: PostsView,
         },
         {

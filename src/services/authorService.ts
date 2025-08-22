@@ -11,4 +11,19 @@ export default class AuthorService {
     const response = await axios.get<Author>(`/base_url/authors/${id}`)
     return response.data
   }
+
+  public static async getAuthorsByPage(
+    page: number,
+    limit: number,
+  ): Promise<[Author[], number, number]> {
+    const response = await axios.get<Author[]>(
+      '/base_url/authors?_page=' + page + '&_limit=' + limit,
+    )
+    if (page * (limit - 1) > parseInt(response.headers['x-total-count'])) {
+      page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
+      return this.getAuthorsByPage(page, limit)
+    }
+    const pageOnReturn = page
+    return [response.data, response.headers['x-total-count'], pageOnReturn]
+  }
 }

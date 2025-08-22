@@ -1,51 +1,75 @@
 <template>
   <div class="authors-view">
-    <div v-if="isLoading" class="has-text-centered p-6">
-      <div class="is-loading"></div>
-      <p class="mt-4">Loading authors...</p>
-    </div>
-    <div v-else-if="hasError" class="notification">
-      <p>Failed to load authors. Please try again.</p>
-      <button class="button is-danger is-outlined mt-3" @click="retryFetch">Retry</button>
-    </div>
-    <template v-else-if="authors.length > 0">
-      <AuthorCardList :authors="authors" />
-    </template>
-    <div v-else class="has-text-centered p-6">
-      <div class="empty-state">
-        <span class="icon is-large has-text-grey-light">
-          <i class="fas fa-users fa-3x"></i>
-        </span>
-        <h3 class="title is-4 has-text-grey">No Authors Found</h3>
-        <p class="has-text-grey">There are no authors to display at the moment.</p>
+    <div class="container">
+      <div v-if="hasError" class="notification">
+        <p>Failed to load authors. Please try again.</p>
+      </div>
+      <template v-else-if="authors.length > 0">
+        <AuthorCardList :authors="authors" />
+        <div class="pagination-wrapper is-static">
+          <Pagination
+            @page-changed="handlePageChange"
+            @page-overflow="handlePageOverflow"
+            :currentPage="currentPage"
+            :totalItems="Number(totalAuthors)"
+            :itemsPerPage="itemsPerPage"
+          />
+        </div>
+      </template>
+      <div v-else class="has-text-centered p-6">
+        <div class="empty-state">
+          <span class="icon is-large has-text-grey-light">
+            <i class="fas fa-users fa-3x"></i>
+          </span>
+          <h3 class="title is-4 has-text-grey">No Authors Found</h3>
+          <p class="has-text-grey">There are no authors to display at the moment.</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import type { Author } from '@/types/Author'
 import { useNotificationStore } from '@/store/Notification'
 import AuthorService from '@/services/authorService'
 import AuthorCardList from '@/components/Author/AuthorCardList.vue'
+import Pagination from '@/components/Pagination.vue'
 
 const notificationStore = useNotificationStore()
 const authors = ref<Author[]>([])
 const isLoading = ref(false)
 const hasError = ref(false)
+const totalAuthors = ref(0)
+const itemsPerPage = 6
+const currentPage = ref(1)
+const emit = defineEmits(['page-overflow'])
 
 onMounted(async () => {
-  authors.value = await getAuthors()
+  authors.value = await getAuthorsByPage()
 })
 
-const getAuthors = async () => {
+watch(currentPage, async () => {
+  authors.value = await getAuthorsByPage()
+})
+
+const getAuthorsByPage = async () => {
   isLoading.value = true
   hasError.value = false
 
   try {
-    const authors = await AuthorService.getAuthors()
-    return authors
+    const page = currentPage.value
+    const limit = itemsPerPage
+    const [fetchedAuthors, totalCount, pageOnReturn] = await AuthorService.getAuthorsByPage(
+      page,
+      limit,
+    )
+    totalAuthors.value = totalCount
+    if (pageOnReturn < currentPage.value) {
+      currentPage.value = pageOnReturn
+    }
+    return fetchedAuthors
   } catch (error) {
     hasError.value = true
     notificationStore.addNotification({
@@ -58,8 +82,13 @@ const getAuthors = async () => {
   }
 }
 
-const retryFetch = () => {
-  getAuthors()
+const handlePageChange = (page: number) => {
+  currentPage.value = page
+}
+
+const handlePageOverflow = () => {
+  const maxPage = Math.ceil(totalAuthors.value / itemsPerPage)
+  currentPage.value = maxPage > 0 ? maxPage : 1
 }
 </script>
 

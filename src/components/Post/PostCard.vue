@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card is-clickable" @click="navigateToPost">
     <div class="card-content">
       <div class="content">
         <p class="post-title">Title: {{ props.post.title }}</p>
@@ -19,6 +19,7 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
 import type { Post } from '@/types/Post'
+import { useRouter } from 'vue-router'
 
 const props = defineProps<{
   post: Post
@@ -29,9 +30,20 @@ const checkAuthor = () => {
     return `Author: ${props.post.author.name} ${props.post.author.surname}`
   }
   if (!props.post.author) {
-    return "Author doesn't exist"
+    return 'Author not found'
   }
   return "Author doesn't have a name"
+}
+
+const router = useRouter()
+
+const navigateToPost = () => {
+  router.push({
+    name: 'post-detail',
+    params: {
+      id: props.post.id,
+    },
+  })
 }
 
 const formatDate = (date: Date | string | null | undefined): string => {

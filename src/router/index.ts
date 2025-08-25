@@ -20,6 +20,7 @@ const router = createRouter({
         {
           path: '/posts/:id',
           name: 'post-detail',
+          props: true,
           component: PostDetailView,
         },
       ],
@@ -35,7 +36,7 @@ const router = createRouter({
       component: Login,
     },
     {
-      path: '/:catchAll(.*)',
+      path: '/:pathMatch(.*)*',
       name: 'not-found',
       component: NotFound,
     },

@@ -4,50 +4,80 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-4">
-            <div class="box login-box" v-bind:class="{ 'has-error': emptyFields }">
+            <div class="box login-box" v-bind:class="{ 'has-error': !meta.valid && meta.dirty }">
               <div class="has-text-centered mb-5">
                 <h1 class="title is-3 has-text-light">Sign In</h1>
                 <p class="subtitle is-6 has-text-grey-light">Welcome back</p>
               </div>
-              <form @submit.prevent="doLogin">
+              <Form @submit="doLogin" v-slot="{ meta }">
                 <div class="field">
                   <div class="control has-icons-left">
-                    <input
-                      v-model="emailLogin"
-                      class="input is-medium has-fixed-size is-dark"
-                      placeholder="Enter your email"
-                      type="email"
-                      rows="1"
-                      required
-                    ></input>
+                    <Field
+                      name="email"
+                      v-slot="{ field, meta, errorMessage }"
+                      rules="required|no_exclamation_after_at|email_type"
+                    >
+                      <input
+                        v-bind="field"
+                        class="input is-medium has-fixed-size is-dark"
+                        :class="{ 'is-danger': errorMessage && meta.touched }"
+                        placeholder="Enter your email"
+                        type="email"
+                      />
+                    </Field>
                     <span class="icon is-small is-left">
                       <img :src="envelope" alt="email icon" />
                     </span>
                   </div>
+                  <ErrorMessage name="email" class="help is-danger">
+                    <template #default="{ message }">
+                      <p class="help is-danger">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        {{ message }}
+                      </p>
+                    </template>
+                  </ErrorMessage>
                 </div>
                 <div class="field">
                   <div class="control has-icons-left">
-                    <input
-                      v-model="passwordLogin"
-                      class="input is-medium has-fixed-size is-dark"
-                      type="password"
-                      placeholder="Enter your password"
-                      rows="1"
-                      required
-                    ></input>
+                    <Field
+                      name="password"
+                      v-slot="{ field, meta, errorMessage }"
+                      rules="required|length|lowercase"
+                    >
+                      <input
+                        v-bind="field"
+                        class="input is-medium has-fixed-size is-dark"
+                        :class="{ 'is-danger': errorMessage && meta.touched }"
+                        type="password"
+                        placeholder="Enter your password"
+                      />
+                    </Field>
                     <span class="icon is-small is-left">
                       <img :src="password" alt="password icon" />
                     </span>
                   </div>
+                  <ErrorMessage name="password" class="help is-danger">
+                    <template #default="{ message }">
+                      <p class="help is-danger">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        {{ message }}
+                      </p>
+                    </template>
+                  </ErrorMessage>
                 </div>
                 <div class="field">
                   <div class="control">
-                    <button type="submit" class="button is-primary is-medium is-fullwidth">
+                    <button
+                      type="submit"
+                      class="button is-primary is-medium is-fullwidth"
+                      :disabled="!meta.valid"
+                    >
                       Sign In
                     </button>
                   </div>
                 </div>
-              </form>
+              </Form>
             </div>
           </div>
         </div>
@@ -57,38 +87,65 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { defineRule, Form, Field, ErrorMessage, useForm } from 'vee-validate'
+import { required, email, min } from '@vee-validate/rules'
 import { useRouter } from 'vue-router'
 import UserService from '@/services/loginService'
 import { useUserStore } from '@/store/Auth'
 import envelope from '@/assets/email.svg'
 import password from '@/assets/password.svg'
+import { useNotificationStore } from '@/store/Notification'
 
 const router = useRouter()
 const userStore = useUserStore()
+const notificationStore = useNotificationStore()
 
-const emailLogin = ref('')
-const passwordLogin = ref('')
-const emptyFields = ref(false)
+defineRule('required', required)
+defineRule('email', email)
+defineRule('min', min)
+
+const { meta, values, setFieldError } = useForm()
 
 const doLogin = async () => {
-  emptyFields.value = !emailLogin.value || !passwordLogin.value
-  if (emptyFields.value) return
-
-  const [user, accesstoken] = await UserService.userLogin(emailLogin.value, passwordLogin.value)
+  const [user, accesstoken] = await UserService.userLogin(values.email, values.password)
 
   if (user && accesstoken) {
     userStore.setUser(user, accesstoken)
     router.push('/posts')
   } else {
-    emptyFields.value = true
+    notificationStore.addNotification({ message: 'Invalid email or password', type: 'error' })
+    setFieldError('email', 'Invalid credentials')
+    setFieldError('password', 'Invalid credentials')
   }
 }
+
+defineRule('no_exclamation_after_at', (value: string) => {
+  if (!value) return true
+  const atIndex = value.indexOf('@')
+  if (atIndex === -1) return true
+  return value[atIndex + 1] !== '!' || "Character '!' cannot be immediately after '@'."
+})
+
+defineRule('email_type', (value: string) => {
+  if (!value) return true
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  return emailPattern.test(value) || 'Please enter a valid email address.'
+})
+
+defineRule('lowercase', (value: string) => {
+  if (!value) return true
+  return /[a-z]/.test(value) || 'Password must contain at least one lowercase letter.'
+})
+
+defineRule('length', (value: string) => {
+  if (!value) return true
+  return value.length >= 6 || 'Password must be at least 6 characters long.'
+})
 </script>
 
 <style scoped>
 .login-page {
-  min-height: calc(100vh - 56px); 
+  min-height: calc(100vh - 56px);
   padding: 2rem 0;
   display: flex;
   align-items: center;
@@ -123,6 +180,11 @@ const doLogin = async () => {
   background-color: #2d3748;
 }
 
+.input.is-danger {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 0.125em rgba(231, 76, 60, 0.25) !important;
+}
+
 .button.is-primary {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-color: transparent;
@@ -131,10 +193,24 @@ const doLogin = async () => {
   transition: all 0.3s ease;
 }
 
-.button.is-primary:hover {
+.button.is-primary:hover:not(:disabled) {
   background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.help.is-danger {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .icon img {

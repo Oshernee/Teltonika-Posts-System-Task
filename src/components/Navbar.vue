@@ -12,7 +12,7 @@
           <span class="button is-primary">Login</span>
         </RouterLink>
         <RouterLink v-else-if="userStore.isLoggedIn()" to="/posts" class="navbar-item">
-          <span class="button is-primary" @click="userStore.clearUser">Logout</span>
+          <span class="button is-primary" @click="logout">Logout</span>
         </RouterLink>
       </div>
     </div>
@@ -22,8 +22,15 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import { useUserStore } from '@/store/Auth'
+import { useNotificationStore } from '@/store/Notification'
 
 const userStore = useUserStore()
+const notificationStore = useNotificationStore()
+
+const logout = () => {
+  userStore.clearUser()
+  notificationStore.addNotification({ message: 'Logout successful', type: 'success' })
+}
 </script>
 
 <style scoped>

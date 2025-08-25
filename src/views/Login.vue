@@ -9,7 +9,10 @@
                 <h1 class="title is-3 has-text-light">Sign In</h1>
                 <p class="subtitle is-6 has-text-grey-light">Welcome back</p>
               </div>
-              <Form @submit="doLogin" v-slot="{ meta }">
+              <Form
+                @submit="(values) => doLogin({ email: values.email, password: values.password })"
+                v-slot="{ meta, values }"
+              >
                 <div class="field">
                   <div class="control has-icons-left">
                     <Field
@@ -104,13 +107,14 @@ defineRule('required', required)
 defineRule('email', email)
 defineRule('min', min)
 
-const { meta, values, setFieldError } = useForm()
+const { meta, setFieldError } = useForm()
 
-const doLogin = async () => {
-  const [user, accesstoken] = await UserService.userLogin(values.email, values.password)
+const doLogin = async ({ email, password }: { email: string; password: string }) => {
+  const [user, accesstoken] = await UserService.userLogin(email, password)
 
   if (user && accesstoken) {
     userStore.setUser(user, accesstoken)
+    notificationStore.addNotification({ message: 'Login successful', type: 'success' })
     router.push('/posts')
   } else {
     notificationStore.addNotification({ message: 'Invalid email or password', type: 'error' })

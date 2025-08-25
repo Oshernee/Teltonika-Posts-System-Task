@@ -2,7 +2,7 @@
   <div class="posts-view">
     <div class="container">
       <div class="content-wrapper">
-        <div v-if="hasError" class="notification">
+        <div v-if="hasError" class="notification is-danger">
           <p>Failed to load posts. Please try again.</p>
         </div>
         <template v-else-if="posts.length > 0 || searchTerm">
@@ -21,10 +21,10 @@
         <div v-else class="has-text-centered p-6">
           <div class="empty-state">
             <span class="icon is-large has-text-grey-light">
-              <i class="fas fa-users fa-3x"></i>
+              <i class="fas fa-file-alt fa-3x"></i>
             </span>
-            <h3 class="title is-4 has-text-grey">No Posts Found</h3>
-            <p class="has-text-grey">There are no posts to display at the moment.</p>
+            <h3 class="title is-4 has-text-light">No Posts Found</h3>
+            <p class="has-text-grey-light">There are no posts to display at the moment.</p>
           </div>
         </div>
       </div>
@@ -106,9 +106,10 @@ const handlePageOverflow = () => {
 
 <style scoped>
 .posts-view {
-  min-height: 75vh;
+  min-height: calc(100vh - 56px);
   display: flex;
   flex-direction: column;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
 }
 
 .container {
@@ -131,8 +132,25 @@ const handlePageOverflow = () => {
   width: 100%;
 }
 
-.hero {
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
+.title.has-text-light {
+  color: #e2e8f0 !important;
+}
+
+.has-text-grey-light {
+  color: #a0aec0 !important;
+}
+
+.notification.is-danger {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.empty-state {
+  color: #e2e8f0;
+}
+
+.empty-state .icon {
+  color: #a0aec0;
 }
 </style>

@@ -90,3 +90,67 @@ const updateCurrentPage = (page: number) => {
   }
 }
 </script>
+
+<style scoped>
+.pagination {
+  margin-top: 2rem;
+}
+
+.pagination-previous,
+.pagination-next {
+  background-color: #34495e;
+  border-color: #4a5568;
+  color: #e2e8f0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pagination-previous:hover:not(:disabled),
+.pagination-next:hover:not(:disabled) {
+  background-color: #2d3748;
+  border-color: #667eea;
+  color: #e2e8f0;
+}
+
+.pagination-previous:disabled,
+.pagination-next:disabled {
+  background-color: #1a202c;
+  border-color: #2d3748;
+  color: #718096;
+  cursor: not-allowed;
+}
+
+.pagination-link {
+  background-color: #34495e;
+  border-color: #4a5568;
+  color: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.pagination-link:hover {
+  background-color: #2d3748;
+  border-color: #667eea;
+  color: #e2e8f0;
+}
+
+.pagination-link.is-current {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.pagination-link.is-unselectable {
+  background-color: transparent;
+  border-color: transparent;
+  color: #a0aec0;
+  cursor: default;
+}
+
+.pagination-link.is-unselectable:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #a0aec0;
+}
+</style>

@@ -21,11 +21,11 @@ const props = defineProps<{
 
 <style scoped>
 .post-card-list {
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1600px;
 }
 
 .column {

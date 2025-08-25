@@ -60,3 +60,57 @@ const formatDate = (date: Date | string | null | undefined): string => {
   })
 }
 </script>
+
+<style scoped>
+.card {
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background-color: #2c3e50;
+  border: 1px solid #34495e;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  border-color: #667eea;
+}
+
+.card-content {
+  padding: 0.25rem;
+}
+
+.post-title {
+  color: #e2e8f0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  height: 3.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author-name {
+  color: #a0aec0;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  font-weight: 500;
+}
+
+.post-id {
+  color: #718096;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.is-clickable {
+  cursor: pointer;
+}
+
+.is-clickable:active {
+  transform: translateY(-2px);
+}
+</style>

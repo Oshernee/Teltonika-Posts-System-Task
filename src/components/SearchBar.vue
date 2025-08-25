@@ -5,7 +5,7 @@
         <div class="field">
           <div class="control">
             <input
-              class="input is-medium"
+              class="input is-medium is-dark"
               type="text"
               v-model="input"
               placeholder="Search "
@@ -46,5 +46,27 @@ const debouncedInput = debounce((value: string) => {
 .box {
   margin-bottom: 0.75rem;
   transition: transform 0.2s ease;
+}
+
+.input.is-dark {
+  background-color: #34495e;
+  border-color: #4a5568;
+  color: #e2e8f0;
+}
+
+.input.is-dark::placeholder {
+  color: #a0aec0;
+}
+
+.input.is-dark:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.125em rgba(102, 126, 234, 0.25);
+  background-color: #2d3748;
+}
+
+.notification.is-danger {
+  background-color: #e74c3c;
+  color: #fff;
+  border-radius: 8px;
 }
 </style>

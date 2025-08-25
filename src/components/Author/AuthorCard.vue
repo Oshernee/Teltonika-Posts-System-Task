@@ -44,3 +44,51 @@ const formatDate = (date: Date | string | null | undefined): string => {
   })
 }
 </script>
+
+<style scoped>
+.card {
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  background-color: #2c3e50;
+  border: 1px solid #34495e;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+  border-color: #667eea;
+}
+
+.card-content {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.author-name {
+  color: #e2e8f0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.author-id {
+  color: #718096;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  font-style: italic;
+  margin-top: auto;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+</style>

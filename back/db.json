@@ -5,6 +5,18 @@
       "password": "$2a$10$wrSOb2J7qq1QDNmovvT34OIReYBv6aTvD9gnb6BzsGy5AY.yAGBru",
       "name": "Regular user",
       "id": 1
+    },
+    {
+      "email": "admin@notreal.com",
+      "password": "$2a$10$wrSOb2J7qq1QDNmovvT34OIReYBv6aTvD9gnb6BzsGy5AY.yAGBru",
+      "name": "Admin user",
+      "id": 2
+    },
+    {
+      "email": "writer@notreal.com",
+      "password": "$2a$10$wrSOb2J7qq1QDNmovvT34OIReYBv6aTvD9gnb6BzsGy5AY.yAGBru",
+      "name": "Writer user",
+      "id": 3
     }
   ],
   "authors": [
@@ -24,7 +36,7 @@
     },
     {
       "id": 3,
-      "name": "Michael",
+      "name": "Alice",
       "surname": "Johnson",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
@@ -32,7 +44,7 @@
     },
     {
       "id": 4,
-      "name": "Emily",
+      "name": "Bob",
       "surname": "Brown",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
@@ -56,9 +68,9 @@
     },
     {
       "id": 7,
-      "name": "Jane",
-      "surname": "Smith",
-      "userId": 1,
+      "name": "Emma",
+      "surname": "Miller",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
@@ -66,7 +78,7 @@
       "id": 8,
       "name": "Michael",
       "surname": "Johnson",
-      "userId": 1,
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
@@ -74,169 +86,217 @@
       "id": 9,
       "name": "Emily",
       "surname": "Brown",
-      "userId": 1,
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 10,
-      "name": "David",
-      "surname": "Wilson",
-      "userId": 1,
+      "name": "James",
+      "surname": "Garcia",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T13:00:00Z"
     },
     {
       "id": 11,
-      "userId": 1,
+      "name": "Olivia",
+      "surname": "Martinez",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 12,
-      "name": "Jane",
-      "surname": "Smith",
-      "userId": 1,
+      "name": "William",
+      "surname": "Anderson",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 13,
-      "name": "Michael",
-      "surname": "Johnson",
-      "userId": 1,
+      "name": "Ava",
+      "surname": "Taylor",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 14,
-      "name": "Emily",
-      "surname": "Brown",
-      "userId": 1,
+      "name": "Benjamin",
+      "surname": "Thomas",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 15,
-      "name": "David",
-      "surname": "Wilson",
+      "name": "Mia",
+      "surname": "Jackson",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T13:00:00Z"
     },
     {
       "id": 16,
+      "name": "Lucas",
+      "surname": "White",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 17,
-      "name": "Jane",
-      "surname": "Smith",
-      "userId": 1,
+      "name": "Isabella",
+      "surname": "Harris",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 18,
-      "name": "Michael",
-      "surname": "Johnson",
-      "userId": 1,
+      "name": "Alexander",
+      "surname": "Clark",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 19,
-      "name": "Emily",
-      "surname": "Brown",
-      "userId": 1,
+      "name": "Charlotte",
+      "surname": "Lewis",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 20,
-      "name": "David",
-      "surname": "Wilson",
-      "userId": 1,
+      "name": "Henry",
+      "surname": "Robinson",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T13:00:00Z"
     },
     {
       "id": 21,
-      "userId": 1,
+      "name": "Amelia",
+      "surname": "Walker",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 22,
-      "name": "Jane",
-      "surname": "Smith",
+      "name": "Ethan",
+      "surname": "Young",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 23,
-      "name": "Michael",
-      "surname": "Johnson",
+      "name": "Harper",
+      "surname": "Allen",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 24,
-      "name": "Emily",
-      "surname": "Brown",
-      "userId": 1,
+      "name": "Sebastian",
+      "surname": "King",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 25,
-      "name": "David",
-      "surname": "Wilson",
-      "userId": 1,
+      "name": "Evelyn",
+      "surname": "Wright",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T13:00:00Z"
     },
     {
       "id": 26,
-      "userId": 1,
+      "name": "Jack",
+      "surname": "Lopez",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 27,
-      "name": "Jane",
-      "surname": "Smith",
-      "userId": 1,
+      "name": "Abigail",
+      "surname": "Hill",
+      "userId": 3,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 28,
-      "name": "Michael",
-      "surname": "Johnson",
+      "name": "Owen",
+      "surname": "Scott",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 29,
-      "name": "Emily",
-      "surname": "Brown",
+      "name": "Luna",
+      "surname": "Green",
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
     },
     {
       "id": 30,
-      "name": "David",
-      "surname": "Wilson",
-      "userId": 1,
+      "name": "Liam",
+      "surname": "Adams",
+      "userId": 2,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T13:00:00Z"
+    },
+    {
+      "id": 31,
+      "name": "Grace",
+      "surname": "Baker",
+      "userId": 2,
+      "created_at": "2024-05-06T08:00:00Z",
+      "updated_at": "2024-05-06T08:00:00Z"
+    },
+    {
+      "id": 32,
+      "name": "Noah",
+      "surname": "Gonzalez",
+      "userId": 3,
+      "created_at": "2024-05-06T09:00:00Z",
+      "updated_at": "2024-05-06T09:00:00Z"
+    },
+    {
+      "id": 33,
+      "name": "Zoe",
+      "surname": "Nelson",
+      "userId": 3,
+      "created_at": "2024-05-06T10:00:00Z",
+      "updated_at": "2024-05-06T10:00:00Z"
+    },
+    {
+      "id": 34,
+      "name": "Samuel",
+      "surname": "Carter",
+      "userId": 1,
+      "created_at": "2024-05-06T11:00:00Z",
+      "updated_at": "2024-05-06T11:00:00Z"
+    },
+    {
+      "id": 35,
+      "name": "Victoria",
+      "surname": "Mitchell",
+      "userId": 1,
+      "created_at": "2024-05-06T12:00:00Z",
+      "updated_at": "2024-05-06T12:00:00Z"
     }
   ],
   "posts": [
@@ -332,8 +392,8 @@
     },
     {
       "id": 1,
-      "title": "First Post",
-      "body": "This is the body of the first post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Introduction to Modern Web Development",
+      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
       "authorId": 1,
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
@@ -341,17 +401,17 @@
     },
     {
       "id": 2,
-      "title": "Second Post",
-      "body": "This is the body of the second post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 2,
+      "title": "The Art of Responsive Design",
+      "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
+      "authorId": 6,
       "userId": 1,
       "created_at": "2024-05-05T12:01:00Z",
       "updated_at": "2024-05-05T12:01:00Z"
     },
     {
       "id": 3,
-      "title": "Third Post",
-      "body": "This is the body of the third post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Understanding JavaScript Closures",
+      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
       "authorId": 3,
       "userId": 1,
       "created_at": "2024-05-05T12:02:00Z",
@@ -359,8 +419,8 @@
     },
     {
       "id": 4,
-      "title": "Fourth Post",
-      "body": "This is the body of the fourth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "The Future of Artificial Intelligence",
+      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
       "authorId": 4,
       "userId": 1,
       "created_at": "2024-05-05T12:03:00Z",
@@ -368,8 +428,8 @@
     },
     {
       "id": 5,
-      "title": "Fifth Post",
-      "body": "This is the body of the fifth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Database Design Best Practices",
+      "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
       "authorId": 5,
       "userId": 1,
       "created_at": "2024-05-05T12:04:00Z",
@@ -377,8 +437,8 @@
     },
     {
       "id": 6,
-      "title": "Sixth Post",
-      "body": "This is the body of the sixth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Cloud Computing Fundamentals",
+      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
       "authorId": 1,
       "userId": 1,
       "created_at": "2024-05-05T12:05:00Z",
@@ -386,8 +446,8 @@
     },
     {
       "id": 7,
-      "title": "Seventh Post",
-      "body": "This is the body of the seventh post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
       "authorId": 2,
       "userId": 1,
       "created_at": "2024-05-05T12:06:00Z",
@@ -395,8 +455,8 @@
     },
     {
       "id": 8,
-      "title": "Eighth Post",
-      "body": "This is the body of the eighth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
       "authorId": 3,
       "userId": 1,
       "created_at": "2024-05-05T12:07:00Z",
@@ -404,21 +464,381 @@
     },
     {
       "id": 9,
-      "title": "Ninth Post",
-      "body": "This is the body of the ninth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
       "authorId": 4,
       "userId": 1,
       "created_at": "2024-05-05T12:08:00Z",
       "updated_at": "2024-05-05T12:08:00Z"
     },
     {
-      "title": "New post for testing",
-      "body": "Testing text. Random text to make up the word count. This post is being generated for the purpose of testing. It fulfills the requirement of having at least twenty five words in the body field.",
+      "id": 10,
+      "title": "Version Control with Git",
+      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
       "authorId": 1,
       "userId": 1,
       "created_at": "2024-05-05T17:14:15Z",
-      "updated_at": "2024-05-05T17:14:15Z",
-      "id": 10
+      "updated_at": "2024-05-05T17:14:15Z"
+    },
+    {
+      "id": 11,
+      "title": "API Design and Development",
+      "body": "Well-designed APIs are the backbone of modern applications. RESTful services and GraphQL have become popular approaches for creating APIs that are both powerful and easy to use. Proper documentation and versioning strategies are crucial for maintaining APIs over time and ensuring developer adoption.",
+      "authorId": 7,
+      "userId": 2,
+      "created_at": "2024-05-05T12:09:00Z",
+      "updated_at": "2024-05-05T12:09:00Z"
+    },
+    {
+      "id": 12,
+      "title": "DevOps Culture and Practices",
+      "body": "DevOps has transformed how teams develop, deploy, and maintain software applications. Continuous integration and continuous deployment pipelines help teams deliver features faster while maintaining quality. Automation tools and monitoring systems are essential components of a successful DevOps implementation.",
+      "authorId": 8,
+      "userId": 2,
+      "created_at": "2024-05-05T12:10:00Z",
+      "updated_at": "2024-05-05T12:10:00Z"
+    },
+    {
+      "id": 13,
+      "title": "User Experience Design Principles",
+      "body": "Great user experience design goes beyond just making things look pretty. It involves understanding user needs, creating intuitive interfaces, and ensuring accessibility for all users. User research and usability testing are important tools for creating products that truly serve their intended audience effectively.",
+      "authorId": 9,
+      "userId": 2,
+      "created_at": "2024-05-05T12:11:00Z",
+      "updated_at": "2024-05-05T12:11:00Z"
+    },
+    {
+      "id": 14,
+      "title": "Performance Optimization Strategies",
+      "body": "Website and application performance directly impacts user satisfaction and business success. Techniques like code splitting, lazy loading, and caching can significantly improve loading times. Monitoring tools help identify bottlenecks and areas for improvement in your application's performance metrics.",
+      "authorId": 10,
+      "userId": 2,
+      "created_at": "2024-05-05T12:12:00Z",
+      "updated_at": "2024-05-05T12:12:00Z"
+    },
+    {
+      "id": 15,
+      "title": "Microservices Architecture",
+      "body": "Microservices architecture has gained popularity for building scalable and maintainable applications. Breaking down monolithic applications into smaller, independent services allows teams to work more efficiently and deploy updates more frequently. However, this approach also introduces new challenges in terms of service communication and data consistency.",
+      "authorId": 11,
+      "userId": 3,
+      "created_at": "2024-05-05T12:13:00Z",
+      "updated_at": "2024-05-05T12:13:00Z"
+    },
+    {
+      "id": 16,
+      "title": "Testing Strategies for Modern Applications",
+      "body": "Comprehensive testing is crucial for delivering reliable software. Unit tests, integration tests, and end-to-end tests each serve different purposes in ensuring code quality. Test-driven development and automated testing pipelines help teams catch issues early and maintain confidence in their codebase.",
+      "authorId": 12,
+      "userId": 3,
+      "created_at": "2024-05-05T12:14:00Z",
+      "updated_at": "2024-05-05T12:14:00Z"
+    },
+    {
+      "id": 17,
+      "title": "Data Science and Analytics",
+      "body": "Data has become one of the most valuable assets for businesses today. Understanding how to collect, process, and analyze data can provide valuable insights for decision-making. Tools like Python, R, and various visualization libraries make it easier to work with large datasets and extract meaningful information.",
+      "authorId": 13,
+      "userId": 3,
+      "created_at": "2024-05-05T12:15:00Z",
+      "updated_at": "2024-05-05T12:15:00Z"
+    },
+    {
+      "id": 18,
+      "title": "Blockchain Technology Applications",
+      "body": "Blockchain technology extends far beyond cryptocurrencies. Smart contracts, supply chain tracking, and digital identity verification are just a few applications that demonstrate the potential of distributed ledger technology. Understanding blockchain fundamentals opens up new possibilities for creating trust and transparency in digital systems.",
+      "authorId": 14,
+      "userId": 3,
+      "created_at": "2024-05-05T12:16:00Z",
+      "updated_at": "2024-05-05T12:16:00Z"
+    },
+    {
+      "id": 19,
+      "title": "Remote Work and Collaboration",
+      "body": "The shift to remote work has changed how teams collaborate and communicate. Digital tools and platforms have become essential for maintaining productivity and team cohesion. Establishing clear communication protocols and using the right collaboration tools can help distributed teams work effectively together.",
+      "authorId": 15,
+      "userId": 1,
+      "created_at": "2024-05-05T12:17:00Z",
+      "updated_at": "2024-05-05T12:17:00Z"
+    },
+    {
+      "id": 20,
+      "title": "Sustainable Technology Practices",
+      "body": "As technology continues to grow, considering its environmental impact becomes increasingly important. Green computing practices, energy-efficient coding, and sustainable data center operations are ways the tech industry can reduce its carbon footprint. Developers and organizations have a responsibility to consider sustainability in their technology choices.",
+      "authorId": 16,
+      "userId": 1,
+      "created_at": "2024-05-05T12:18:00Z",
+      "updated_at": "2024-05-05T12:18:00Z"
+    },
+    {
+      "id": 21,
+      "title": "Machine Learning for Beginners",
+      "body": "Machine learning might seem intimidating at first, but understanding the basic concepts can open up exciting possibilities. Supervised learning, unsupervised learning, and reinforcement learning are the three main categories that form the foundation of ML. Python libraries like scikit-learn make it easier to get started with practical applications.",
+      "authorId": 17,
+      "userId": 2,
+      "created_at": "2024-05-05T12:19:00Z",
+      "updated_at": "2024-05-05T12:19:00Z"
+    },
+    {
+      "id": 22,
+      "title": "The Evolution of Programming Languages",
+      "body": "Programming languages continue to evolve to meet the changing needs of developers and the industry. From low-level languages like C to high-level languages like Python and JavaScript, each serves specific purposes and use cases. Understanding the strengths and weaknesses of different languages helps developers choose the right tool for each project.",
+      "authorId": 18,
+      "userId": 2,
+      "created_at": "2024-05-05T12:20:00Z",
+      "updated_at": "2024-05-05T12:20:00Z"
+    },
+    {
+      "id": 23,
+      "title": "Internet of Things (IoT) Development",
+      "body": "The Internet of Things connects everyday devices to the internet, creating new opportunities for automation and data collection. From smart homes to industrial sensors, IoT applications are becoming more prevalent. Understanding hardware interfaces, communication protocols, and data processing is essential for IoT development projects.",
+      "authorId": 19,
+      "userId": 2,
+      "created_at": "2024-05-05T12:21:00Z",
+      "updated_at": "2024-05-05T12:21:00Z"
+    },
+    {
+      "id": 24,
+      "title": "Agile Development Methodologies",
+      "body": "Agile methodologies have transformed how software teams approach project management and development. Scrum, Kanban, and other agile frameworks emphasize iterative development, collaboration, and responding to change. These approaches help teams deliver value more quickly and adapt to changing requirements throughout the development process.",
+      "authorId": 20,
+      "userId": 3,
+      "created_at": "2024-05-05T12:22:00Z",
+      "updated_at": "2024-05-05T12:22:00Z"
+    },
+    {
+      "id": 25,
+      "title": "Open Source Software Benefits",
+      "body": "Open source software has democratized access to high-quality tools and libraries. Contributing to open source projects is a great way to improve coding skills, collaborate with other developers, and give back to the community. Many successful companies build their products on open source foundations and contribute back to the ecosystem.",
+      "authorId": 21,
+      "userId": 3,
+      "created_at": "2024-05-05T12:23:00Z",
+      "updated_at": "2024-05-05T12:23:00Z"
+    },
+    {
+      "id": 26,
+      "title": "Digital Marketing in the Tech Era",
+      "body": "Digital marketing strategies have evolved alongside technology advancements. Social media platforms, search engine optimization, and content marketing are essential components of modern marketing campaigns. Understanding analytics and user behavior helps marketers create more effective campaigns that reach their target audience successfully.",
+      "authorId": 22,
+      "userId": 1,
+      "created_at": "2024-05-05T12:24:00Z",
+      "updated_at": "2024-05-05T12:24:00Z"
+    },
+    {
+      "id": 27,
+      "title": "Web Accessibility Guidelines",
+      "body": "Creating accessible websites ensures that all users, including those with disabilities, can interact with your content effectively. Following WCAG guidelines and implementing proper semantic HTML, keyboard navigation, and screen reader support makes the web more inclusive. Accessibility should be considered from the beginning of any web development project.",
+      "authorId": 23,
+      "userId": 1,
+      "created_at": "2024-05-05T12:25:00Z",
+      "updated_at": "2024-05-05T12:25:00Z"
+    },
+    {
+      "id": 28,
+      "title": "Containerization with Docker",
+      "body": "Docker has revolutionized how applications are packaged and deployed. Containers provide a consistent environment across different platforms and make it easier to scale applications. Understanding container orchestration with tools like Kubernetes is becoming increasingly important for managing complex, distributed applications in production environments.",
+      "authorId": 24,
+      "userId": 2,
+      "created_at": "2024-05-05T12:26:00Z",
+      "updated_at": "2024-05-05T12:26:00Z"
+    },
+    {
+      "id": 29,
+      "title": "Progressive Web Applications",
+      "body": "Progressive Web Applications combine the best features of web and mobile apps. They provide offline functionality, push notifications, and app-like experiences while maintaining the reach and accessibility of web applications. Service workers and web app manifests are key technologies that enable PWA functionality.",
+      "authorId": 25,
+      "userId": 2,
+      "created_at": "2024-05-05T12:27:00Z",
+      "updated_at": "2024-05-05T12:27:00Z"
+    },
+    {
+      "id": 30,
+      "title": "The Future of Work in Technology",
+      "body": "The technology industry continues to evolve rapidly, creating new job opportunities and changing existing roles. Skills like artificial intelligence, cloud computing, and cybersecurity are in high demand. Continuous learning and adaptation are essential for staying relevant in the fast-paced world of technology careers.",
+      "authorId": 26,
+      "userId": 3,
+      "created_at": "2024-05-05T12:28:00Z",
+      "updated_at": "2024-05-05T12:28:00Z"
+    },
+    {
+      "id": 31,
+      "title": "Quantum Computing Fundamentals",
+      "body": "Quantum computing represents a paradigm shift in computational power and capability. While still in its early stages, quantum computers have the potential to solve complex problems that are intractable for classical computers. Understanding quantum principles like superposition and entanglement opens doors to revolutionary applications in cryptography, optimization, and simulation.",
+      "authorId": 27,
+      "userId": 3,
+      "created_at": "2024-05-06T08:30:00Z",
+      "updated_at": "2024-05-06T08:30:00Z"
+    },
+    {
+      "id": 32,
+      "title": "Ethical AI Development",
+      "body": "As artificial intelligence becomes more prevalent in society, ethical considerations become increasingly important. Bias in algorithms, data privacy, and the impact of automation on employment are critical issues that developers and organizations must address. Responsible AI development requires careful consideration of these ethical implications throughout the development process.",
+      "authorId": 28,
+      "userId": 1,
+      "created_at": "2024-05-06T09:00:00Z",
+      "updated_at": "2024-05-06T09:00:00Z"
+    },
+    {
+      "id": 33,
+      "title": "Edge Computing Applications",
+      "body": "Edge computing brings data processing closer to where it's generated, reducing latency and improving performance for time-sensitive applications. This technology is particularly important for IoT devices, autonomous vehicles, and real-time analytics. Understanding edge computing principles helps developers create more responsive and efficient distributed systems.",
+      "authorId": 29,
+      "userId": 1,
+      "created_at": "2024-05-06T09:30:00Z",
+      "updated_at": "2024-05-06T09:30:00Z"
+    },
+    {
+      "id": 34,
+      "title": "Serverless Architecture Patterns",
+      "body": "Serverless computing allows developers to focus on writing code without managing infrastructure. Functions as a Service (FaaS) platforms like AWS Lambda and Azure Functions enable event-driven architectures that scale automatically. Understanding serverless patterns and best practices can lead to more cost-effective and scalable applications.",
+      "authorId": 30,
+      "userId": 2,
+      "created_at": "2024-05-06T10:00:00Z",
+      "updated_at": "2024-05-06T10:00:00Z"
+    },
+    {
+      "id": 35,
+      "title": "Virtual and Augmented Reality Development",
+      "body": "Virtual and Augmented Reality technologies are creating new possibilities for immersive experiences. From gaming and entertainment to education and training, VR and AR applications are expanding rapidly. Understanding 3D graphics, spatial computing, and user interaction in virtual environments opens up exciting career opportunities in this growing field.",
+      "authorId": 31,
+      "userId": 2,
+      "created_at": "2024-05-06T10:30:00Z",
+      "updated_at": "2024-05-06T10:30:00Z"
+    },
+    {
+      "id": 36,
+      "title": "Low-Code and No-Code Platforms",
+      "body": "Low-code and no-code platforms are democratizing software development by enabling non-programmers to create applications. These tools use visual interfaces and pre-built components to accelerate development. While they can't replace traditional programming for complex applications, they offer valuable solutions for rapid prototyping and business automation.",
+      "authorId": 32,
+      "userId": 3,
+      "created_at": "2024-05-06T11:00:00Z",
+      "updated_at": "2024-05-06T11:00:00Z"
+    },
+    {
+      "id": 37,
+      "title": "Cybersecurity Threat Landscape",
+      "body": "The cybersecurity threat landscape is constantly evolving as attackers develop new techniques and exploit emerging vulnerabilities. Ransomware, social engineering, and advanced persistent threats pose significant risks to organizations. Staying informed about current threats and implementing defense-in-depth strategies is crucial for protecting digital assets and maintaining business continuity.",
+      "authorId": 33,
+      "userId": 3,
+      "created_at": "2024-05-06T11:30:00Z",
+      "updated_at": "2024-05-06T11:30:00Z"
+    },
+    {
+      "id": 38,
+      "title": "5G Technology and Its Impact",
+      "body": "5G networks promise to revolutionize connectivity with faster speeds, lower latency, and support for massive IoT deployments. This technology enables new applications like remote surgery, autonomous vehicles, and enhanced augmented reality experiences. Understanding 5G capabilities helps developers design applications that take advantage of these improved network characteristics.",
+      "authorId": 34,
+      "userId": 1,
+      "created_at": "2024-05-06T12:00:00Z",
+      "updated_at": "2024-05-06T12:00:00Z"
+    },
+    {
+      "id": 39,
+      "title": "Digital Transformation Strategies",
+      "body": "Digital transformation involves integrating digital technology into all areas of business operations, fundamentally changing how organizations operate and deliver value to customers. Successful transformation requires cultural change, process reengineering, and technology adoption. Understanding transformation methodologies helps organizations navigate this complex but essential journey.",
+      "authorId": 35,
+      "userId": 1,
+      "created_at": "2024-05-06T12:30:00Z",
+      "updated_at": "2024-05-06T12:30:00Z"
+    },
+    {
+      "id": 40,
+      "title": "The Psychology of User Interface Design",
+      "body": "Understanding human psychology is crucial for creating effective user interfaces. Cognitive load theory, visual hierarchy, and behavioral psychology principles guide design decisions that improve user experience. Color psychology, typography choices, and layout patterns all influence how users perceive and interact with digital products, making psychological understanding essential for designers.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-06T13:00:00Z",
+      "updated_at": "2024-05-06T13:00:00Z"
+    },
+    {
+      "id": 41,
+      "title": "Introduction to Modern Web Development",
+      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-05T12:00:00Z",
+      "updated_at": "2024-05-05T12:00:00Z"
+    },
+    {
+      "id": 42,
+      "title": "The Art of Responsive Design",
+      "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
+      "authorId": 6,
+      "userId": 1,
+      "created_at": "2024-05-05T12:01:00Z",
+      "updated_at": "2024-05-05T12:01:00Z"
+    },
+    {
+      "id": 43,
+      "title": "Understanding JavaScript Closures",
+      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:02:00Z",
+      "updated_at": "2024-05-05T12:02:00Z"
+    },
+    {
+      "id": 44,
+      "title": "The Future of Artificial Intelligence",
+      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:03:00Z",
+      "updated_at": "2024-05-05T12:03:00Z"
+    },
+    {
+      "id": 45,
+      "title": "Database Design Best Practices",
+      "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
+      "authorId": 5,
+      "userId": 1,
+      "created_at": "2024-05-05T12:04:00Z",
+      "updated_at": "2024-05-05T12:04:00Z"
+    },
+    {
+      "id": 46,
+      "title": "Cloud Computing Fundamentals",
+      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-05T12:05:00Z",
+      "updated_at": "2024-05-05T12:05:00Z"
+    },
+    {
+      "id": 47,
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
+      "authorId": 2,
+      "userId": 1,
+      "created_at": "2024-05-05T12:06:00Z",
+      "updated_at": "2024-05-05T12:06:00Z"
+    },
+    {
+      "id": 48,
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:07:00Z",
+      "updated_at": "2024-05-05T12:07:00Z"
+    },
+    {
+      "id": 49,
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:08:00Z",
+      "updated_at": "2024-05-05T12:08:00Z"
+    },
+    {
+      "id": 50,
+      "title": "Version Control with Git",
+      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-05T17:14:15Z",
+      "updated_at": "2024-05-05T17:14:15Z"
     },
     {
       "id": 1,
@@ -1412,8 +1832,8 @@
     },
     {
       "id": 1,
-      "title": "First Post",
-      "body": "This is the body of the first post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Introduction to Modern Web Development",
+      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
       "authorId": 1,
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
@@ -1421,17 +1841,17 @@
     },
     {
       "id": 2,
-      "title": "Second Post",
-      "body": "This is the body of the second post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 2,
+      "title": "The Art of Responsive Design",
+      "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
+      "authorId": 6,
       "userId": 1,
       "created_at": "2024-05-05T12:01:00Z",
       "updated_at": "2024-05-05T12:01:00Z"
     },
     {
       "id": 3,
-      "title": "Third Post",
-      "body": "This is the body of the third post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Understanding JavaScript Closures",
+      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
       "authorId": 3,
       "userId": 1,
       "created_at": "2024-05-05T12:02:00Z",
@@ -1439,8 +1859,8 @@
     },
     {
       "id": 4,
-      "title": "Fourth Post",
-      "body": "This is the body of the fourth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "The Future of Artificial Intelligence",
+      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
       "authorId": 4,
       "userId": 1,
       "created_at": "2024-05-05T12:03:00Z",
@@ -1448,8 +1868,8 @@
     },
     {
       "id": 5,
-      "title": "Fifth Post",
-      "body": "This is the body of the fifth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Database Design Best Practices",
+      "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
       "authorId": 5,
       "userId": 1,
       "created_at": "2024-05-05T12:04:00Z",
@@ -1457,8 +1877,8 @@
     },
     {
       "id": 6,
-      "title": "Sixth Post",
-      "body": "This is the body of the sixth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Cloud Computing Fundamentals",
+      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
       "authorId": 1,
       "userId": 1,
       "created_at": "2024-05-05T12:05:00Z",
@@ -1466,8 +1886,8 @@
     },
     {
       "id": 7,
-      "title": "Seventh Post",
-      "body": "This is the body of the seventh post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
       "authorId": 2,
       "userId": 1,
       "created_at": "2024-05-05T12:06:00Z",
@@ -1475,8 +1895,8 @@
     },
     {
       "id": 8,
-      "title": "Eighth Post",
-      "body": "This is the body of the eighth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
       "authorId": 3,
       "userId": 1,
       "created_at": "2024-05-05T12:07:00Z",
@@ -1484,21 +1904,651 @@
     },
     {
       "id": 9,
-      "title": "Ninth Post",
-      "body": "This is the body of the ninth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
       "authorId": 4,
       "userId": 1,
       "created_at": "2024-05-05T12:08:00Z",
       "updated_at": "2024-05-05T12:08:00Z"
     },
     {
-      "title": "New post for testing",
-      "body": "Testing text. Random text to make up the word count. This post is being generated for the purpose of testing. It fulfills the requirement of having at least twenty five words in the body field.",
+      "id": 10,
+      "title": "Version Control with Git",
+      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
       "authorId": 1,
       "userId": 1,
       "created_at": "2024-05-05T17:14:15Z",
-      "updated_at": "2024-05-05T17:14:15Z",
-      "id": 10
+      "updated_at": "2024-05-05T17:14:15Z"
+    },
+    {
+      "id": 11,
+      "title": "API Design and Development",
+      "body": "Well-designed APIs are the backbone of modern applications. RESTful services and GraphQL have become popular approaches for creating APIs that are both powerful and easy to use. Proper documentation and versioning strategies are crucial for maintaining APIs over time and ensuring developer adoption.",
+      "authorId": 7,
+      "userId": 2,
+      "created_at": "2024-05-05T12:09:00Z",
+      "updated_at": "2024-05-05T12:09:00Z"
+    },
+    {
+      "id": 12,
+      "title": "DevOps Culture and Practices",
+      "body": "DevOps has transformed how teams develop, deploy, and maintain software applications. Continuous integration and continuous deployment pipelines help teams deliver features faster while maintaining quality. Automation tools and monitoring systems are essential components of a successful DevOps implementation.",
+      "authorId": 8,
+      "userId": 2,
+      "created_at": "2024-05-05T12:10:00Z",
+      "updated_at": "2024-05-05T12:10:00Z"
+    },
+    {
+      "id": 13,
+      "title": "User Experience Design Principles",
+      "body": "Great user experience design goes beyond just making things look pretty. It involves understanding user needs, creating intuitive interfaces, and ensuring accessibility for all users. User research and usability testing are important tools for creating products that truly serve their intended audience effectively.",
+      "authorId": 9,
+      "userId": 2,
+      "created_at": "2024-05-05T12:11:00Z",
+      "updated_at": "2024-05-05T12:11:00Z"
+    },
+    {
+      "id": 14,
+      "title": "Performance Optimization Strategies",
+      "body": "Website and application performance directly impacts user satisfaction and business success. Techniques like code splitting, lazy loading, and caching can significantly improve loading times. Monitoring tools help identify bottlenecks and areas for improvement in your application's performance metrics.",
+      "authorId": 10,
+      "userId": 2,
+      "created_at": "2024-05-05T12:12:00Z",
+      "updated_at": "2024-05-05T12:12:00Z"
+    },
+    {
+      "id": 15,
+      "title": "Microservices Architecture",
+      "body": "Microservices architecture has gained popularity for building scalable and maintainable applications. Breaking down monolithic applications into smaller, independent services allows teams to work more efficiently and deploy updates more frequently. However, this approach also introduces new challenges in terms of service communication and data consistency.",
+      "authorId": 11,
+      "userId": 3,
+      "created_at": "2024-05-05T12:13:00Z",
+      "updated_at": "2024-05-05T12:13:00Z"
+    },
+    {
+      "id": 16,
+      "title": "Testing Strategies for Modern Applications",
+      "body": "Comprehensive testing is crucial for delivering reliable software. Unit tests, integration tests, and end-to-end tests each serve different purposes in ensuring code quality. Test-driven development and automated testing pipelines help teams catch issues early and maintain confidence in their codebase.",
+      "authorId": 12,
+      "userId": 3,
+      "created_at": "2024-05-05T12:14:00Z",
+      "updated_at": "2024-05-05T12:14:00Z"
+    },
+    {
+      "id": 17,
+      "title": "Data Science and Analytics",
+      "body": "Data has become one of the most valuable assets for businesses today. Understanding how to collect, process, and analyze data can provide valuable insights for decision-making. Tools like Python, R, and various visualization libraries make it easier to work with large datasets and extract meaningful information.",
+      "authorId": 13,
+      "userId": 3,
+      "created_at": "2024-05-05T12:15:00Z",
+      "updated_at": "2024-05-05T12:15:00Z"
+    },
+    {
+      "id": 18,
+      "title": "Blockchain Technology Applications",
+      "body": "Blockchain technology extends far beyond cryptocurrencies. Smart contracts, supply chain tracking, and digital identity verification are just a few applications that demonstrate the potential of distributed ledger technology. Understanding blockchain fundamentals opens up new possibilities for creating trust and transparency in digital systems.",
+      "authorId": 14,
+      "userId": 3,
+      "created_at": "2024-05-05T12:16:00Z",
+      "updated_at": "2024-05-05T12:16:00Z"
+    },
+    {
+      "id": 19,
+      "title": "Remote Work and Collaboration",
+      "body": "The shift to remote work has changed how teams collaborate and communicate. Digital tools and platforms have become essential for maintaining productivity and team cohesion. Establishing clear communication protocols and using the right collaboration tools can help distributed teams work effectively together.",
+      "authorId": 15,
+      "userId": 1,
+      "created_at": "2024-05-05T12:17:00Z",
+      "updated_at": "2024-05-05T12:17:00Z"
+    },
+    {
+      "id": 20,
+      "title": "Sustainable Technology Practices",
+      "body": "As technology continues to grow, considering its environmental impact becomes increasingly important. Green computing practices, energy-efficient coding, and sustainable data center operations are ways the tech industry can reduce its carbon footprint. Developers and organizations have a responsibility to consider sustainability in their technology choices.",
+      "authorId": 16,
+      "userId": 1,
+      "created_at": "2024-05-05T12:18:00Z",
+      "updated_at": "2024-05-05T12:18:00Z"
+    },
+    {
+      "id": 21,
+      "title": "Machine Learning for Beginners",
+      "body": "Machine learning might seem intimidating at first, but understanding the basic concepts can open up exciting possibilities. Supervised learning, unsupervised learning, and reinforcement learning are the three main categories that form the foundation of ML. Python libraries like scikit-learn make it easier to get started with practical applications.",
+      "authorId": 17,
+      "userId": 2,
+      "created_at": "2024-05-05T12:19:00Z",
+      "updated_at": "2024-05-05T12:19:00Z"
+    },
+    {
+      "id": 22,
+      "title": "The Evolution of Programming Languages",
+      "body": "Programming languages continue to evolve to meet the changing needs of developers and the industry. From low-level languages like C to high-level languages like Python and JavaScript, each serves specific purposes and use cases. Understanding the strengths and weaknesses of different languages helps developers choose the right tool for each project.",
+      "authorId": 18,
+      "userId": 2,
+      "created_at": "2024-05-05T12:20:00Z",
+      "updated_at": "2024-05-05T12:20:00Z"
+    },
+    {
+      "id": 23,
+      "title": "Internet of Things (IoT) Development",
+      "body": "The Internet of Things connects everyday devices to the internet, creating new opportunities for automation and data collection. From smart homes to industrial sensors, IoT applications are becoming more prevalent. Understanding hardware interfaces, communication protocols, and data processing is essential for IoT development projects.",
+      "authorId": 19,
+      "userId": 2,
+      "created_at": "2024-05-05T12:21:00Z",
+      "updated_at": "2024-05-05T12:21:00Z"
+    },
+    {
+      "id": 24,
+      "title": "Agile Development Methodologies",
+      "body": "Agile methodologies have transformed how software teams approach project management and development. Scrum, Kanban, and other agile frameworks emphasize iterative development, collaboration, and responding to change. These approaches help teams deliver value more quickly and adapt to changing requirements throughout the development process.",
+      "authorId": 20,
+      "userId": 3,
+      "created_at": "2024-05-05T12:22:00Z",
+      "updated_at": "2024-05-05T12:22:00Z"
+    },
+    {
+      "id": 25,
+      "title": "Open Source Software Benefits",
+      "body": "Open source software has democratized access to high-quality tools and libraries. Contributing to open source projects is a great way to improve coding skills, collaborate with other developers, and give back to the community. Many successful companies build their products on open source foundations and contribute back to the ecosystem.",
+      "authorId": 21,
+      "userId": 3,
+      "created_at": "2024-05-05T12:23:00Z",
+      "updated_at": "2024-05-05T12:23:00Z"
+    },
+    {
+      "id": 26,
+      "title": "Digital Marketing in the Tech Era",
+      "body": "Digital marketing strategies have evolved alongside technology advancements. Social media platforms, search engine optimization, and content marketing are essential components of modern marketing campaigns. Understanding analytics and user behavior helps marketers create more effective campaigns that reach their target audience successfully.",
+      "authorId": 22,
+      "userId": 1,
+      "created_at": "2024-05-05T12:24:00Z",
+      "updated_at": "2024-05-05T12:24:00Z"
+    },
+    {
+      "id": 27,
+      "title": "Web Accessibility Guidelines",
+      "body": "Creating accessible websites ensures that all users, including those with disabilities, can interact with your content effectively. Following WCAG guidelines and implementing proper semantic HTML, keyboard navigation, and screen reader support makes the web more inclusive. Accessibility should be considered from the beginning of any web development project.",
+      "authorId": 23,
+      "userId": 1,
+      "created_at": "2024-05-05T12:25:00Z",
+      "updated_at": "2024-05-05T12:25:00Z"
+    },
+    {
+      "id": 28,
+      "title": "Containerization with Docker",
+      "body": "Docker has revolutionized how applications are packaged and deployed. Containers provide a consistent environment across different platforms and make it easier to scale applications. Understanding container orchestration with tools like Kubernetes is becoming increasingly important for managing complex, distributed applications in production environments.",
+      "authorId": 24,
+      "userId": 2,
+      "created_at": "2024-05-05T12:26:00Z",
+      "updated_at": "2024-05-05T12:26:00Z"
+    },
+    {
+      "id": 29,
+      "title": "Progressive Web Applications",
+      "body": "Progressive Web Applications combine the best features of web and mobile apps. They provide offline functionality, push notifications, and app-like experiences while maintaining the reach and accessibility of web applications. Service workers and web app manifests are key technologies that enable PWA functionality.",
+      "authorId": 25,
+      "userId": 2,
+      "created_at": "2024-05-05T12:27:00Z",
+      "updated_at": "2024-05-05T12:27:00Z"
+    },
+    {
+      "id": 30,
+      "title": "The Future of Work in Technology",
+      "body": "The technology industry continues to evolve rapidly, creating new job opportunities and changing existing roles. Skills like artificial intelligence, cloud computing, and cybersecurity are in high demand. Continuous learning and adaptation are essential for staying relevant in the fast-paced world of technology careers.",
+      "authorId": 26,
+      "userId": 3,
+      "created_at": "2024-05-05T12:28:00Z",
+      "updated_at": "2024-05-05T12:28:00Z"
+    },
+    {
+      "id": 31,
+      "title": "Quantum Computing Fundamentals",
+      "body": "Quantum computing represents a paradigm shift in computational power and capability. While still in its early stages, quantum computers have the potential to solve complex problems that are intractable for classical computers. Understanding quantum principles like superposition and entanglement opens doors to revolutionary applications in cryptography, optimization, and simulation.",
+      "authorId": 27,
+      "userId": 3,
+      "created_at": "2024-05-06T08:30:00Z",
+      "updated_at": "2024-05-06T08:30:00Z"
+    },
+    {
+      "id": 32,
+      "title": "Ethical AI Development",
+      "body": "As artificial intelligence becomes more prevalent in society, ethical considerations become increasingly important. Bias in algorithms, data privacy, and the impact of automation on employment are critical issues that developers and organizations must address. Responsible AI development requires careful consideration of these ethical implications throughout the development process.",
+      "authorId": 28,
+      "userId": 1,
+      "created_at": "2024-05-06T09:00:00Z",
+      "updated_at": "2024-05-06T09:00:00Z"
+    },
+    {
+      "id": 33,
+      "title": "Edge Computing Applications",
+      "body": "Edge computing brings data processing closer to where it's generated, reducing latency and improving performance for time-sensitive applications. This technology is particularly important for IoT devices, autonomous vehicles, and real-time analytics. Understanding edge computing principles helps developers create more responsive and efficient distributed systems.",
+      "authorId": 29,
+      "userId": 1,
+      "created_at": "2024-05-06T09:30:00Z",
+      "updated_at": "2024-05-06T09:30:00Z"
+    },
+    {
+      "id": 34,
+      "title": "Serverless Architecture Patterns",
+      "body": "Serverless computing allows developers to focus on writing code without managing infrastructure. Functions as a Service (FaaS) platforms like AWS Lambda and Azure Functions enable event-driven architectures that scale automatically. Understanding serverless patterns and best practices can lead to more cost-effective and scalable applications.",
+      "authorId": 30,
+      "userId": 2,
+      "created_at": "2024-05-06T10:00:00Z",
+      "updated_at": "2024-05-06T10:00:00Z"
+    },
+    {
+      "id": 35,
+      "title": "Virtual and Augmented Reality Development",
+      "body": "Virtual and Augmented Reality technologies are creating new possibilities for immersive experiences. From gaming and entertainment to education and training, VR and AR applications are expanding rapidly. Understanding 3D graphics, spatial computing, and user interaction in virtual environments opens up exciting career opportunities in this growing field.",
+      "authorId": 31,
+      "userId": 2,
+      "created_at": "2024-05-06T10:30:00Z",
+      "updated_at": "2024-05-06T10:30:00Z"
+    },
+    {
+      "id": 36,
+      "title": "Low-Code and No-Code Platforms",
+      "body": "Low-code and no-code platforms are democratizing software development by enabling non-programmers to create applications. These tools use visual interfaces and pre-built components to accelerate development. While they can't replace traditional programming for complex applications, they offer valuable solutions for rapid prototyping and business automation.",
+      "authorId": 32,
+      "userId": 3,
+      "created_at": "2024-05-06T11:00:00Z",
+      "updated_at": "2024-05-06T11:00:00Z"
+    },
+    {
+      "id": 37,
+      "title": "Cybersecurity Threat Landscape",
+      "body": "The cybersecurity threat landscape is constantly evolving as attackers develop new techniques and exploit emerging vulnerabilities. Ransomware, social engineering, and advanced persistent threats pose significant risks to organizations. Staying informed about current threats and implementing defense-in-depth strategies is crucial for protecting digital assets and maintaining business continuity.",
+      "authorId": 33,
+      "userId": 3,
+      "created_at": "2024-05-06T11:30:00Z",
+      "updated_at": "2024-05-06T11:30:00Z"
+    },
+    {
+      "id": 38,
+      "title": "5G Technology and Its Impact",
+      "body": "5G networks promise to revolutionize connectivity with faster speeds, lower latency, and support for massive IoT deployments. This technology enables new applications like remote surgery, autonomous vehicles, and enhanced augmented reality experiences. Understanding 5G capabilities helps developers design applications that take advantage of these improved network characteristics.",
+      "authorId": 34,
+      "userId": 1,
+      "created_at": "2024-05-06T12:00:00Z",
+      "updated_at": "2024-05-06T12:00:00Z"
+    },
+    {
+      "id": 39,
+      "title": "Digital Transformation Strategies",
+      "body": "Digital transformation involves integrating digital technology into all areas of business operations, fundamentally changing how organizations operate and deliver value to customers. Successful transformation requires cultural change, process reengineering, and technology adoption. Understanding transformation methodologies helps organizations navigate this complex but essential journey.",
+      "authorId": 35,
+      "userId": 1,
+      "created_at": "2024-05-06T12:30:00Z",
+      "updated_at": "2024-05-06T12:30:00Z"
+    },
+    {
+      "id": 40,
+      "title": "The Psychology of User Interface Design",
+      "body": "Understanding human psychology is crucial for creating effective user interfaces. Cognitive load theory, visual hierarchy, and behavioral psychology principles guide design decisions that improve user experience. Color psychology, typography choices, and layout patterns all influence how users perceive and interact with digital products, making psychological understanding essential for designers.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-06T13:00:00Z",
+      "updated_at": "2024-05-06T13:00:00Z"
+    },
+    {
+      "id": 41,
+      "title": "Introduction to Modern Web Development",
+      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-05T12:00:00Z",
+      "updated_at": "2024-05-05T12:00:00Z"
+    },
+    {
+      "id": 42,
+      "title": "The Art of Responsive Design",
+      "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
+      "authorId": 6,
+      "userId": 1,
+      "created_at": "2024-05-05T12:01:00Z",
+      "updated_at": "2024-05-05T12:01:00Z"
+    },
+    {
+      "id": 43,
+      "title": "Understanding JavaScript Closures",
+      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:02:00Z",
+      "updated_at": "2024-05-05T12:02:00Z"
+    },
+    {
+      "id": 44,
+      "title": "The Future of Artificial Intelligence",
+      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:03:00Z",
+      "updated_at": "2024-05-05T12:03:00Z"
+    },
+    {
+      "id": 45,
+      "title": "Database Design Best Practices",
+      "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
+      "authorId": 5,
+      "userId": 1,
+      "created_at": "2024-05-05T12:04:00Z",
+      "updated_at": "2024-05-05T12:04:00Z"
+    },
+    {
+      "id": 46,
+      "title": "Cloud Computing Fundamentals",
+      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-05T12:05:00Z",
+      "updated_at": "2024-05-05T12:05:00Z"
+    },
+    {
+      "id": 47,
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
+      "authorId": 2,
+      "userId": 1,
+      "created_at": "2024-05-05T12:06:00Z",
+      "updated_at": "2024-05-05T12:06:00Z"
+    },
+    {
+      "id": 48,
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:07:00Z",
+      "updated_at": "2024-05-05T12:07:00Z"
+    },
+    {
+      "id": 49,
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:08:00Z",
+      "updated_at": "2024-05-05T12:08:00Z"
+    },
+    {
+      "id": 50,
+      "title": "Version Control with Git",
+      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-05T17:14:15Z",
+      "updated_at": "2024-05-05T17:14:15Z"
+    },
+    {
+      "id": 51,
+      "title": "API Design and Development",
+      "body": "Well-designed APIs are the backbone of modern applications. RESTful services and GraphQL have become popular approaches for creating APIs that are both powerful and easy to use. Proper documentation and versioning strategies are crucial for maintaining APIs over time and ensuring developer adoption.",
+      "authorId": 7,
+      "userId": 2,
+      "created_at": "2024-05-05T12:09:00Z",
+      "updated_at": "2024-05-05T12:09:00Z"
+    },
+    {
+      "id": 52,
+      "title": "DevOps Culture and Practices",
+      "body": "DevOps has transformed how teams develop, deploy, and maintain software applications. Continuous integration and continuous deployment pipelines help teams deliver features faster while maintaining quality. Automation tools and monitoring systems are essential components of a successful DevOps implementation.",
+      "authorId": 8,
+      "userId": 2,
+      "created_at": "2024-05-05T12:10:00Z",
+      "updated_at": "2024-05-05T12:10:00Z"
+    },
+    {
+      "id": 53,
+      "title": "User Experience Design Principles",
+      "body": "Great user experience design goes beyond just making things look pretty. It involves understanding user needs, creating intuitive interfaces, and ensuring accessibility for all users. User research and usability testing are important tools for creating products that truly serve their intended audience effectively.",
+      "authorId": 9,
+      "userId": 2,
+      "created_at": "2024-05-05T12:11:00Z",
+      "updated_at": "2024-05-05T12:11:00Z"
+    },
+    {
+      "id": 54,
+      "title": "Performance Optimization Strategies",
+      "body": "Website and application performance directly impacts user satisfaction and business success. Techniques like code splitting, lazy loading, and caching can significantly improve loading times. Monitoring tools help identify bottlenecks and areas for improvement in your application's performance metrics.",
+      "authorId": 10,
+      "userId": 2,
+      "created_at": "2024-05-05T12:12:00Z",
+      "updated_at": "2024-05-05T12:12:00Z"
+    },
+    {
+      "id": 55,
+      "title": "Microservices Architecture",
+      "body": "Microservices architecture has gained popularity for building scalable and maintainable applications. Breaking down monolithic applications into smaller, independent services allows teams to work more efficiently and deploy updates more frequently. However, this approach also introduces new challenges in terms of service communication and data consistency.",
+      "authorId": 11,
+      "userId": 3,
+      "created_at": "2024-05-05T12:13:00Z",
+      "updated_at": "2024-05-05T12:13:00Z"
+    },
+    {
+      "id": 56,
+      "title": "Testing Strategies for Modern Applications",
+      "body": "Comprehensive testing is crucial for delivering reliable software. Unit tests, integration tests, and end-to-end tests each serve different purposes in ensuring code quality. Test-driven development and automated testing pipelines help teams catch issues early and maintain confidence in their codebase.",
+      "authorId": 12,
+      "userId": 3,
+      "created_at": "2024-05-05T12:14:00Z",
+      "updated_at": "2024-05-05T12:14:00Z"
+    },
+    {
+      "id": 57,
+      "title": "Data Science and Analytics",
+      "body": "Data has become one of the most valuable assets for businesses today. Understanding how to collect, process, and analyze data can provide valuable insights for decision-making. Tools like Python, R, and various visualization libraries make it easier to work with large datasets and extract meaningful information.",
+      "authorId": 13,
+      "userId": 3,
+      "created_at": "2024-05-05T12:15:00Z",
+      "updated_at": "2024-05-05T12:15:00Z"
+    },
+    {
+      "id": 58,
+      "title": "Blockchain Technology Applications",
+      "body": "Blockchain technology extends far beyond cryptocurrencies. Smart contracts, supply chain tracking, and digital identity verification are just a few applications that demonstrate the potential of distributed ledger technology. Understanding blockchain fundamentals opens up new possibilities for creating trust and transparency in digital systems.",
+      "authorId": 14,
+      "userId": 3,
+      "created_at": "2024-05-05T12:16:00Z",
+      "updated_at": "2024-05-05T12:16:00Z"
+    },
+    {
+      "id": 59,
+      "title": "Remote Work and Collaboration",
+      "body": "The shift to remote work has changed how teams collaborate and communicate. Digital tools and platforms have become essential for maintaining productivity and team cohesion. Establishing clear communication protocols and using the right collaboration tools can help distributed teams work effectively together.",
+      "authorId": 15,
+      "userId": 1,
+      "created_at": "2024-05-05T12:17:00Z",
+      "updated_at": "2024-05-05T12:17:00Z"
+    },
+    {
+      "id": 60,
+      "title": "Sustainable Technology Practices",
+      "body": "As technology continues to grow, considering its environmental impact becomes increasingly important. Green computing practices, energy-efficient coding, and sustainable data center operations are ways the tech industry can reduce its carbon footprint. Developers and organizations have a responsibility to consider sustainability in their technology choices.",
+      "authorId": 16,
+      "userId": 1,
+      "created_at": "2024-05-05T12:18:00Z",
+      "updated_at": "2024-05-05T12:18:00Z"
+    },
+    {
+      "id": 61,
+      "title": "Machine Learning for Beginners",
+      "body": "Machine learning might seem intimidating at first, but understanding the basic concepts can open up exciting possibilities. Supervised learning, unsupervised learning, and reinforcement learning are the three main categories that form the foundation of ML. Python libraries like scikit-learn make it easier to get started with practical applications.",
+      "authorId": 17,
+      "userId": 2,
+      "created_at": "2024-05-05T12:19:00Z",
+      "updated_at": "2024-05-05T12:19:00Z"
+    },
+    {
+      "id": 62,
+      "title": "The Evolution of Programming Languages",
+      "body": "Programming languages continue to evolve to meet the changing needs of developers and the industry. From low-level languages like C to high-level languages like Python and JavaScript, each serves specific purposes and use cases. Understanding the strengths and weaknesses of different languages helps developers choose the right tool for each project.",
+      "authorId": 18,
+      "userId": 2,
+      "created_at": "2024-05-05T12:20:00Z",
+      "updated_at": "2024-05-05T12:20:00Z"
+    },
+    {
+      "id": 63,
+      "title": "Internet of Things (IoT) Development",
+      "body": "The Internet of Things connects everyday devices to the internet, creating new opportunities for automation and data collection. From smart homes to industrial sensors, IoT applications are becoming more prevalent. Understanding hardware interfaces, communication protocols, and data processing is essential for IoT development projects.",
+      "authorId": 19,
+      "userId": 2,
+      "created_at": "2024-05-05T12:21:00Z",
+      "updated_at": "2024-05-05T12:21:00Z"
+    },
+    {
+      "id": 64,
+      "title": "Agile Development Methodologies",
+      "body": "Agile methodologies have transformed how software teams approach project management and development. Scrum, Kanban, and other agile frameworks emphasize iterative development, collaboration, and responding to change. These approaches help teams deliver value more quickly and adapt to changing requirements throughout the development process.",
+      "authorId": 20,
+      "userId": 3,
+      "created_at": "2024-05-05T12:22:00Z",
+      "updated_at": "2024-05-05T12:22:00Z"
+    },
+    {
+      "id": 65,
+      "title": "Open Source Software Benefits",
+      "body": "Open source software has democratized access to high-quality tools and libraries. Contributing to open source projects is a great way to improve coding skills, collaborate with other developers, and give back to the community. Many successful companies build their products on open source foundations and contribute back to the ecosystem.",
+      "authorId": 21,
+      "userId": 3,
+      "created_at": "2024-05-05T12:23:00Z",
+      "updated_at": "2024-05-05T12:23:00Z"
+    },
+    {
+      "id": 66,
+      "title": "Digital Marketing in the Tech Era",
+      "body": "Digital marketing strategies have evolved alongside technology advancements. Social media platforms, search engine optimization, and content marketing are essential components of modern marketing campaigns. Understanding analytics and user behavior helps marketers create more effective campaigns that reach their target audience successfully.",
+      "authorId": 22,
+      "userId": 1,
+      "created_at": "2024-05-05T12:24:00Z",
+      "updated_at": "2024-05-05T12:24:00Z"
+    },
+    {
+      "id": 67,
+      "title": "Web Accessibility Guidelines",
+      "body": "Creating accessible websites ensures that all users, including those with disabilities, can interact with your content effectively. Following WCAG guidelines and implementing proper semantic HTML, keyboard navigation, and screen reader support makes the web more inclusive. Accessibility should be considered from the beginning of any web development project.",
+      "authorId": 23,
+      "userId": 1,
+      "created_at": "2024-05-05T12:25:00Z",
+      "updated_at": "2024-05-05T12:25:00Z"
+    },
+    {
+      "id": 68,
+      "title": "Containerization with Docker",
+      "body": "Docker has revolutionized how applications are packaged and deployed. Containers provide a consistent environment across different platforms and make it easier to scale applications. Understanding container orchestration with tools like Kubernetes is becoming increasingly important for managing complex, distributed applications in production environments.",
+      "authorId": 24,
+      "userId": 2,
+      "created_at": "2024-05-05T12:26:00Z",
+      "updated_at": "2024-05-05T12:26:00Z"
+    },
+    {
+      "id": 69,
+      "title": "Progressive Web Applications",
+      "body": "Progressive Web Applications combine the best features of web and mobile apps. They provide offline functionality, push notifications, and app-like experiences while maintaining the reach and accessibility of web applications. Service workers and web app manifests are key technologies that enable PWA functionality.",
+      "authorId": 25,
+      "userId": 2,
+      "created_at": "2024-05-05T12:27:00Z",
+      "updated_at": "2024-05-05T12:27:00Z"
+    },
+    {
+      "id": 70,
+      "title": "The Future of Work in Technology",
+      "body": "The technology industry continues to evolve rapidly, creating new job opportunities and changing existing roles. Skills like artificial intelligence, cloud computing, and cybersecurity are in high demand. Continuous learning and adaptation are essential for staying relevant in the fast-paced world of technology careers.",
+      "authorId": 26,
+      "userId": 3,
+      "created_at": "2024-05-05T12:28:00Z",
+      "updated_at": "2024-05-05T12:28:00Z"
+    },
+    {
+      "id": 71,
+      "title": "Quantum Computing Fundamentals",
+      "body": "Quantum computing represents a paradigm shift in computational power and capability. While still in its early stages, quantum computers have the potential to solve complex problems that are intractable for classical computers. Understanding quantum principles like superposition and entanglement opens doors to revolutionary applications in cryptography, optimization, and simulation.",
+      "authorId": 27,
+      "userId": 3,
+      "created_at": "2024-05-06T08:30:00Z",
+      "updated_at": "2024-05-06T08:30:00Z"
+    },
+    {
+      "id": 72,
+      "title": "Ethical AI Development",
+      "body": "As artificial intelligence becomes more prevalent in society, ethical considerations become increasingly important. Bias in algorithms, data privacy, and the impact of automation on employment are critical issues that developers and organizations must address. Responsible AI development requires careful consideration of these ethical implications throughout the development process.",
+      "authorId": 28,
+      "userId": 1,
+      "created_at": "2024-05-06T09:00:00Z",
+      "updated_at": "2024-05-06T09:00:00Z"
+    },
+    {
+      "id": 73,
+      "title": "Edge Computing Applications",
+      "body": "Edge computing brings data processing closer to where it's generated, reducing latency and improving performance for time-sensitive applications. This technology is particularly important for IoT devices, autonomous vehicles, and real-time analytics. Understanding edge computing principles helps developers create more responsive and efficient distributed systems.",
+      "authorId": 29,
+      "userId": 1,
+      "created_at": "2024-05-06T09:30:00Z",
+      "updated_at": "2024-05-06T09:30:00Z"
+    },
+    {
+      "id": 74,
+      "title": "Serverless Architecture Patterns",
+      "body": "Serverless computing allows developers to focus on writing code without managing infrastructure. Functions as a Service (FaaS) platforms like AWS Lambda and Azure Functions enable event-driven architectures that scale automatically. Understanding serverless patterns and best practices can lead to more cost-effective and scalable applications.",
+      "authorId": 30,
+      "userId": 2,
+      "created_at": "2024-05-06T10:00:00Z",
+      "updated_at": "2024-05-06T10:00:00Z"
+    },
+    {
+      "id": 75,
+      "title": "Virtual and Augmented Reality Development",
+      "body": "Virtual and Augmented Reality technologies are creating new possibilities for immersive experiences. From gaming and entertainment to education and training, VR and AR applications are expanding rapidly. Understanding 3D graphics, spatial computing, and user interaction in virtual environments opens up exciting career opportunities in this growing field.",
+      "authorId": 31,
+      "userId": 2,
+      "created_at": "2024-05-06T10:30:00Z",
+      "updated_at": "2024-05-06T10:30:00Z"
+    },
+    {
+      "id": 76,
+      "title": "Low-Code and No-Code Platforms",
+      "body": "Low-code and no-code platforms are democratizing software development by enabling non-programmers to create applications. These tools use visual interfaces and pre-built components to accelerate development. While they can't replace traditional programming for complex applications, they offer valuable solutions for rapid prototyping and business automation.",
+      "authorId": 32,
+      "userId": 3,
+      "created_at": "2024-05-06T11:00:00Z",
+      "updated_at": "2024-05-06T11:00:00Z"
+    },
+    {
+      "id": 77,
+      "title": "Cybersecurity Threat Landscape",
+      "body": "The cybersecurity threat landscape is constantly evolving as attackers develop new techniques and exploit emerging vulnerabilities. Ransomware, social engineering, and advanced persistent threats pose significant risks to organizations. Staying informed about current threats and implementing defense-in-depth strategies is crucial for protecting digital assets and maintaining business continuity.",
+      "authorId": 33,
+      "userId": 3,
+      "created_at": "2024-05-06T11:30:00Z",
+      "updated_at": "2024-05-06T11:30:00Z"
+    },
+    {
+      "id": 78,
+      "title": "5G Technology and Its Impact",
+      "body": "5G networks promise to revolutionize connectivity with faster speeds, lower latency, and support for massive IoT deployments. This technology enables new applications like remote surgery, autonomous vehicles, and enhanced augmented reality experiences. Understanding 5G capabilities helps developers design applications that take advantage of these improved network characteristics.",
+      "authorId": 34,
+      "userId": 1,
+      "created_at": "2024-05-06T12:00:00Z",
+      "updated_at": "2024-05-06T12:00:00Z"
+    },
+    {
+      "id": 79,
+      "title": "Digital Transformation Strategies",
+      "body": "Digital transformation involves integrating digital technology into all areas of business operations, fundamentally changing how organizations operate and deliver value to customers. Successful transformation requires cultural change, process reengineering, and technology adoption. Understanding transformation methodologies helps organizations navigate this complex but essential journey.",
+      "authorId": 35,
+      "userId": 1,
+      "created_at": "2024-05-06T12:30:00Z",
+      "updated_at": "2024-05-06T12:30:00Z"
+    },
+    {
+      "id": 70,
+      "title": "The Psychology of User Interface Design",
+      "body": "Understanding human psychology is crucial for creating effective user interfaces. Cognitive load theory, visual hierarchy, and behavioral psychology principles guide design decisions that improve user experience. Color psychology, typography choices, and layout patterns all influence how users perceive and interact with digital products, making psychological understanding essential for designers.",
+      "authorId": 1,
+      "userId": 1,
+      "created_at": "2024-05-06T13:00:00Z",
+      "updated_at": "2024-05-06T13:00:00Z"
     }
   ]
 }

@@ -15,15 +15,20 @@ export default class PostService {
   public static async getPostsByPage(
     page: number,
     limit: number,
+    searchTerm?: string,
     signal?: AbortSignal,
   ): Promise<[Post[], number, number]> {
     const response = await axios.get<Post[]>(
-      '/base_url/posts?_expand=author&_page=' + page + '&_limit=' + limit,
+      '/base_url/posts?_expand=author&_page=' +
+        page +
+        '&_limit=' +
+        limit +
+        (searchTerm ? '&q=' + searchTerm : ''),
       { signal },
     )
-    if (page * (limit - 1) > parseInt(response.headers['x-total-count'])) {
+    if ((page - 1) * limit > parseInt(response.headers['x-total-count'])) {
       page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
-      return this.getPostsByPage(page, limit, signal)
+      return this.getPostsByPage(page, limit, searchTerm)
     }
     const pageOnReturn = page
     return [response.data, response.headers['x-total-count'], pageOnReturn]

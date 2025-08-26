@@ -4,7 +4,8 @@
       <div v-if="hasError" class="notification">
         <p>Failed to load authors. Please try again.</p>
       </div>
-      <template v-else-if="authors.length > 0">
+      <template v-else-if="authors.length > 0 || searchTerm">
+        <SearchBar :count="authors.length" @input-changed="handleSearchInput" />
         <AuthorCardList :authors="authors" />
         <div class="pagination-wrapper is-static">
           <Pagination
@@ -36,6 +37,7 @@ import { useNotificationStore } from '@/store/Notification'
 import AuthorService from '@/services/authorService'
 import AuthorCardList from '@/components/Author/AuthorCardList.vue'
 import Pagination from '@/components/Pagination.vue'
+import SearchBar from '@/components/SearchBar.vue'
 
 const notificationStore = useNotificationStore()
 const authors = ref<Author[]>([])
@@ -45,13 +47,14 @@ const totalAuthors = ref(0)
 const itemsPerPage = 6
 const currentPage = ref(1)
 const emit = defineEmits(['page-overflow'])
+const searchTerm = ref('')
 let currentController: AbortController | null = null
 
 onMounted(async () => {
   authors.value = await getAuthorsByPage()
 })
 
-watch(currentPage, async () => {
+watch([currentPage, searchTerm], async () => {
   authors.value = await getAuthorsByPage()
 })
 
@@ -67,9 +70,11 @@ const getAuthorsByPage = async () => {
   try {
     const page = currentPage.value
     const limit = itemsPerPage
+    const search = searchTerm.value.trim()
     const [fetchedAuthors, totalCount, pageOnReturn] = await AuthorService.getAuthorsByPage(
       page,
       limit,
+      search,
       currentController.signal,
     )
     totalAuthors.value = totalCount
@@ -90,6 +95,11 @@ const getAuthorsByPage = async () => {
   } finally {
     isLoading.value = false
   }
+}
+
+const handleSearchInput = (input: string) => {
+  searchTerm.value = input
+  currentPage.value = 1
 }
 
 const handlePageChange = (page: number) => {

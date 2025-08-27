@@ -124,9 +124,9 @@ const doLogin = async ({ email, password }: { email: string; password: string })
       message = 'Server error. Please try again later.'
     } else if (error.status === 400) {
       message = 'Invalid email or password.'
+      setFieldError('email', 'Invalid credentials')
+      setFieldError('password', 'Invalid credentials')
     }
-    setFieldError('email', 'Invalid credentials')
-    setFieldError('password', 'Invalid credentials')
     notificationStore.addNotification({
       type: 'error',
       message,

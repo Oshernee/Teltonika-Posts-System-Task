@@ -50,6 +50,7 @@ const isLoading = ref(false)
 const hasError = ref(false)
 const emit = defineEmits(['page-overflow'])
 const searchTerm = ref('')
+let currentController: AbortController | null = null
 
 onMounted(async () => {
   posts.value = await getPostsByPage()
@@ -62,7 +63,11 @@ watch([currentPage, searchTerm], async () => {
 const getPostsByPage = async () => {
   isLoading.value = true
   hasError.value = false
+  if (currentController) {
+    currentController.abort()
+  }
 
+  currentController = new AbortController()
   try {
     const page = currentPage.value
     const limit = itemsPerPage
@@ -71,13 +76,17 @@ const getPostsByPage = async () => {
       page,
       limit,
       search,
+      currentController.signal,
     )
     totalPosts.value = totalCount
     if (pageOnReturn < currentPage.value) {
       currentPage.value = pageOnReturn
     }
     return fetchedPosts
-  } catch (error) {
+  } catch (error: Error | any) {
+    if (error.name === 'CanceledError') {
+      return posts.value
+    }
     hasError.value = true
     notificationStore.addNotification({
       type: 'error',

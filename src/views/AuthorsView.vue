@@ -50,6 +50,7 @@ const itemsPerPage = 6
 const currentPage = ref(1)
 const emit = defineEmits(['page-overflow'])
 const searchTerm = ref('')
+let currentController: AbortController | null = null
 
 onMounted(async () => {
   authors.value = await getAuthorsByPage()
@@ -62,6 +63,11 @@ watch([currentPage, searchTerm], async () => {
 const getAuthorsByPage = async () => {
   isLoading.value = true
   hasError.value = false
+  if (currentController) {
+    currentController.abort()
+  }
+
+  currentController = new AbortController()
 
   try {
     const page = currentPage.value
@@ -71,13 +77,17 @@ const getAuthorsByPage = async () => {
       page,
       limit,
       search,
+      currentController.signal,
     )
     totalAuthors.value = totalCount
     if (pageOnReturn < currentPage.value) {
       currentPage.value = pageOnReturn
     }
     return fetchedAuthors
-  } catch (error) {
+  } catch (error: Error | any) {
+    if (error.name === 'CanceledError') {
+      return authors.value
+    }
     hasError.value = true
     notificationStore.addNotification({
       type: 'error',

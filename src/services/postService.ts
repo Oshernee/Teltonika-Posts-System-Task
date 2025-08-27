@@ -16,6 +16,7 @@ export default class PostService {
     page: number,
     limit: number,
     searchTerm?: string,
+    signal?: AbortSignal,
   ): Promise<[Post[], number, number]> {
     const response = await axios.get<Post[]>(
       '/base_url/posts?_expand=author&_page=' +
@@ -23,6 +24,7 @@ export default class PostService {
         '&_limit=' +
         limit +
         (searchTerm ? '&q=' + searchTerm : ''),
+      { signal },
     )
     if ((page - 1) * limit > parseInt(response.headers['x-total-count'])) {
       page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)

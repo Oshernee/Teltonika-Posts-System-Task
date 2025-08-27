@@ -16,6 +16,7 @@ export default class AuthorService {
     page: number,
     limit: number,
     searchTerm?: string,
+    signal?: AbortSignal,
   ): Promise<[Author[], number, number]> {
     const response = await axios.get<Author[]>(
       '/base_url/authors?_page=' +
@@ -23,8 +24,9 @@ export default class AuthorService {
         '&_limit=' +
         limit +
         (searchTerm ? '&q=' + searchTerm : ''),
+      { signal },
     )
-    if ((page - 1) * limit > parseInt(response.headers['x-total-count'])) {
+    if (page * (limit - 1) > parseInt(response.headers['x-total-count'])) {
       page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
       return this.getAuthorsByPage(page, limit, searchTerm)
     }

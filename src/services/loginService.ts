@@ -11,19 +11,14 @@ export default class UserService {
     email: string,
     password: string,
   ): Promise<[User | null, string | null]> {
-    try {
-      const response = await axios.post<{ user: User | null; accessToken: string | null }>(
-        '/base_url/users/signin',
-        {
-          email,
-          password,
-        },
-      )
-      const { accessToken, user } = response.data
-      return [user, accessToken]
-    } catch (error) {
-      console.error('Login failed:', error)
-      return [null, null]
-    }
+    const response = await axios.post<{ user: User | null; accessToken: string | null }>(
+      '/base_url/users/signin',
+      {
+        email,
+        password,
+      },
+    )
+    const { accessToken, user } = response.data
+    return [user, accessToken]
   }
 }

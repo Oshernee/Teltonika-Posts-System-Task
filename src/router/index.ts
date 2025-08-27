@@ -4,6 +4,7 @@ import AuthorsView from '../views/AuthorsView.vue'
 import PostDetailView from '../views/PostDetailView.vue'
 import Login from '../views/Login.vue'
 import NotFound from '../views/NotFound.vue'
+import { useUserStore } from '@/store/Auth'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,14 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: Login,
+      beforeEnter: (to, from, next) => {
+        const userStore = useUserStore()
+        if (userStore.isLoggedIn()) {
+          next('/')
+        } else {
+          next()
+        }
+      },
     },
     {
       path: '/:pathMatch(.*)*',

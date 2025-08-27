@@ -30,7 +30,12 @@ export const useUserStore = defineStore('user', () => {
   }
 
   const isLoggedIn = () => {
-    return user.value !== null && accessToken.value !== null
+    return (
+      user.value !== null &&
+      accessToken.value !== null &&
+      localStorage.getItem('accessToken') !== null &&
+      localStorage.getItem('user') !== null
+    )
   }
 
   return {

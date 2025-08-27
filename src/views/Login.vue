@@ -110,16 +110,27 @@ defineRule('min', min)
 const { meta, setFieldError } = useForm()
 
 const doLogin = async ({ email, password }: { email: string; password: string }) => {
-  const [user, accesstoken] = await UserService.userLogin(email, password)
+  try {
+    const [user, accesstoken] = await UserService.userLogin(email, password)
 
-  if (user && accesstoken) {
-    userStore.setUser(user, accesstoken)
-    notificationStore.addNotification({ message: 'Login successful', type: 'success' })
-    router.push('/posts')
-  } else {
-    notificationStore.addNotification({ message: 'Invalid email or password', type: 'error' })
+    if (user && accesstoken) {
+      userStore.setUser(user, accesstoken)
+      notificationStore.addNotification({ message: 'Login successful', type: 'success' })
+      router.push('/posts')
+    }
+  } catch (error: any) {
+    let message = 'An error occurred during login. Please try again.'
+    if (error.status === 500) {
+      message = 'Server error. Please try again later.'
+    } else if (error.status === 400) {
+      message = 'Invalid email or password.'
+    }
     setFieldError('email', 'Invalid credentials')
     setFieldError('password', 'Invalid credentials')
+    notificationStore.addNotification({
+      type: 'error',
+      message,
+    })
   }
 }
 

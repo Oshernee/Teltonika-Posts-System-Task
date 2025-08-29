@@ -6,8 +6,11 @@
           <p>Failed to load authors. Please try again.</p>
         </div>
         <template v-else-if="authors.length > 0 || searchTerm">
+          <button v-if="userId" class="button is-primary" @click="openAuthorModal">
+            Add Author
+          </button>
           <SearchBar :count="authors.length" @input-changed="handleSearchInput" />
-          <AuthorCardList :authors="authors" />
+          <AuthorCardList :authors="authors" @update="updateAuthors" />
           <div class="pagination-wrapper is-static">
             <Pagination
               @page-changed="handlePageChange"
@@ -27,20 +30,25 @@
             <p class="has-text-grey-light">There are no authors to display at the moment.</p>
           </div>
         </div>
+        <Modal ref="modalRef" @update="redirectToLastPage" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, onUnmounted, ref, watch, computed } from 'vue'
 import type { Author } from '@/types/Author'
 import { useNotificationStore } from '@/store/Notification'
 import AuthorService from '@/services/authorService'
 import AuthorCardList from '@/components/Author/AuthorCardList.vue'
 import Pagination from '@/components/Pagination.vue'
 import SearchBar from '@/components/SearchBar.vue'
+import { useUserStore } from '@/store/Auth'
+import Modal from '@/components/Modal.vue'
+import AuthorCreateForm from '@/components/Author/AuthorCreateForm.vue'
 
+const userStore = useUserStore()
 const notificationStore = useNotificationStore()
 const authors = ref<Author[]>([])
 const isLoading = ref(false)
@@ -50,14 +58,22 @@ const itemsPerPage = 6
 const currentPage = ref(1)
 const emit = defineEmits(['page-overflow'])
 const searchTerm = ref('')
+const modalRef = ref()
+const userId = computed(() => userStore.getUser()[0] as number | null)
 let currentController: AbortController | null = null
 
 onMounted(async () => {
   authors.value = await getAuthorsByPage()
 })
 
+onUnmounted(() => {
+  if (currentController) {
+    currentController.abort()
+  }
+})
+
 watch([currentPage, searchTerm], async () => {
-  authors.value = await getAuthorsByPage()
+  updateAuthors()
 })
 
 const getAuthorsByPage = async () => {
@@ -85,13 +101,15 @@ const getAuthorsByPage = async () => {
     }
     return fetchedAuthors
   } catch (error: Error | any) {
-    if (error.name === 'CanceledError') {
+    if (error.name === 'CanceledError' || error.name === 'AbortError') {
+      console.log('Request was aborted')
       return authors.value
     }
+
     hasError.value = true
     notificationStore.addNotification({
       type: 'error',
-      message: 'Failed to fetch authors.',
+      message: error || 'Failed to fetch authors.',
     })
     return []
   } finally {
@@ -111,6 +129,26 @@ const handlePageChange = (page: number) => {
 const handlePageOverflow = () => {
   const maxPage = Math.ceil(totalAuthors.value / itemsPerPage)
   currentPage.value = maxPage > 0 ? maxPage : 1
+}
+
+const openAuthorModal = () => {
+  const [userId, token] = userStore.getUser()
+  if (userId === null || token === null) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to access this page.`,
+    })
+    return
+  }
+  modalRef.value.open(AuthorCreateForm)
+}
+
+const redirectToLastPage = () => {
+  currentPage.value = Math.ceil((totalAuthors.value + 1) / itemsPerPage)
+}
+
+const updateAuthors = async () => {
+  authors.value = await getAuthorsByPage()
 }
 </script>
 
@@ -162,5 +200,30 @@ const handlePageOverflow = () => {
 
 .empty-state .icon {
   color: #a0aec0;
+}
+
+.button.is-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+  border: none !important;
+  outline: none !important;
+  width: 300px;
+}
+
+.button.is-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.button.is-primary:focus,
+.button.is-primary:active {
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2) !important;
+  outline: none !important;
+  border: none !important;
 }
 </style>

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { readonly, ref } from 'vue'
 import type Notification from '@/types/Notification'
 
 export const useNotificationStore = defineStore('notification', () => {
@@ -50,7 +50,7 @@ export const useNotificationStore = defineStore('notification', () => {
   }
 
   return {
-    notifications,
+    notifications: readonly(notifications),
     addNotification,
     removeNotificationById,
   }

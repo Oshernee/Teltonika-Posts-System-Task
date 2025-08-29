@@ -1,15 +1,16 @@
-import axios from 'axios'
 import type { Author } from '@/types/Author'
+import UniversalService from './axiosInterceptor'
+
+const api = UniversalService.axiosInstance
 
 export default class AuthorService {
-  public static async getAuthors(): Promise<Author[]> {
-    const response = await axios.get<Author[]>('/base_url/authors')
-    return response.data
-  }
-
   public static async getAuthorById(id: number): Promise<Author> {
-    const response = await axios.get<Author>(`/base_url/authors/${id}`)
-    return response.data
+    try {
+      const response = await api.get<Author>(`/authors/${id}`)
+      return response.data
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to fetch author'
+    }
   }
 
   public static async getAuthorsByPage(
@@ -18,19 +19,75 @@ export default class AuthorService {
     searchTerm?: string,
     signal?: AbortSignal,
   ): Promise<[Author[], number, number]> {
-    const response = await axios.get<Author[]>(
-      '/base_url/authors?_page=' +
-        page +
-        '&_limit=' +
-        limit +
-        (searchTerm ? '&q=' + searchTerm : ''),
-      { signal },
-    )
-    if (page * (limit - 1) > parseInt(response.headers['x-total-count'])) {
-      page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
-      return this.getAuthorsByPage(page, limit, searchTerm)
+    try {
+      const response = await api.get<Author[]>(
+        '/authors?_page=' + page + '&_limit=' + limit + (searchTerm ? '&q=' + searchTerm : ''),
+        { signal },
+      )
+      if ((page - 1) * limit > parseInt(response.headers['x-total-count'])) {
+        page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
+        return this.getAuthorsByPage(page, limit, searchTerm, signal)
+      }
+      const pageOnReturn = page
+      return [response.data, response.headers['x-total-count'], pageOnReturn]
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to fetch authors'
     }
-    const pageOnReturn = page
-    return [response.data, response.headers['x-total-count'], pageOnReturn]
+  }
+
+  public static async createAuthor(
+    token: string,
+    userId: number,
+    name: string,
+    surname: string,
+  ): Promise<Author> {
+    try {
+      const date = new Date().toISOString()
+      const response = await api.post<Author>(
+        '/authors',
+        {
+          userId,
+          name,
+          surname,
+          created_at: date,
+          updated_at: date,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      return response.data
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to create author'
+    }
+  }
+
+  public static async updateAuthor(
+    token: string,
+    id: number,
+    name: string,
+    surname: string,
+  ): Promise<Author> {
+    try {
+      const date = new Date().toISOString()
+      const response = await api.put<Author>(
+        `/authors/${id}`,
+        {
+          name,
+          surname,
+          updated_at: date,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      return response.data
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to update author'
+    }
   }
 }

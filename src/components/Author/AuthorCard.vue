@@ -7,8 +7,8 @@
           {{ checkAuthorDate }}
         </p>
         <div class="buttons flex mt-4 is-justify-content-center">
-          <button class="button" @click="openModal(AuthorDeleteForm)">Delete</button>
-          <button class="button" @click="openModal(AuthorEditForm)">Edit</button>
+          <button v-if="userId" class="button" @click="openModal(AuthorDeleteForm)">Delete</button>
+          <button v-if="userId" class="button" @click="openModal(AuthorEditForm)">Edit</button>
         </div>
       </div>
       <Modal ref="modalRef" @update="emit('update')" />
@@ -79,6 +79,7 @@ const openModal = (ViewComponent: any) => {
   font-weight: 600;
   margin-bottom: 1rem;
   line-height: 1.4;
+  overflow: hidden;
 }
 
 .author-id {

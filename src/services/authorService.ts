@@ -24,7 +24,7 @@ export default class AuthorService {
         '/authors?_page=' + page + '&_limit=' + limit + (searchTerm ? '&q=' + searchTerm : ''),
         { signal },
       )
-      if ((page - 1) * limit > parseInt(response.headers['x-total-count'])) {
+      if ((page - 1) * limit >= parseInt(response.headers['x-total-count'])) {
         page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
         return this.getAuthorsByPage(page, limit, searchTerm, signal)
       }
@@ -88,6 +88,18 @@ export default class AuthorService {
       return response.data
     } catch (error: any) {
       throw error.response?.data?.message || 'Failed to update author'
+    }
+  }
+
+  public static async deleteAuthor(token: string, id: number): Promise<void> {
+    try {
+      await api.delete(`/authors/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to delete author'
     }
   }
 }

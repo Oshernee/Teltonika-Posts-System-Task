@@ -21,36 +21,6 @@
   ],
   "authors": [
     {
-      "name": "Draugas",
-      "surname": "Sventasis",
-      "updated_at": "2025-08-28T09:15:42.746Z",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "name": "Jane",
-      "surname": "Smith",
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2024-05-05T12:00:00Z"
-    },
-    {
-      "id": 3,
-      "name": "Michael",
-      "surname": "Johnson",
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2024-05-05T12:00:00Z"
-    },
-    {
-      "id": 4,
-      "name": "Bob",
-      "surname": "Brown",
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2024-05-05T12:00:00Z"
-    },
-    {
       "id": 5,
       "name": "David",
       "surname": "Wilson",
@@ -369,14 +339,6 @@
       "created_at": "2025-08-26T11:11:28.985Z",
       "updated_at": "2025-08-26T11:11:28.985Z",
       "id": 44
-    },
-    {
-      "userId": 1,
-      "name": "@@@2",
-      "surname": "safsafsaf",
-      "created_at": "2025-08-26T11:12:32.706Z",
-      "updated_at": "2025-08-26T11:12:32.706Z",
-      "id": 45
     },
     {
       "userId": 1,
@@ -727,108 +689,26 @@
     {
       "userId": 1,
       "name": "Draugas",
-      "surname": "Sasda",
-      "created_at": "2025-08-28T10:44:32.369Z",
-      "updated_at": "2025-08-28T10:44:32.369Z",
-      "id": 90
+      "surname": "SsssDraugassss",
+      "created_at": "2025-08-28T09:22:41.046Z",
+      "updated_at": "2025-08-28T09:22:41.046Z",
+      "id": 91
+    },
+    {
+      "userId": 1,
+      "name": "Draugas",
+      "surname": "Sventas",
+      "created_at": "2025-08-28T12:56:58.429Z",
+      "updated_at": "2025-08-28T12:56:58.429Z",
+      "id": 92
     }
   ],
   "posts": [
     {
       "id": 1,
-      "title": "First Post",
-      "body": "This is the body of the first post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2024-05-05T12:00:00Z"
-    },
-    {
-      "id": 2,
-      "title": "Second Post",
-      "body": "This is the body of the second post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
+      "title": "The Art of Responsive Design",
+      "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
       "authorId": 6,
-      "userId": 1,
-      "created_at": "2024-05-05T12:01:00Z",
-      "updated_at": "2024-05-05T12:01:00Z"
-    },
-    {
-      "id": 3,
-      "title": "Third Post",
-      "body": "This is the body of the third post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:02:00Z",
-      "updated_at": "2024-05-05T12:02:00Z"
-    },
-    {
-      "id": 4,
-      "title": "Fourth Post",
-      "body": "This is the body of the fourth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:03:00Z",
-      "updated_at": "2024-05-05T12:03:00Z"
-    },
-    {
-      "id": 5,
-      "title": "Fifth Post",
-      "body": "This is the body of the fifth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 5,
-      "userId": 1,
-      "created_at": "2024-05-05T12:04:00Z",
-      "updated_at": "2024-05-05T12:04:00Z"
-    },
-    {
-      "id": 6,
-      "title": "Sixth Post",
-      "body": "This is the body of the sixth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:05:00Z",
-      "updated_at": "2024-05-05T12:05:00Z"
-    },
-    {
-      "id": 7,
-      "title": "Seventh Post",
-      "body": "This is the body of the seventh post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 2,
-      "userId": 1,
-      "created_at": "2024-05-05T12:06:00Z",
-      "updated_at": "2024-05-05T12:06:00Z"
-    },
-    {
-      "id": 8,
-      "title": "Eighth Post",
-      "body": "This is the body of the eighth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:07:00Z",
-      "updated_at": "2024-05-05T12:07:00Z"
-    },
-    {
-      "id": 9,
-      "title": "Ninth Post",
-      "body": "This is the body of the ninth post. It contains more than twenty five words to fulfill the requirement of the task. This is just a filler text to meet the criteria.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:08:00Z",
-      "updated_at": "2024-05-05T12:08:00Z"
-    },
-    {
-      "title": "New post for testing",
-      "body": "Testing text. Random text to make up the word count. This post is being generated for the purpose of testing. It fulfills the requirement of having at least twenty five words in the body field.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T17:14:15Z",
-      "updated_at": "2024-05-05T17:14:15Z",
-      "id": 10
-    },
-    {
-      "id": 1,
-      "title": "Introduction to Modern Web Development",
-      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
-      "authorId": 1,
       "userId": 1,
       "created_at": "2024-05-05T12:00:00Z",
       "updated_at": "2024-05-05T12:00:00Z"
@@ -843,24 +723,6 @@
       "updated_at": "2024-05-05T12:01:00Z"
     },
     {
-      "id": 3,
-      "title": "Understanding JavaScript Closures",
-      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:02:00Z",
-      "updated_at": "2024-05-05T12:02:00Z"
-    },
-    {
-      "id": 4,
-      "title": "The Future of Artificial Intelligence",
-      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:03:00Z",
-      "updated_at": "2024-05-05T12:03:00Z"
-    },
-    {
       "id": 5,
       "title": "Database Design Best Practices",
       "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
@@ -868,51 +730,6 @@
       "userId": 1,
       "created_at": "2024-05-05T12:04:00Z",
       "updated_at": "2024-05-05T12:04:00Z"
-    },
-    {
-      "id": 6,
-      "title": "Cloud Computing Fundamentals",
-      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:05:00Z",
-      "updated_at": "2024-05-05T12:05:00Z"
-    },
-    {
-      "id": 7,
-      "title": "Cybersecurity in the Digital Age",
-      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
-      "authorId": 2,
-      "userId": 1,
-      "created_at": "2024-05-05T12:06:00Z",
-      "updated_at": "2024-05-05T12:06:00Z"
-    },
-    {
-      "id": 8,
-      "title": "Mobile App Development Trends",
-      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:07:00Z",
-      "updated_at": "2024-05-05T12:07:00Z"
-    },
-    {
-      "id": 9,
-      "title": "The Importance of Code Reviews",
-      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:08:00Z",
-      "updated_at": "2024-05-05T12:08:00Z"
-    },
-    {
-      "id": 10,
-      "title": "Version Control with Git",
-      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T17:14:15Z",
-      "updated_at": "2024-05-05T17:14:15Z"
     },
     {
       "id": 11,
@@ -1176,24 +993,6 @@
       "updated_at": "2024-05-06T12:30:00Z"
     },
     {
-      "id": 40,
-      "title": "The Psychology of User Interface Design",
-      "body": "Understanding human psychology is crucial for creating effective user interfaces. Cognitive load theory, visual hierarchy, and behavioral psychology principles guide design decisions that improve user experience. Color psychology, typography choices, and layout patterns all influence how users perceive and interact with digital products, making psychological understanding essential for designers.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-06T13:00:00Z",
-      "updated_at": "2024-05-06T13:00:00Z"
-    },
-    {
-      "id": 41,
-      "title": "Introduction to Modern Web Development",
-      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2024-05-05T12:00:00Z"
-    },
-    {
       "id": 42,
       "title": "The Art of Responsive Design",
       "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
@@ -1201,24 +1000,6 @@
       "userId": 1,
       "created_at": "2024-05-05T12:01:00Z",
       "updated_at": "2024-05-05T12:01:00Z"
-    },
-    {
-      "id": 43,
-      "title": "Understanding JavaScript Closures",
-      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:02:00Z",
-      "updated_at": "2024-05-05T12:02:00Z"
-    },
-    {
-      "id": 44,
-      "title": "The Future of Artificial Intelligence",
-      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:03:00Z",
-      "updated_at": "2024-05-05T12:03:00Z"
     },
     {
       "id": 45,
@@ -1230,60 +1011,6 @@
       "updated_at": "2024-05-05T12:04:00Z"
     },
     {
-      "id": 46,
-      "title": "Cloud Computing Fundamentals",
-      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:05:00Z",
-      "updated_at": "2024-05-05T12:05:00Z"
-    },
-    {
-      "id": 47,
-      "title": "Cybersecurity in the Digital Age",
-      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
-      "authorId": 2,
-      "userId": 1,
-      "created_at": "2024-05-05T12:06:00Z",
-      "updated_at": "2024-05-05T12:06:00Z"
-    },
-    {
-      "id": 48,
-      "title": "Mobile App Development Trends",
-      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:07:00Z",
-      "updated_at": "2024-05-05T12:07:00Z"
-    },
-    {
-      "id": 49,
-      "title": "The Importance of Code Reviews",
-      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:08:00Z",
-      "updated_at": "2024-05-05T12:08:00Z"
-    },
-    {
-      "id": 50,
-      "title": "Version Control with Git",
-      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T17:14:15Z",
-      "updated_at": "2024-05-05T17:14:15Z"
-    },
-    {
-      "id": 1,
-      "title": "Introduction to Modern Web Development",
-      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2024-05-05T12:00:00Z"
-    },
-    {
       "id": 2,
       "title": "The Art of Responsive Design",
       "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
@@ -1293,24 +1020,6 @@
       "updated_at": "2024-05-05T12:01:00Z"
     },
     {
-      "id": 3,
-      "title": "Understanding JavaScript Closures",
-      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:02:00Z",
-      "updated_at": "2024-05-05T12:02:00Z"
-    },
-    {
-      "id": 4,
-      "title": "The Future of Artificial Intelligence",
-      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:03:00Z",
-      "updated_at": "2024-05-05T12:03:00Z"
-    },
-    {
       "id": 5,
       "title": "Database Design Best Practices",
       "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
@@ -1318,51 +1027,6 @@
       "userId": 1,
       "created_at": "2024-05-05T12:04:00Z",
       "updated_at": "2024-05-05T12:04:00Z"
-    },
-    {
-      "id": 6,
-      "title": "Cloud Computing Fundamentals",
-      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:05:00Z",
-      "updated_at": "2024-05-05T12:05:00Z"
-    },
-    {
-      "id": 7,
-      "title": "Cybersecurity in the Digital Age",
-      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
-      "authorId": 2,
-      "userId": 1,
-      "created_at": "2024-05-05T12:06:00Z",
-      "updated_at": "2024-05-05T12:06:00Z"
-    },
-    {
-      "id": 8,
-      "title": "Mobile App Development Trends",
-      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:07:00Z",
-      "updated_at": "2024-05-05T12:07:00Z"
-    },
-    {
-      "id": 9,
-      "title": "The Importance of Code Reviews",
-      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:08:00Z",
-      "updated_at": "2024-05-05T12:08:00Z"
-    },
-    {
-      "id": 10,
-      "title": "Version Control with Git",
-      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T17:14:15Z",
-      "updated_at": "2024-05-05T17:14:15Z"
     },
     {
       "id": 11,
@@ -1626,24 +1290,6 @@
       "updated_at": "2024-05-06T12:30:00Z"
     },
     {
-      "id": 40,
-      "title": "The Psychology of User Interface Design",
-      "body": "Understanding human psychology is crucial for creating effective user interfaces. Cognitive load theory, visual hierarchy, and behavioral psychology principles guide design decisions that improve user experience. Color psychology, typography choices, and layout patterns all influence how users perceive and interact with digital products, making psychological understanding essential for designers.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-06T13:00:00Z",
-      "updated_at": "2024-05-06T13:00:00Z"
-    },
-    {
-      "id": 41,
-      "title": "Introduction to Modern Web Development",
-      "body": "Web development has evolved significantly over the past decade. With the introduction of modern frameworks like React, Vue, and Angular, developers can now create more interactive and dynamic user interfaces. These tools have revolutionized how we approach frontend development and continue to shape the future.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2024-05-05T12:00:00Z"
-    },
-    {
       "id": 42,
       "title": "The Art of Responsive Design",
       "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
@@ -1653,24 +1299,6 @@
       "updated_at": "2024-05-05T12:01:00Z"
     },
     {
-      "id": 43,
-      "title": "Understanding JavaScript Closures",
-      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:02:00Z",
-      "updated_at": "2024-05-05T12:02:00Z"
-    },
-    {
-      "id": 44,
-      "title": "The Future of Artificial Intelligence",
-      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:03:00Z",
-      "updated_at": "2024-05-05T12:03:00Z"
-    },
-    {
       "id": 45,
       "title": "Database Design Best Practices",
       "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
@@ -1678,51 +1306,6 @@
       "userId": 1,
       "created_at": "2024-05-05T12:04:00Z",
       "updated_at": "2024-05-05T12:04:00Z"
-    },
-    {
-      "id": 46,
-      "title": "Cloud Computing Fundamentals",
-      "body": "Cloud computing has revolutionized how businesses deploy and manage their applications. Services like AWS, Google Cloud, and Azure provide scalable infrastructure that can grow with your needs. Understanding cloud fundamentals is essential for modern software development and deployment strategies.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T12:05:00Z",
-      "updated_at": "2024-05-05T12:05:00Z"
-    },
-    {
-      "id": 47,
-      "title": "Cybersecurity in the Digital Age",
-      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
-      "authorId": 2,
-      "userId": 1,
-      "created_at": "2024-05-05T12:06:00Z",
-      "updated_at": "2024-05-05T12:06:00Z"
-    },
-    {
-      "id": 48,
-      "title": "Mobile App Development Trends",
-      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:07:00Z",
-      "updated_at": "2024-05-05T12:07:00Z"
-    },
-    {
-      "id": 49,
-      "title": "The Importance of Code Reviews",
-      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:08:00Z",
-      "updated_at": "2024-05-05T12:08:00Z"
-    },
-    {
-      "id": 50,
-      "title": "Version Control with Git",
-      "body": "Git has become the standard for version control in software development. Understanding branching strategies, merge conflicts, and collaborative workflows is essential for any developer. Platforms like GitHub and GitLab have made it easier to manage code repositories and collaborate with team members effectively.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-05T17:14:15Z",
-      "updated_at": "2024-05-06T17:14:15Z"
     },
     {
       "id": 51,
@@ -1984,15 +1567,6 @@
       "userId": 1,
       "created_at": "2024-05-06T12:30:00Z",
       "updated_at": "2024-05-06T12:30:00Z"
-    },
-    {
-      "id": 80,
-      "title": "The Psychology of User Interface Design",
-      "body": "Understanding human psychology is crucial for creating effective user interfaces. Cognitive load theory, visual hierarchy, and behavioral psychology principles guide design decisions that improve user experience. Color psychology, typography choices, and layout patterns all influence how users perceive and interact with digital products, making psychological understanding essential for designers.",
-      "authorId": 1,
-      "userId": 1,
-      "created_at": "2024-05-06T13:00:00Z",
-      "updated_at": "2024-05-06T13:00:00Z"
     }
   ]
 }

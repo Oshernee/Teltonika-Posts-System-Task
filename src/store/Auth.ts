@@ -38,6 +38,17 @@ export const useUserStore = defineStore('user', () => {
     )
   }
 
+  const getUser = () => {
+    if (
+      localStorage.getItem('user') === JSON.stringify(user.value) &&
+      localStorage.getItem('accessToken') === accessToken.value
+    ) {
+      return [user.value?.id, accessToken.value]
+    }
+    clearUser()
+    return [null, null]
+  }
+
   return {
     user,
     setUser,
@@ -45,5 +56,6 @@ export const useUserStore = defineStore('user', () => {
     isLoggedIn,
     clearUser,
     setUserFromLocalStorage,
+    getUser,
   }
 })

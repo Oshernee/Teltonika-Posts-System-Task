@@ -91,7 +91,7 @@
 
 <script setup lang="ts">
 import { defineRule, Form, Field, ErrorMessage, useForm } from 'vee-validate'
-import { required, email, min } from '@vee-validate/rules'
+import { required, email } from '@vee-validate/rules'
 import { useRouter } from 'vue-router'
 import UserService from '@/services/loginService'
 import { useUserStore } from '@/store/Auth'
@@ -105,7 +105,6 @@ const notificationStore = useNotificationStore()
 
 defineRule('required', required)
 defineRule('email', email)
-defineRule('min', min)
 
 const { meta, setFieldError } = useForm()
 
@@ -119,17 +118,9 @@ const doLogin = async ({ email, password }: { email: string; password: string })
       router.push('/posts')
     }
   } catch (error: any) {
-    let message = 'An error occurred during login. Please try again.'
-    if (error.status === 500) {
-      message = 'Server error. Please try again later.'
-    } else if (error.status === 400) {
-      message = 'Invalid email or password.'
-      setFieldError('email', 'Invalid credentials')
-      setFieldError('password', 'Invalid credentials')
-    }
     notificationStore.addNotification({
       type: 'error',
-      message,
+      message: error || 'Login failed. Please try again.',
     })
   }
 }

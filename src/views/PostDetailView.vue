@@ -31,11 +31,7 @@
             <h1 class="title has-text-light">{{ post?.title }}</h1>
             <p class="subtitle is-6 pt-4 has-text-grey-light">{{ checkAuthor(post.author) }}</p>
             <p class="is-size-7 has-text-grey-light mb-4">
-              {{
-                post?.updated_at === post?.created_at || !post?.updated_at
-                  ? `Created: ${formatDate(post?.created_at)}`
-                  : `Updated: ${formatDate(post?.updated_at)}`
-              }}
+              {{ checkUpdatedAt(post) }}
             </p>
             <div class="content has-text-light">
               {{ post?.body }}
@@ -53,6 +49,7 @@ import { onMounted, ref } from 'vue'
 import PostService from '@/services/postService'
 import { useNotificationStore } from '@/store/Notification'
 import { useRoute, useRouter } from 'vue-router'
+import { checkAuthor, checkUpdatedAt } from '@/utils/stringUtils'
 
 const notificationStore = useNotificationStore()
 const post = ref<Post | null>(null)
@@ -69,20 +66,17 @@ onMounted(async () => {
 const getPostById = async (id: number) => {
   isLoading.value = true
   hasError.value = false
-  post.value = null // Reset post while loading
+  post.value = null
 
   try {
-    const fetchedPost = await PostService.getPostByIdWithAuthor(id)
+    const fetchedPost = await PostService.getPostById(id)
     post.value = fetchedPost
   } catch (error: Error | any) {
     hasError.value = true
     post.value = null
-    if (error.status === 404) {
-      router.replace({ name: 'not-found' })
-    }
     notificationStore.addNotification({
       type: 'error',
-      message: 'Failed to load post.',
+      message: error || 'An error occurred while fetching the post.',
     })
   } finally {
     isLoading.value = false
@@ -91,30 +85,6 @@ const getPostById = async (id: number) => {
 
 const handleRetry = async () => {
   await getPostById(id)
-}
-
-const checkAuthor = (author: Post['author']) => {
-  if (author && author.name && author.surname) {
-    return `By author: ${author.name} ${author.surname}`
-  }
-  if (!author) {
-    return 'Author not found'
-  }
-  return "Author doesn't have a name"
-}
-
-const formatDate = (date: Date | string | null | undefined): string => {
-  if (!date) return 'N/A'
-
-  const dateObj = date instanceof Date ? date : new Date(date)
-
-  return dateObj.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
 }
 </script>
 

@@ -1,6 +1,7 @@
 <template>
   <NavBar />
   <NotificationContainer />
+  <Modal />
   <router-view />
 </template>
 
@@ -8,6 +9,7 @@
 import { onMounted } from 'vue'
 import NavBar from './components/Navbar.vue'
 import NotificationContainer from './components/Notification.vue'
+import Modal from './components/Modal.vue'
 import { useUserStore } from '@/store/Auth'
 
 const userStore = useUserStore()

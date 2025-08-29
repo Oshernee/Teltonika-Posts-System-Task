@@ -90,7 +90,7 @@ const getPostsByPage = async () => {
     hasError.value = true
     notificationStore.addNotification({
       type: 'error',
-      message: 'Failed to fetch posts.',
+      message: error || 'Failed to fetch posts.',
     })
     return []
   } finally {

@@ -2,46 +2,56 @@
   <div class="card">
     <div class="card-content">
       <div class="content">
-        <p class="author-name">{{ checkAuthor() }}</p>
+        <p class="author-name">{{ checkAuthor(props.author) }}</p>
         <p class="author-id">
-          {{
-            props.author.updated_at === props.author.created_at || !props.author.updated_at
-              ? `Joined at: ${formatDate(props.author.created_at)}`
-              : `Last updated at: ${formatDate(props.author.updated_at)}`
-          }}
+          {{ checkAuthorDate }}
         </p>
+        <div class="buttons flex mt-4 is-justify-content-center">
+          <button class="button" @click="openModal(AuthorDeleteForm)">Delete</button>
+          <button class="button" @click="openModal(AuthorEditForm)">Edit</button>
+        </div>
       </div>
+      <Modal ref="modalRef" @update="emit('update')" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, computed, ref } from 'vue'
 import type { Author } from '@/types/Author'
+import { formatDate } from '@/utils/dateUtils'
+import { checkAuthor } from '@/utils/stringUtils'
+import Modal from '../Modal.vue'
+import AuthorDeleteForm from './AuthorDeleteForm.vue'
+import AuthorEditForm from './AuthorEditForm.vue'
+import { useUserStore } from '@/store/Auth'
+import { useNotificationStore } from '@/store/Notification'
+
+const notificationStore = useNotificationStore()
+const modalRef = ref()
+const userStore = useUserStore()
+const [userId, token] = userStore.getUser()
+const emit = defineEmits(['update'])
 
 const props = defineProps<{
   author: Author
 }>()
 
-const checkAuthor = () => {
-  if (props.author && props.author.name && props.author.surname) {
-    return `Author: ${props.author.name} ${props.author.surname}`
+const checkAuthorDate = computed(() => {
+  return props.author.updated_at === props.author.created_at || !props.author.updated_at
+    ? `Joined at: ${formatDate(props.author.created_at)}`
+    : `Last updated at: ${formatDate(props.author.updated_at)}`
+})
+
+const openModal = (ViewComponent: any) => {
+  if (!userId || !token) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to create an author.`,
+    })
+    return
   }
-  return "Author doesn't have a name"
-}
-
-const formatDate = (date: Date | string | null | undefined): string => {
-  if (!date) return 'N/A'
-
-  const dateObj = date instanceof Date ? date : new Date(date)
-
-  return dateObj.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-  })
+  modalRef.value.open(ViewComponent, props)
 }
 </script>
 
@@ -53,12 +63,6 @@ const formatDate = (date: Date | string | null | undefined): string => {
   border: 1px solid #34495e;
   transition: all 0.3s ease;
   height: 100%;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-  border-color: #667eea;
 }
 
 .card-content {
@@ -90,5 +94,15 @@ const formatDate = (date: Date | string | null | undefined): string => {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 </style>

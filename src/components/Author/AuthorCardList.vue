@@ -7,7 +7,7 @@
           :key="author.id"
           class="column is-4-desktop is-6-tablet"
         >
-          <AuthorCard :author="author" />
+          <AuthorCard :author="author" @update="emit('update')" />
         </div>
       </div>
     </div>
@@ -17,6 +17,8 @@
 <script setup lang="ts">
 import AuthorCard from '@/components/Author/AuthorCard.vue'
 import type { Author } from '@/types/Author'
+
+const emit = defineEmits(['update'])
 
 const props = defineProps<{
   authors: Author[]

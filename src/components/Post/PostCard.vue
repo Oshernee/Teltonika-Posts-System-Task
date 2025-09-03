@@ -7,22 +7,39 @@
         <p class="post-id">
           {{ checkUpdatedAt(props.post) }}
         </p>
+        <div class="buttons flex mt-4 is-justify-content-center">
+          <button v-if="userId" class="button" @click.stop="openModal(PostDeleteForm)">
+            Delete
+          </button>
+          <button v-if="userId" class="button" @click.stop="openModal(PostEditForm)">Edit</button>
+        </div>
       </div>
     </div>
   </div>
+  <Modal ref="modalRef" @update="emit('update')" />
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue'
+import { defineProps, computed, ref } from 'vue'
 import type { Post } from '@/types/Post'
 import { useRouter } from 'vue-router'
 import { checkAuthor, checkUpdatedAt } from '@/utils/stringUtils'
+import Modal from '../Modal.vue'
+import PostEditForm from './PostEditForm.vue'
+import PostDeleteForm from './PostDeleteForm.vue'
+import { useUserStore } from '@/store/Auth'
+import { useNotificationStore } from '@/store/Notification'
+
+const notificationStore = useNotificationStore()
+const modalRef = ref()
+const userStore = useUserStore()
+const emit = defineEmits(['update'])
+const router = useRouter()
+const userId = computed(() => userStore.getUser()[0] as number | null)
 
 const props = defineProps<{
   post: Post
 }>()
-
-const router = useRouter()
 
 const navigateToPost = () => {
   router.push({
@@ -31,6 +48,17 @@ const navigateToPost = () => {
       id: props.post.id,
     },
   })
+}
+
+const openModal = (ViewComponent: any) => {
+  if (!userId) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to modify this post.`,
+    })
+    return
+  }
+  modalRef.value.open(ViewComponent, props)
 }
 </script>
 
@@ -85,5 +113,15 @@ const navigateToPost = () => {
 
 .is-clickable:active {
   transform: translateY(-2px);
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 </style>

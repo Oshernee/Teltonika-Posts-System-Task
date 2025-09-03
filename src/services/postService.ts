@@ -69,4 +69,31 @@ export default class PostService {
       throw error.response?.data?.message || 'Failed to create post'
     }
   }
+
+  public static async editPost(
+    token: string,
+    postId: number,
+    title: string,
+    body: string,
+  ): Promise<Post> {
+    try {
+      const date = new Date().toISOString()
+      const response = await api.patch<Post>(
+        `/posts/${postId}`,
+        {
+          title,
+          body,
+          updated_at: date,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      return response.data
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to edit post'
+    }
+  }
 }

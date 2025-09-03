@@ -8,7 +8,7 @@
         <template v-else-if="posts.length > 0 || searchTerm">
           <button v-if="userId" class="button is-primary" @click="openPostModal">Add Post</button>
           <SearchBar :count="posts.length" @input-changed="handleSearchInput" />
-          <PostCardList :posts="posts" />
+          <PostCardList :posts="posts" @update="updatePosts" />
           <div class="pagination-wrapper is-static">
             <Pagination
               @page-changed="handlePageChange"
@@ -135,11 +135,16 @@ const openPostModal = () => {
 const redirectToLastPage = () => {
   currentPage.value = Math.ceil((totalPosts.value + 1) / itemsPerPage)
 }
+
+const updatePosts = async () => {
+  posts.value = await getPostsByPage()
+}
 </script>
 
 <style scoped>
 .posts-view {
   min-height: calc(100vh - 56px);
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -176,7 +181,6 @@ const redirectToLastPage = () => {
 .notification.is-danger {
   background-color: #e74c3c;
   color: #fff;
-  border-radius: 8px;
 }
 
 .empty-state {
@@ -185,5 +189,30 @@ const redirectToLastPage = () => {
 
 .empty-state .icon {
   color: #a0aec0;
+}
+
+.button.is-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+  border: none !important;
+  outline: none !important;
+  width: 300px;
+}
+
+.button.is-primary:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.button.is-primary:focus,
+.button.is-primary:active {
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2) !important;
+  outline: none !important;
+  border: none !important;
 }
 </style>

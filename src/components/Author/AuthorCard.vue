@@ -47,7 +47,7 @@ const openModal = (ViewComponent: any) => {
   if (!userId || !token) {
     notificationStore.addNotification({
       type: 'error',
-      message: `You are not authorized to create an author.`,
+      message: `You are not authorized to modify this author.`,
     })
     return
   }

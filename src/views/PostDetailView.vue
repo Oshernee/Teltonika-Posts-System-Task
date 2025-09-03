@@ -39,25 +39,36 @@
           </div>
         </div>
       </div>
+      <div class="buttons flex mt-4 is-justify-content-center">
+        <button v-if="userId" class="button" @click="openModal(PostDeleteForm)">Delete</button>
+        <button v-if="userId" class="button" @click="openModal(PostEditForm)">Edit</button>
+      </div>
+      <Modal ref="modalRef" @update="getPostById(id)" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Post } from '@/types/Post'
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, computed } from 'vue'
 import PostService from '@/services/postService'
 import { useNotificationStore } from '@/store/Notification'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { checkAuthor, checkUpdatedAt } from '@/utils/stringUtils'
+import { useUserStore } from '@/store/Auth'
+import Modal from '@/components/Modal.vue'
+import PostEditForm from '@/components/Post/PostEditForm.vue'
+import PostDeleteForm from '@/components/Post/PostDeleteForm.vue'
 
 const notificationStore = useNotificationStore()
 const post = ref<Post | null>(null)
 const route = useRoute()
-const router = useRouter()
 const id = Number(route.params.id)
 const isLoading = ref(false)
 const hasError = ref(false)
+const userStore = useUserStore()
+const modalRef = ref()
+const userId = computed(() => userStore.getUser()[0] as number | null)
 
 onMounted(async () => {
   await getPostById(id)
@@ -85,6 +96,17 @@ const getPostById = async (id: number) => {
 
 const handleRetry = async () => {
   await getPostById(id)
+}
+
+const openModal = (ViewComponent: any) => {
+  if (!userId) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to modify this post.`,
+    })
+    return
+  }
+  modalRef.value.open(ViewComponent, { post: post.value })
 }
 </script>
 
@@ -149,5 +171,15 @@ const handleRetry = async () => {
 .button.is-danger.is-outlined:hover {
   background-color: #fff;
   color: #e74c3c;
+}
+
+.button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 </style>

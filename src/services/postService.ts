@@ -38,4 +38,35 @@ export default class PostService {
       throw error.response?.data?.message || 'Failed to fetch posts'
     }
   }
+
+  public static async createPost(
+    token: string,
+    userId: number,
+    title: string,
+    body: string,
+    authorId: number,
+  ): Promise<Post> {
+    try {
+      const date = new Date().toISOString()
+      const response = await api.post<Post>(
+        '/posts',
+        {
+          title,
+          body,
+          authorId,
+          userId,
+          created_at: date,
+          updated_at: date,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      )
+      return response.data
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to create post'
+    }
+  }
 }

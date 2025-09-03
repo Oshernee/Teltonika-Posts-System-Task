@@ -21,6 +21,29 @@
   ],
   "authors": [
     {
+      "userId": 2,
+      "name": "Janes",
+      "surname": "Smith",
+      "updated_at": "2025-08-28T10:01:46.718Z",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Michael",
+      "surname": "Johnson",
+      "userId": 1,
+      "created_at": "2024-05-05T12:00:00Z",
+      "updated_at": "2024-05-05T12:00:00Z"
+    },
+    {
+      "id": 4,
+      "name": "Bob",
+      "surname": "Brown",
+      "userId": 1,
+      "created_at": "2024-05-05T12:00:00Z",
+      "updated_at": "2024-05-05T12:00:00Z"
+    },
+    {
       "id": 5,
       "name": "David",
       "surname": "Wilson",
@@ -299,134 +322,6 @@
       "created_at": "2025-08-26T10:18:27.048Z",
       "updated_at": "2025-08-26T10:18:27.048Z",
       "id": 39
-    },
-    {
-      "userId": 1,
-      "name": "Draugas",
-      "surname": "Sventasis",
-      "created_at": "2025-08-26T11:08:23.895Z",
-      "updated_at": "2025-08-26T11:08:23.895Z",
-      "id": 40
-    },
-    {
-      "userId": 1,
-      "name": "   ",
-      "surname": "          ",
-      "created_at": "2025-08-26T11:09:58.888Z",
-      "updated_at": "2025-08-26T11:09:58.888Z",
-      "id": 41
-    },
-    {
-      "userId": 1,
-      "name": "       ",
-      "surname": "     ",
-      "created_at": "2025-08-26T11:10:41.528Z",
-      "updated_at": "2025-08-26T11:10:41.528Z",
-      "id": 42
-    },
-    {
-      "userId": 1,
-      "name": "hvghvgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg",
-      "surname": "ascsac",
-      "created_at": "2025-08-26T11:11:00.225Z",
-      "updated_at": "2025-08-26T11:11:00.225Z",
-      "id": 43
-    },
-    {
-      "userId": 1,
-      "name": "fgsdgsdgsdgsdg                                                      sdgsdgsdgsdgsdg",
-      "surname": "sdgsdgsdgsdgsdg",
-      "created_at": "2025-08-26T11:11:28.985Z",
-      "updated_at": "2025-08-26T11:11:28.985Z",
-      "id": 44
-    },
-    {
-      "userId": 1,
-      "name": "2222",
-      "surname": "22222",
-      "created_at": "2025-08-26T11:12:48.874Z",
-      "updated_at": "2025-08-26T11:12:48.874Z",
-      "id": 46
-    },
-    {
-      "userId": 1,
-      "name": "                                                                           dsaf",
-      "surname": "                                                                           sdf",
-      "created_at": "2025-08-26T11:13:10.787Z",
-      "updated_at": "2025-08-26T11:13:10.787Z",
-      "id": 47
-    },
-    {
-      "userId": 1,
-      "name": "f",
-      "surname": "f",
-      "created_at": "2025-08-26T11:13:14.491Z",
-      "updated_at": "2025-08-26T11:13:14.491Z",
-      "id": 48
-    },
-    {
-      "userId": 1,
-      "name": "asd",
-      "surname": "asd   ",
-      "created_at": "2025-08-26T11:35:23.943Z",
-      "updated_at": "2025-08-26T11:35:23.943Z",
-      "id": 49
-    },
-    {
-      "userId": 1,
-      "name": "asd",
-      "surname": "asd",
-      "created_at": "2025-08-26T11:46:41.911Z",
-      "updated_at": "2025-08-26T11:46:41.911Z",
-      "id": 50
-    },
-    {
-      "userId": 1,
-      "name": "@",
-      "surname": "@",
-      "created_at": "2025-08-26T11:49:23.833Z",
-      "updated_at": "2025-08-26T11:49:23.833Z",
-      "id": 51
-    },
-    {
-      "userId": 1,
-      "name": "@",
-      "surname": "@",
-      "created_at": "2025-08-26T11:49:35.483Z",
-      "updated_at": "2025-08-26T11:49:35.483Z",
-      "id": 52
-    },
-    {
-      "userId": 1,
-      "name": "@asd",
-      "surname": "",
-      "created_at": "2025-08-26T11:49:45.698Z",
-      "updated_at": "2025-08-26T11:49:45.698Z",
-      "id": 53
-    },
-    {
-      "userId": 1,
-      "name": "@asd",
-      "surname": "asd@",
-      "created_at": "2025-08-26T11:50:36.482Z",
-      "updated_at": "2025-08-26T11:50:36.482Z",
-      "id": 54
-    },
-    {
-      "userId": 1,
-      "name": "aaaaaaaaaaaaaaaaaaaaaaaaa",
-      "surname": "aaaaaaaaaaaaaaaaaaaaaaaaa",
-      "created_at": "2025-08-26T11:59:45.106Z",
-      "updated_at": "2025-08-26T11:59:45.106Z",
-      "id": 55
-    },
-    {
-      "userId": 1,
-      "name": "     aaaaaaaaaa    aaaaaa",
-      "surname": "a a a a a a a          a",
-      "created_at": "2025-08-26T12:00:23.291Z",
-      "updated_at": "2025-08-26T12:00:23.291Z",
-      "id": 56
     },
     {
       "userId": 1,
@@ -732,6 +627,33 @@
       "updated_at": "2024-05-05T12:04:00Z"
     },
     {
+      "id": 7,
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
+      "authorId": 2,
+      "userId": 1,
+      "created_at": "2024-05-05T12:06:00Z",
+      "updated_at": "2024-05-05T12:06:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:07:00Z",
+      "updated_at": "2024-05-05T12:07:00Z"
+    },
+    {
+      "id": 9,
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:08:00Z",
+      "updated_at": "2024-05-05T12:08:00Z"
+    },
+    {
       "id": 11,
       "title": "API Design and Development",
       "body": "Well-designed APIs are the backbone of modern applications. RESTful services and GraphQL have become popular approaches for creating APIs that are both powerful and easy to use. Proper documentation and versioning strategies are crucial for maintaining APIs over time and ensuring developer adoption.",
@@ -1009,6 +931,33 @@
       "userId": 1,
       "created_at": "2024-05-05T12:04:00Z",
       "updated_at": "2024-05-05T12:04:00Z"
+    },
+    {
+      "id": 47,
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
+      "authorId": 2,
+      "userId": 1,
+      "created_at": "2024-05-05T12:06:00Z",
+      "updated_at": "2024-05-05T12:06:00Z"
+    },
+    {
+      "id": 48,
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:07:00Z",
+      "updated_at": "2024-05-05T12:07:00Z"
+    },
+    {
+      "id": 49,
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:08:00Z",
+      "updated_at": "2024-05-05T12:08:00Z"
     },
     {
       "id": 2,
@@ -1029,6 +978,33 @@
       "updated_at": "2024-05-05T12:04:00Z"
     },
     {
+      "id": 7,
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
+      "authorId": 2,
+      "userId": 1,
+      "created_at": "2024-05-05T12:06:00Z",
+      "updated_at": "2024-05-05T12:06:00Z"
+    },
+    {
+      "id": 8,
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:07:00Z",
+      "updated_at": "2024-05-05T12:07:00Z"
+    },
+    {
+      "id": 9,
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:08:00Z",
+      "updated_at": "2024-05-05T12:08:00Z"
+    },
+    {
       "id": 11,
       "title": "API Design and Development",
       "body": "Well-designed APIs are the backbone of modern applications. RESTful services and GraphQL have become popular approaches for creating APIs that are both powerful and easy to use. Proper documentation and versioning strategies are crucial for maintaining APIs over time and ensuring developer adoption.",
@@ -1306,6 +1282,33 @@
       "userId": 1,
       "created_at": "2024-05-05T12:04:00Z",
       "updated_at": "2024-05-05T12:04:00Z"
+    },
+    {
+      "id": 47,
+      "title": "Cybersecurity in the Digital Age",
+      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
+      "authorId": 2,
+      "userId": 1,
+      "created_at": "2024-05-05T12:06:00Z",
+      "updated_at": "2024-05-05T12:06:00Z"
+    },
+    {
+      "id": 48,
+      "title": "Mobile App Development Trends",
+      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:07:00Z",
+      "updated_at": "2024-05-05T12:07:00Z"
+    },
+    {
+      "id": 49,
+      "title": "The Importance of Code Reviews",
+      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:08:00Z",
+      "updated_at": "2024-05-05T12:08:00Z"
     },
     {
       "id": 51,
@@ -1567,6 +1570,57 @@
       "userId": 1,
       "created_at": "2024-05-06T12:30:00Z",
       "updated_at": "2024-05-06T12:30:00Z"
+    },
+    {
+      "body": "aAASDASD",
+      "authorId": 59,
+      "userId": 1,
+      "created_at": "2025-08-29T09:13:09.153Z",
+      "updated_at": "2025-08-29T09:13:09.153Z",
+      "id": 80
+    },
+    {
+      "body": "ASDASD",
+      "authorId": 57,
+      "userId": 1,
+      "created_at": "2025-08-29T09:13:36.656Z",
+      "updated_at": "2025-08-29T09:13:36.656Z",
+      "id": 81
+    },
+    {
+      "body": "DADADA",
+      "authorId": 57,
+      "userId": 1,
+      "created_at": "2025-08-29T09:14:00.648Z",
+      "updated_at": "2025-08-29T09:14:00.648Z",
+      "id": 82
+    },
+    {
+      "title": "Dass",
+      "body": "Auto",
+      "authorId": 59,
+      "userId": 1,
+      "created_at": "2025-08-29T09:16:44.204Z",
+      "updated_at": "2025-08-29T09:16:44.204Z",
+      "id": 83
+    },
+    {
+      "title": "Dasss",
+      "body": "Daas",
+      "authorId": 57,
+      "userId": 1,
+      "created_at": "2025-08-29T09:17:59.997Z",
+      "updated_at": "2025-08-29T09:17:59.997Z",
+      "id": 84
+    },
+    {
+      "title": "Dass",
+      "body": "Auto",
+      "authorId": 39,
+      "userId": 1,
+      "created_at": "2025-08-29T09:21:47.622Z",
+      "updated_at": "2025-08-29T09:21:47.622Z",
+      "id": 85
     }
   ]
 }

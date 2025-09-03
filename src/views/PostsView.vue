@@ -6,6 +6,7 @@
           <p>Failed to load posts. Please try again.</p>
         </div>
         <template v-else-if="posts.length > 0 || searchTerm">
+          <button v-if="userId" class="button is-primary" @click="openPostModal">Add Post</button>
           <SearchBar :count="posts.length" @input-changed="handleSearchInput" />
           <PostCardList :posts="posts" />
           <div class="pagination-wrapper is-static">
@@ -27,20 +28,25 @@
             <p class="has-text-grey-light">There are no posts to display at the moment.</p>
           </div>
         </div>
+        <Modal ref="modalRef" @update="redirectToLastPage" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch, computed } from 'vue'
 import type { Post } from '@/types/Post'
 import { useNotificationStore } from '@/store/Notification'
 import PostService from '@/services/postService'
 import PostCardList from '@/components/Post/PostCardList.vue'
 import Pagination from '@/components/Pagination.vue'
 import SearchBar from '@/components/SearchBar.vue'
+import { useUserStore } from '@/store/Auth'
+import Modal from '@/components/Modal.vue'
+import PostCreateForm from '@/components/Post/PostCreateForm.vue'
 
+const userStore = useUserStore()
 const notificationStore = useNotificationStore()
 const posts = ref<Post[]>([])
 const totalPosts = ref(0)
@@ -50,6 +56,8 @@ const isLoading = ref(false)
 const hasError = ref(false)
 const emit = defineEmits(['page-overflow'])
 const searchTerm = ref('')
+const userId = computed(() => userStore.getUser()[0] as number | null)
+const modalRef = ref()
 let currentController: AbortController | null = null
 
 onMounted(async () => {
@@ -110,6 +118,22 @@ const handlePageChange = (page: number) => {
 const handlePageOverflow = () => {
   const maxPage = Math.ceil(totalPosts.value / itemsPerPage)
   currentPage.value = maxPage > 0 ? maxPage : 1
+}
+
+const openPostModal = () => {
+  const [userId, token] = userStore.getUser()
+  if (userId === null || token === null) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to access this page.`,
+    })
+    return
+  }
+  modalRef.value.open(PostCreateForm)
+}
+
+const redirectToLastPage = () => {
+  currentPage.value = Math.ceil((totalPosts.value + 1) / itemsPerPage)
 }
 </script>
 

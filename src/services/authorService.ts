@@ -4,9 +4,9 @@ import UniversalService from './axiosInterceptor'
 const api = UniversalService.axiosInstance
 
 export default class AuthorService {
-  public static async getAuthorById(id: number): Promise<Author> {
+  public static async getAuthorsByUserId(userId: number): Promise<Author[]> {
     try {
-      const response = await api.get<Author>(`/authors/${id}`)
+      const response = await api.get<Author[]>(`/authors?userId=${userId}`)
       return response.data
     } catch (error: any) {
       throw error.response?.data?.message || 'Failed to fetch author'

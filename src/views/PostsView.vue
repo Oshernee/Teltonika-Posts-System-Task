@@ -28,7 +28,7 @@
             <p class="has-text-grey-light">There are no posts to display at the moment.</p>
           </div>
         </div>
-        <Modal ref="modalRef" @update="redirectToLastPage" />
+        <Modal ref="modalRef" @update="redirectToLastPage" @updateCurrent="handlePostCreated" />
       </div>
     </div>
   </div>
@@ -137,6 +137,11 @@ const redirectToLastPage = () => {
 }
 
 const updatePosts = async () => {
+  posts.value = await getPostsByPage()
+}
+
+const handlePostCreated = async () => {
+  totalPosts.value = totalPosts.value + 1
   posts.value = await getPostsByPage()
 }
 </script>

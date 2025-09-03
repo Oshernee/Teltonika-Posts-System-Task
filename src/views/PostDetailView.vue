@@ -1,6 +1,6 @@
 <template>
   <div class="post-detail-view">
-    <div class="container mt-6">
+    <div class="container mt-6 content-center">
       <div v-if="hasError" class="notification is-danger">
         <p>Failed to load post. Please try again.</p>
         <button
@@ -37,13 +37,13 @@
               {{ post?.body }}
             </div>
           </div>
+          <div class="buttons flex mt-4 is-justify-content-center">
+            <button class="button" @click="openModal(PostDeleteForm)">Delete</button>
+            <button class="button" @click="openModal(PostEditForm)">Edit</button>
+          </div>
         </div>
       </div>
-      <div class="buttons flex mt-4 is-justify-content-center">
-        <button v-if="userId" class="button" @click="openModal(PostDeleteForm)">Delete</button>
-        <button v-if="userId" class="button" @click="openModal(PostEditForm)">Edit</button>
-      </div>
-      <Modal ref="modalRef" @update="getPostById(id)" />
+      <Modal ref="modalRef" @update="getPostById(id)" @delete="router.push('/posts')" />
     </div>
   </div>
 </template>
@@ -53,7 +53,7 @@ import type { Post } from '@/types/Post'
 import { onMounted, ref, computed } from 'vue'
 import PostService from '@/services/postService'
 import { useNotificationStore } from '@/store/Notification'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { checkAuthor, checkUpdatedAt } from '@/utils/stringUtils'
 import { useUserStore } from '@/store/Auth'
 import Modal from '@/components/Modal.vue'

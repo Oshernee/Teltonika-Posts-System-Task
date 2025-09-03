@@ -28,7 +28,7 @@ export default class PostService {
           (searchTerm ? '&q=' + searchTerm : ''),
         { signal },
       )
-      if ((page - 1) * limit > parseInt(response.headers['x-total-count'])) {
+      if ((page - 1) * limit >= parseInt(response.headers['x-total-count'])) {
         page = Math.ceil(parseInt(response.headers['x-total-count']) / limit)
         return this.getPostsByPage(page, limit, searchTerm)
       }
@@ -94,6 +94,18 @@ export default class PostService {
       return response.data
     } catch (error: any) {
       throw error.response?.data?.message || 'Failed to edit post'
+    }
+  }
+
+  public static async deletePost(token: string, id: number): Promise<void> {
+    try {
+      await api.delete(`/posts/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to delete post'
     }
   }
 }

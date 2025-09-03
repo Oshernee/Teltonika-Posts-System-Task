@@ -91,6 +91,18 @@
 
       <div class="field">
         <div class="control">
+          <label class="checkbox has-text-light custom-checkbox">
+            <Field name="isPublished" type="checkbox" v-slot="{ field }">
+              <input v-bind="field" type="checkbox" class="checkbox-input" />
+              <span class="checkmark"></span>
+            </Field>
+            <span class="checkbox-label">Redirect after creation</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
           <button
             type="submit"
             class="button is-primary is-medium is-fullwidth"
@@ -119,13 +131,21 @@ const userStore = useUserStore()
 const notificationStore = useNotificationStore()
 const isLoading = ref(false)
 const formRef = ref()
-const emit = defineEmits(['update'])
+const emit = defineEmits(['update', 'close', 'updateCurrent'])
 
 const authors = ref<Author[]>([])
 
 onMounted(async () => {
   try {
     const [userId, token] = userStore.getUser()
+    if (userId === null || token === null) {
+      notificationStore.addNotification({
+        type: 'error',
+        message: `You are not authorized to edit the post.`,
+      })
+      emit('close')
+      return
+    }
     const fetchedAuthors = await AuthorService.getAuthorsByUserId(Number(userId))
     authors.value = fetchedAuthors
   } catch (error: any) {
@@ -142,19 +162,16 @@ const handleSubmit = async (values: any, { resetForm }: any) => {
   isLoading.value = true
   const [userId, token] = userStore.getUser()
   const selectedAuthorId = values.author
+  const shouldRedirect = values.isPublished
   try {
     if (userId === null || token === null) {
       notificationStore.addNotification({
         type: 'error',
         message: `You are not authorized to create a post.`,
       })
+      emit('close')
       return
     }
-
-    notificationStore.addNotification({
-      type: 'success',
-      message: `Post created successfully`,
-    })
 
     await PostService.createPost(
       String(token),
@@ -164,9 +181,17 @@ const handleSubmit = async (values: any, { resetForm }: any) => {
       Number(selectedAuthorId),
     )
 
-    emit('update')
+    notificationStore.addNotification({
+      type: 'success',
+      message: `Post created successfully`,
+    })
 
-    resetForm()
+    if (!shouldRedirect) {
+      emit('update')
+    } else {
+      emit('updateCurrent')
+    }
+    emit('close')
   } catch (error: any) {
     notificationStore.addNotification({
       type: 'error',
@@ -311,5 +336,45 @@ defineRule('length', (value: string) => {
 .button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 2rem;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #34495e;
+  border: 2px solid #4a5568;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #667eea;
+  border-color: #667eea;
+}
+
+.checkbox-label {
+  color: #e2e8f0;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  line-height: 1.5rem;
 }
 </style>

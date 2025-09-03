@@ -30,7 +30,8 @@ import { useNotificationStore } from '@/store/Notification'
 const notificationStore = useNotificationStore()
 const modalRef = ref()
 const userStore = useUserStore()
-const [userId, token] = userStore.getUser()
+const userId = computed(() => userStore.getUser()[0] as number | null)
+const token = computed(() => userStore.getUser()[1] as string | null)
 const emit = defineEmits(['update'])
 
 const props = defineProps<{

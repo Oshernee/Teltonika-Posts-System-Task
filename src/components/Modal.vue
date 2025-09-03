@@ -11,6 +11,8 @@
             v-bind="componentProps"
             @close="close"
             @update="updatePages"
+            @updateCurrent="updateCurrent"
+            @delete="redirectToMain"
             v-on="$attrs"
           />
           <slot v-else></slot>
@@ -31,6 +33,8 @@ const emit = defineEmits<{
   close: []
   update: []
   cancel: []
+  delete: []
+  updateCurrent: []
   modalEvent: [eventName: string, data: any]
 }>()
 
@@ -49,6 +53,14 @@ const close = () => {
 
 const updatePages = () => {
   emit('update')
+}
+
+const updateCurrent = () => {
+  emit('updateCurrent')
+}
+
+const redirectToMain = () => {
+  emit('delete')
 }
 
 defineExpose({

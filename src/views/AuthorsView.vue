@@ -30,7 +30,7 @@
             <p class="has-text-grey-light">There are no authors to display at the moment.</p>
           </div>
         </div>
-        <Modal ref="modalRef" @update="redirectToLastPage" />
+        <Modal ref="modalRef" @update="redirectToLastPage" @updateCurrent="handleAuthorCreated" />
       </div>
     </div>
   </div>
@@ -148,6 +148,11 @@ const redirectToLastPage = () => {
 }
 
 const updateAuthors = async () => {
+  authors.value = await getAuthorsByPage()
+}
+
+const handleAuthorCreated = async () => {
+  totalAuthors.value = totalAuthors.value + 1
   authors.value = await getAuthorsByPage()
 }
 </script>

@@ -63,6 +63,21 @@ watch(
   },
 )
 
+watch(
+  () => props.totalItems,
+  (newTotalItems, oldTotalItems) => {
+    const newTotalPages = Math.ceil(newTotalItems / props.itemsPerPage)
+    if (currentPage.value <= newTotalPages) {
+      return
+    }
+
+    if (currentPage.value > newTotalPages && newTotalPages > 0) {
+      currentPage.value = newTotalPages
+      emit('page-changed', currentPage.value)
+    }
+  },
+)
+
 const displayPages = computed(() => {
   const startPage = Math.max(1, currentPage.value - Math.floor(pagesToShow / 2))
   const endPage = Math.min(totalPages.value, startPage + pagesToShow - 1)

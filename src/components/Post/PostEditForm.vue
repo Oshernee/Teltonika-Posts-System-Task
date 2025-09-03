@@ -84,7 +84,7 @@
 <script setup lang="ts">
 import { defineRule, Form, Field, ErrorMessage } from 'vee-validate'
 import { required } from '@vee-validate/rules'
-import { ref, onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useNotificationStore } from '@/store/Notification'
 import PostService from '@/services/postService'
 import { useUserStore } from '@/store/Auth'
@@ -95,6 +95,18 @@ const notificationStore = useNotificationStore()
 const isLoading = ref(false)
 const formRef = ref()
 const emit = defineEmits(['update', 'close'])
+
+onMounted(() => {
+  const [userId, token] = userStore.getUser()
+  if (userId === null || token === null) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to edit the post.`,
+    })
+    emit('close')
+    return
+  }
+})
 
 const props = defineProps<{
   post: Post
@@ -113,6 +125,7 @@ const handleSubmit = async (values: any) => {
         type: 'error',
         message: `You are not authorized to update a post.`,
       })
+      emit('close')
       return
     }
 
@@ -124,12 +137,12 @@ const handleSubmit = async (values: any) => {
       return
     }
 
+    await PostService.editPost(String(token), Number(props.post.id), values.title, values.content)
+
     notificationStore.addNotification({
       type: 'success',
       message: `Post updated successfully`,
     })
-
-    await PostService.editPost(String(token), Number(userId), values.title, values.content)
 
     emit('update')
     emit('close')

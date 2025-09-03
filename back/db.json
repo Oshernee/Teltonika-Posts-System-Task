@@ -591,130 +591,88 @@
     },
     {
       "userId": 1,
+      "name": "Aasdasd",
+      "surname": "Aasdasd",
+      "created_at": "2025-09-03T05:46:36.124Z",
+      "updated_at": "2025-09-03T05:46:36.124Z",
+      "id": 92
+    },
+    {
+      "userId": 1,
+      "name": "Aasdasd",
+      "surname": "Aasdasd",
+      "created_at": "2025-09-03T05:46:42.060Z",
+      "updated_at": "2025-09-03T05:46:42.060Z",
+      "id": 93
+    },
+    {
+      "userId": 1,
+      "name": "Aasdasd",
+      "surname": "Aasdasd",
+      "created_at": "2025-09-03T05:46:47.827Z",
+      "updated_at": "2025-09-03T05:46:47.827Z",
+      "id": 94
+    },
+    {
+      "userId": 1,
+      "name": "Aasd",
+      "surname": "Aasd",
+      "created_at": "2025-09-03T05:54:32.360Z",
+      "updated_at": "2025-09-03T05:54:32.360Z",
+      "id": 95
+    },
+    {
+      "userId": 1,
       "name": "Draugas",
       "surname": "Sventas",
-      "created_at": "2025-08-28T12:56:58.429Z",
-      "updated_at": "2025-08-28T12:56:58.429Z",
-      "id": 92
+      "created_at": "2025-09-03T05:54:35.902Z",
+      "updated_at": "2025-09-03T05:54:35.902Z",
+      "id": 96
+    },
+    {
+      "userId": 1,
+      "name": "Draugas",
+      "surname": "Sventas",
+      "created_at": "2025-09-03T05:54:41.142Z",
+      "updated_at": "2025-09-03T05:54:41.142Z",
+      "id": 97
+    },
+    {
+      "userId": 1,
+      "name": "Aasdasd",
+      "surname": "Aasdasd",
+      "created_at": "2025-09-03T06:24:04.509Z",
+      "updated_at": "2025-09-03T06:24:04.509Z",
+      "id": 98
     }
   ],
   "posts": [
     {
-      "id": 1,
-      "title": "AdasdassdThe Art of Responsive Designersrs",
-      "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.asdasd",
-      "authorId": 6,
-      "userId": 1,
-      "created_at": "2024-05-05T12:00:00Z",
-      "updated_at": "2025-08-29T11:19:45.177Z"
-    },
-    {
-      "id": 2,
-      "title": "The Art of Responsive Design",
-      "body": "Creating websites that work seamlessly across all devices is crucial in today's digital landscape. Responsive design ensures that your content looks great whether viewed on a smartphone, tablet, or desktop computer. CSS Grid and Flexbox have made this process much more manageable for developers.",
-      "authorId": 6,
-      "userId": 1,
-      "created_at": "2024-05-05T12:01:00Z",
-      "updated_at": "2024-05-05T12:01:00Z"
-    },
-    {
-      "id": 5,
-      "title": "Database Design Best Practices",
-      "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
-      "authorId": 5,
-      "userId": 1,
-      "created_at": "2024-05-05T12:04:00Z",
-      "updated_at": "2024-05-05T12:04:00Z"
-    },
-    {
-      "id": 7,
-      "title": "Cybersecurity in the Digital Age",
-      "body": "As our world becomes increasingly digital, cybersecurity has never been more important. Protecting sensitive data and maintaining user privacy are top priorities for any organization. Understanding common security vulnerabilities and how to prevent them is crucial for all developers and IT professionals.",
-      "authorId": 2,
-      "userId": 1,
-      "created_at": "2024-05-05T12:06:00Z",
-      "updated_at": "2024-05-05T12:06:00Z"
-    },
-    {
-      "id": 8,
-      "title": "Mobile App Development Trends",
-      "body": "Mobile applications continue to dominate the software landscape. Cross-platform development tools like React Native and Flutter have made it easier to create apps for both iOS and Android. Progressive Web Apps are also gaining traction as an alternative approach to mobile development.",
-      "authorId": 3,
-      "userId": 1,
-      "created_at": "2024-05-05T12:07:00Z",
-      "updated_at": "2024-05-05T12:07:00Z"
-    },
-    {
-      "id": 9,
-      "title": "The Importance of Code Reviews",
-      "body": "Code reviews are an essential part of the software development process. They help maintain code quality, share knowledge among team members, and catch potential bugs before they reach production. Establishing a good code review culture can significantly improve your team's overall productivity and code quality.",
-      "authorId": 4,
-      "userId": 1,
-      "created_at": "2024-05-05T12:08:00Z",
-      "updated_at": "2024-05-05T12:08:00Z"
-    },
-    {
-      "id": 11,
-      "title": "API Design and Development",
-      "body": "Well-designed APIs are the backbone of modern applications. RESTful services and GraphQL have become popular approaches for creating APIs that are both powerful and easy to use. Proper documentation and versioning strategies are crucial for maintaining APIs over time and ensuring developer adoption.",
-      "authorId": 7,
-      "userId": 2,
-      "created_at": "2024-05-05T12:09:00Z",
-      "updated_at": "2024-05-05T12:09:00Z"
-    },
-    {
-      "id": 12,
-      "title": "DevOps Culture and Practices",
-      "body": "DevOps has transformed how teams develop, deploy, and maintain software applications. Continuous integration and continuous deployment pipelines help teams deliver features faster while maintaining quality. Automation tools and monitoring systems are essential components of a successful DevOps implementation.",
-      "authorId": 8,
-      "userId": 2,
-      "created_at": "2024-05-05T12:10:00Z",
-      "updated_at": "2024-05-05T12:10:00Z"
-    },
-    {
-      "id": 13,
-      "title": "User Experience Design Principles",
-      "body": "Great user experience design goes beyond just making things look pretty. It involves understanding user needs, creating intuitive interfaces, and ensuring accessibility for all users. User research and usability testing are important tools for creating products that truly serve their intended audience effectively.",
-      "authorId": 9,
-      "userId": 2,
-      "created_at": "2024-05-05T12:11:00Z",
-      "updated_at": "2024-05-05T12:11:00Z"
-    },
-    {
       "id": 14,
-      "title": "Performance Optimization Strategies",
+      "title": "Performance Optimization Strategiesasd",
       "body": "Website and application performance directly impacts user satisfaction and business success. Techniques like code splitting, lazy loading, and caching can significantly improve loading times. Monitoring tools help identify bottlenecks and areas for improvement in your application's performance metrics.",
       "authorId": 10,
       "userId": 2,
       "created_at": "2024-05-05T12:12:00Z",
-      "updated_at": "2024-05-05T12:12:00Z"
+      "updated_at": "2025-09-01T11:16:41.349Z"
     },
     {
       "id": 15,
-      "title": "Microservices Architecture",
+      "title": "Microservices Architectureas",
       "body": "Microservices architecture has gained popularity for building scalable and maintainable applications. Breaking down monolithic applications into smaller, independent services allows teams to work more efficiently and deploy updates more frequently. However, this approach also introduces new challenges in terms of service communication and data consistency.",
       "authorId": 11,
       "userId": 3,
       "created_at": "2024-05-05T12:13:00Z",
-      "updated_at": "2024-05-05T12:13:00Z"
-    },
-    {
-      "id": 16,
-      "title": "Testing Strategies for Modern Applications",
-      "body": "Comprehensive testing is crucial for delivering reliable software. Unit tests, integration tests, and end-to-end tests each serve different purposes in ensuring code quality. Test-driven development and automated testing pipelines help teams catch issues early and maintain confidence in their codebase.",
-      "authorId": 12,
-      "userId": 3,
-      "created_at": "2024-05-05T12:14:00Z",
-      "updated_at": "2024-05-05T12:14:00Z"
+      "updated_at": "2025-09-01T11:01:05.333Z"
     },
     {
       "id": 17,
-      "title": "Data Science and Analytics",
+      "title": "Data Science and Analyticsasd",
       "body": "Data has become one of the most valuable assets for businesses today. Understanding how to collect, process, and analyze data can provide valuable insights for decision-making. Tools like Python, R, and various visualization libraries make it easier to work with large datasets and extract meaningful information.",
       "authorId": 13,
       "userId": 3,
       "created_at": "2024-05-05T12:15:00Z",
-      "updated_at": "2024-05-05T12:15:00Z"
+      "updated_at": "2025-09-01T11:33:39.643Z"
     },
     {
       "id": 18,
@@ -924,6 +882,24 @@
       "updated_at": "2024-05-05T12:01:00Z"
     },
     {
+      "id": 43,
+      "title": "Understanding JavaScript Closures",
+      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:02:00Z",
+      "updated_at": "2024-05-05T12:02:00Z"
+    },
+    {
+      "id": 44,
+      "title": "The Future of Artificial Intelligence",
+      "body": "Artificial Intelligence is transforming industries at an unprecedented pace. From healthcare to finance, AI technologies are being integrated into various sectors to improve efficiency and create new possibilities. Machine learning algorithms are becoming more sophisticated and accessible to developers worldwide.",
+      "authorId": 4,
+      "userId": 1,
+      "created_at": "2024-05-05T12:03:00Z",
+      "updated_at": "2024-05-05T12:03:00Z"
+    },
+    {
       "id": 45,
       "title": "Database Design Best Practices",
       "body": "Proper database design is the foundation of any successful application. Understanding normalization, indexing, and relationships between tables can significantly impact your application's performance. Whether you're using SQL or NoSQL databases, these principles remain important for scalable systems.",
@@ -967,6 +943,15 @@
       "userId": 1,
       "created_at": "2024-05-05T12:01:00Z",
       "updated_at": "2024-05-05T12:01:00Z"
+    },
+    {
+      "id": 3,
+      "title": "Understanding JavaScript Closures",
+      "body": "Closures are one of the most powerful features in JavaScript, yet they can be confusing for beginners. A closure gives you access to an outer function's scope from an inner function. This concept is fundamental to understanding how JavaScript works under the hood.",
+      "authorId": 3,
+      "userId": 1,
+      "created_at": "2024-05-05T12:02:00Z",
+      "updated_at": "2024-05-05T12:02:00Z"
     },
     {
       "id": 5,
@@ -1596,30 +1581,30 @@
       "id": 82
     },
     {
-      "title": "Dass",
-      "body": "Auto",
-      "authorId": 59,
+      "title": "Aasdasd",
+      "body": "Aasdasd",
+      "authorId": 39,
       "userId": 1,
-      "created_at": "2025-08-29T09:16:44.204Z",
-      "updated_at": "2025-08-29T09:16:44.204Z",
+      "created_at": "2025-09-01T11:01:23.017Z",
+      "updated_at": "2025-09-01T11:01:23.017Z",
       "id": 83
     },
     {
-      "title": "Dasss",
-      "body": "Daas",
-      "authorId": 57,
+      "title": "Aasdasd",
+      "body": "Aasdasd",
+      "authorId": 58,
       "userId": 1,
-      "created_at": "2025-08-29T09:17:59.997Z",
-      "updated_at": "2025-08-29T09:17:59.997Z",
+      "created_at": "2025-09-01T11:02:03.881Z",
+      "updated_at": "2025-09-01T11:02:03.881Z",
       "id": 84
     },
     {
-      "title": "Dass",
-      "body": "Auto",
-      "authorId": 39,
+      "title": "Aasdasd",
+      "body": "asdas",
+      "authorId": 37,
       "userId": 1,
-      "created_at": "2025-08-29T09:21:47.622Z",
-      "updated_at": "2025-08-29T09:21:47.622Z",
+      "created_at": "2025-09-03T06:22:08.568Z",
+      "updated_at": "2025-09-03T06:22:08.568Z",
       "id": 85
     }
   ]

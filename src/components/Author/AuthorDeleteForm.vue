@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useNotificationStore } from '@/store/Notification'
 import AuthorService from '@/services/authorService'
 import { useUserStore } from '@/store/Auth'
@@ -53,6 +53,18 @@ const props = defineProps<{
   author: Author
 }>()
 
+onMounted(() => {
+  const [userId, token] = userStore.getUser()
+  if (userId === null || token === null) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to delete the author.`,
+    })
+    emit('close')
+    return
+  }
+})
+
 const handleSubmit = async () => {
   isLoading.value = true
   const [userId, token] = userStore.getUser()
@@ -62,6 +74,7 @@ const handleSubmit = async () => {
         type: 'error',
         message: `You are not authorized to delete the author.`,
       })
+      emit('close')
       return
     }
 

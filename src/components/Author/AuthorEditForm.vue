@@ -86,7 +86,7 @@
 <script setup lang="ts">
 import { defineRule, Form, Field, ErrorMessage } from 'vee-validate'
 import { required } from '@vee-validate/rules'
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useNotificationStore } from '@/store/Notification'
 import AuthorService from '@/services/authorService'
 import { useUserStore } from '@/store/Auth'
@@ -104,6 +104,18 @@ const props = defineProps<{
   author: Author
 }>()
 
+onMounted(() => {
+  const [userId, token] = userStore.getUser()
+  if (userId === null || token === null) {
+    notificationStore.addNotification({
+      type: 'error',
+      message: `You are not authorized to edit the author.`,
+    })
+    emit('close')
+    return
+  }
+})
+
 const localAuthor = reactive<Author>({ ...props.author })
 
 const handleSubmit = async (values: any, { resetForm }: any) => {
@@ -115,6 +127,7 @@ const handleSubmit = async (values: any, { resetForm }: any) => {
         type: 'error',
         message: `You are not authorized to edit the author.`,
       })
+      emit('close')
       return
     }
 

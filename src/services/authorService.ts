@@ -1,5 +1,6 @@
 import type { Author } from '@/types/Author'
 import UniversalService from './axiosInterceptor'
+import PostService from './postService'
 
 const api = UniversalService.axiosInstance
 
@@ -98,6 +99,7 @@ export default class AuthorService {
           Authorization: `Bearer ${token}`,
         },
       })
+      PostService.deleteAuthorPosts(id)
     } catch (error: any) {
       throw error.response?.data?.message || 'Failed to delete author'
     }

@@ -108,4 +108,12 @@ export default class PostService {
       throw error.response?.data?.message || 'Failed to delete post'
     }
   }
+
+  public static async deleteAuthorPosts(authorId: number): Promise<void> {
+    try {
+      await api.delete(`/posts?authorId=${authorId}`)
+    } catch (error: any) {
+      throw error.response?.data?.message || 'Failed to delete author posts'
+    }
+  }
 }

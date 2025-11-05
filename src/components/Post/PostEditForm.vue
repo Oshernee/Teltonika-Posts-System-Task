@@ -12,7 +12,7 @@
             name="title"
             v-model="localPost.title"
             v-slot="{ field, meta, errorMessage }"
-            rules="required|first_letter_uppercase|length"
+            rules="required|first_letter_uppercase|title_length"
             :validateOnValueUpdate="true"
           >
             <input
@@ -42,7 +42,7 @@
           <Field
             name="content"
             v-slot="{ field, meta, errorMessage }"
-            rules="required"
+            rules="required|content_length"
             :value="localPost.body"
           >
             <textarea
@@ -89,6 +89,7 @@ import { useNotificationStore } from '@/store/Notification'
 import PostService from '@/services/postService'
 import { useUserStore } from '@/store/Auth'
 import type { Post } from '@/types/Post'
+import { validationRules } from '@/utils/validationRules'
 
 const userStore = useUserStore()
 const notificationStore = useNotificationStore()
@@ -115,6 +116,9 @@ const props = defineProps<{
 const localPost = ref<Post>({ ...props.post })
 
 defineRule('required', required)
+defineRule('title_length', validationRules.post.title.length)
+defineRule('first_letter_uppercase', validationRules.firstLetterUppercase)
+defineRule('content_length', validationRules.post.content.length)
 
 const handleSubmit = async (values: any) => {
   isLoading.value = true
@@ -155,24 +159,6 @@ const handleSubmit = async (values: any) => {
     isLoading.value = false
   }
 }
-
-defineRule('first_letter_uppercase', (value: string) => {
-  if (!value || value.length === 0) return true
-  const trimmedValue = value.trim()
-  if (trimmedValue.length === 0) return true
-  return (
-    trimmedValue.charAt(0) === trimmedValue.charAt(0).toUpperCase() ||
-    'First letter must be uppercase'
-  )
-})
-
-defineRule('length', (value: string) => {
-  const normalizedValue = value.trim().replace(/\s+/g, ' ')
-  return (
-    (normalizedValue.length >= 4 && normalizedValue.length <= 50) ||
-    'Must be between 4 and 50 characters'
-  )
-})
 </script>
 
 <style scoped>

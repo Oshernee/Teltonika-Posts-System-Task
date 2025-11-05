@@ -4,11 +4,11 @@
       <div class="content">
         <p class="author-name">{{ checkAuthor(props.author) }}</p>
         <p class="author-id">
-          {{ checkAuthorDate }}
+          {{ checkUpdatedAt(props.author) }}
         </p>
-        <div class="buttons flex mt-4 is-justify-content-center">
-          <button v-if="userId" class="button" @click="openModal(AuthorDeleteForm)">Delete</button>
-          <button v-if="userId" class="button" @click="openModal(AuthorEditForm)">Edit</button>
+        <div v-if="userStore.isLoggedIn()" class="buttons flex mt-4 is-justify-content-center">
+          <button class="button" @click="openModal(AuthorDeleteForm)">Delete</button>
+          <button class="button" @click="openModal(AuthorEditForm)">Edit</button>
         </div>
       </div>
       <Modal ref="modalRef" @update="emit('update')" />
@@ -17,41 +17,28 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed, ref } from 'vue'
+import { defineProps, ref } from 'vue'
+import type { Component } from 'vue'
 import type { Author } from '@/types/Author'
-import { formatDate } from '@/utils/dateUtils'
-import { checkAuthor } from '@/utils/stringUtils'
+import { checkAuthor, checkUpdatedAt } from '@/utils/stringUtils'
 import Modal from '../Modal.vue'
 import AuthorDeleteForm from './AuthorDeleteForm.vue'
 import AuthorEditForm from './AuthorEditForm.vue'
 import { useUserStore } from '@/store/Auth'
-import { useNotificationStore } from '@/store/Notification'
+import { checkIfAuthenticated } from '@/utils/authUtils'
 
-const notificationStore = useNotificationStore()
 const modalRef = ref()
 const userStore = useUserStore()
-const userId = computed(() => userStore.getUser()[0] as number | null)
-const token = computed(() => userStore.getUser()[1] as string | null)
 const emit = defineEmits(['update'])
+
+const UNAUTHORIZED_MESSAGE = 'You are not authorized to modify this author.'
 
 const props = defineProps<{
   author: Author
 }>()
 
-const checkAuthorDate = computed(() => {
-  return props.author.updated_at === props.author.created_at || !props.author.updated_at
-    ? `Joined at: ${formatDate(props.author.created_at)}`
-    : `Last updated at: ${formatDate(props.author.updated_at)}`
-})
-
-const openModal = (ViewComponent: any) => {
-  if (!userId || !token) {
-    notificationStore.addNotification({
-      type: 'error',
-      message: `You are not authorized to modify this author.`,
-    })
-    return
-  }
+const openModal = (ViewComponent: Component) => {
+  if (!checkIfAuthenticated(UNAUTHORIZED_MESSAGE)) return
   modalRef.value.open(ViewComponent, props)
 }
 </script>

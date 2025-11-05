@@ -63,6 +63,7 @@ import PostDeleteForm from '@/components/Post/PostDeleteForm.vue'
 const notificationStore = useNotificationStore()
 const post = ref<Post | null>(null)
 const route = useRoute()
+const router = useRouter()
 const id = Number(route.params.id)
 const isLoading = ref(false)
 const hasError = ref(false)

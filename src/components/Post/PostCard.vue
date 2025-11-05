@@ -7,11 +7,9 @@
         <p class="post-id">
           {{ checkUpdatedAt(props.post) }}
         </p>
-        <div class="buttons flex mt-4 is-justify-content-center">
-          <button v-if="userId" class="button" @click.stop="openModal(PostDeleteForm)">
-            Delete
-          </button>
-          <button v-if="userId" class="button" @click.stop="openModal(PostEditForm)">Edit</button>
+        <div v-if="userStore.isLoggedIn()" class="buttons flex mt-4 is-justify-content-center">
+          <button class="button" @click.stop="openModal(PostDeleteForm)">Delete</button>
+          <button class="button" @click.stop="openModal(PostEditForm)">Edit</button>
         </div>
       </div>
     </div>
@@ -28,14 +26,14 @@ import Modal from '../Modal.vue'
 import PostEditForm from './PostEditForm.vue'
 import PostDeleteForm from './PostDeleteForm.vue'
 import { useUserStore } from '@/store/Auth'
-import { useNotificationStore } from '@/store/Notification'
+import { checkIfAuthenticated } from '@/utils/authUtils'
 
-const notificationStore = useNotificationStore()
 const modalRef = ref()
 const userStore = useUserStore()
 const emit = defineEmits(['update'])
 const router = useRouter()
-const userId = computed(() => userStore.getUser()[0] as number | null)
+
+const UNAUTHORIZED_MESSAGE = 'You are not authorized to modify this author.'
 
 const props = defineProps<{
   post: Post
@@ -51,13 +49,7 @@ const navigateToPost = () => {
 }
 
 const openModal = (ViewComponent: any) => {
-  if (!userId) {
-    notificationStore.addNotification({
-      type: 'error',
-      message: `You are not authorized to modify this post.`,
-    })
-    return
-  }
+  if (!checkIfAuthenticated(UNAUTHORIZED_MESSAGE)) return
   modalRef.value.open(ViewComponent, props)
 }
 </script>

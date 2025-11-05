@@ -10,3 +10,15 @@ export interface Post {
   updated_at: string
   author?: Author
 }
+
+export interface PostInput {
+  title: string
+  body: string
+  authorId: number
+}
+
+export interface PostUpdateInput {
+  title?: string
+  body?: string
+  authorId?: number
+}

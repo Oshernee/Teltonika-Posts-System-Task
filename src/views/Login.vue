@@ -124,29 +124,6 @@ const doLogin = async ({ email, password }: { email: string; password: string })
     })
   }
 }
-
-defineRule('no_exclamation_after_at', (value: string) => {
-  if (!value) return true
-  const atIndex = value.indexOf('@')
-  if (atIndex === -1) return true
-  return value[atIndex + 1] !== '!' || "Character '!' cannot be immediately after '@'."
-})
-
-defineRule('email_type', (value: string) => {
-  if (!value) return true
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailPattern.test(value) || 'Please enter a valid email address.'
-})
-
-defineRule('lowercase', (value: string) => {
-  if (!value) return true
-  return /[a-z]/.test(value) || 'Password must contain at least one lowercase letter.'
-})
-
-defineRule('length', (value: string) => {
-  if (!value) return true
-  return value.length >= 6 || 'Password must be at least 6 characters long.'
-})
 </script>
 
 <style scoped>

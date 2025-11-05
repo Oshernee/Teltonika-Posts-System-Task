@@ -91,6 +91,7 @@ import { useNotificationStore } from '@/store/Notification'
 import AuthorService from '@/services/authorService'
 import { useUserStore } from '@/store/Auth'
 import type { Author } from '@/types/Author'
+import { validationRules } from '@/utils/validationRules'
 
 const userStore = useUserStore()
 const notificationStore = useNotificationStore()
@@ -99,6 +100,9 @@ const formRef = ref()
 const emit = defineEmits(['update', 'close'])
 
 defineRule('required', required)
+defineRule('length', validationRules.length)
+defineRule('only_letters_and_spaces', validationRules.onlyLettersAndSpaces)
+defineRule('first_letter_uppercase', validationRules.firstLetterUppercase)
 
 const props = defineProps<{
   author: Author
@@ -166,29 +170,6 @@ const handleSubmit = async (values: any, { resetForm }: any) => {
     isLoading.value = false
   }
 }
-
-defineRule('length', (value: string) => {
-  const normalizedValue = value.trim().replace(/\s+/g, ' ')
-  return (
-    (normalizedValue.length >= 4 && normalizedValue.length <= 25) ||
-    'Must be between 4 and 25 characters'
-  )
-})
-
-defineRule('only_letters_and_spaces', (value: string) => {
-  const regex = /^[A-Za-z\s]+$/
-  return regex.test(value) || 'Only letters and spaces are allowed'
-})
-
-defineRule('first_letter_uppercase', (value: string) => {
-  if (!value || value.length === 0) return true
-  const trimmedValue = value.trim()
-  if (trimmedValue.length === 0) return true
-  return (
-    trimmedValue.charAt(0) === trimmedValue.charAt(0).toUpperCase() ||
-    'First letter must be uppercase'
-  )
-})
 </script>
 
 <style scoped>

@@ -68,7 +68,7 @@
       <div class="field">
         <div class="control">
           <label class="checkbox has-text-light custom-checkbox">
-            <Field name="isPublished" type="checkbox" v-slot="{ field }">
+            <Field name="redirectAfterCreation" type="checkbox" v-slot="{ field }">
               <input v-bind="field" type="checkbox" class="checkbox-input" />
               <span class="checkmark"></span>
             </Field>
@@ -94,13 +94,15 @@
 </template>
 
 <script setup lang="ts">
-import { defineRule, Form, Field, ErrorMessage } from 'vee-validate'
+import { Form, Field, ErrorMessage, defineRule } from 'vee-validate'
+import { validationRules } from '@/utils/validationRules'
 import { required } from '@vee-validate/rules'
-import { ref, reactive, onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useNotificationStore } from '@/store/Notification'
 import AuthorService from '@/services/authorService'
 import { useUserStore } from '@/store/Auth'
-import type { Author } from '@/types/Author'
+import type { Author, AuthorInput, AuthorUpdateInput } from '@/types/Author'
+import { checkIfAuthenticated } from '@/utils/authUtils'
 
 const userStore = useUserStore()
 const notificationStore = useNotificationStore()
@@ -108,17 +110,19 @@ const isLoading = ref(false)
 const formRef = ref()
 const emit = defineEmits(['update', 'close', 'updateCurrent'])
 const authors = ref<Array<Author>>([])
+const [userId, token] = userStore.getUser()
+
+const UNAUTHORIZED_MESSAGE = 'You are not authorized to create an author.'
 
 defineRule('required', required)
+defineRule('email', validationRules.email)
+defineRule('length', validationRules.length)
+defineRule('only_letters_and_spaces', validationRules.onlyLettersAndSpaces)
+defineRule('first_letter_uppercase', validationRules.firstLetterUppercase)
 
 onMounted(async () => {
   try {
-    const [userId, token] = userStore.getUser()
-    if (userId === null || token === null) {
-      notificationStore.addNotification({
-        type: 'error',
-        message: `You are not authorized to create an author.`,
-      })
+    if (!checkIfAuthenticated(UNAUTHORIZED_MESSAGE)) {
       emit('close')
       return
     }
@@ -132,16 +136,11 @@ onMounted(async () => {
   }
 })
 
-const handleSubmit = async (values: any, { resetForm }: any) => {
+const handleSubmit = async (values: AuthorInput) => {
   isLoading.value = true
-  const [userId, token] = userStore.getUser()
   const shouldRedirect = values.isPublished
   try {
-    if (userId === null || token === null) {
-      notificationStore.addNotification({
-        type: 'error',
-        message: `You are not authorized to create an author.`,
-      })
+    if (!checkIfAuthenticated(UNAUTHORIZED_MESSAGE)) {
       emit('close')
       return
     }
@@ -175,29 +174,6 @@ const handleSubmit = async (values: any, { resetForm }: any) => {
     isLoading.value = false
   }
 }
-
-defineRule('length', (value: string) => {
-  const normalizedValue = value.trim().replace(/\s+/g, ' ')
-  return (
-    (normalizedValue.length >= 4 && normalizedValue.length <= 25) ||
-    'Must be between 4 and 25 characters'
-  )
-})
-
-defineRule('only_letters_and_spaces', (value: string) => {
-  const regex = /^[A-Za-z\s]+$/
-  return regex.test(value) || 'Only letters and spaces are allowed'
-})
-
-defineRule('first_letter_uppercase', (value: string) => {
-  if (!value || value.length === 0) return true
-  const trimmedValue = value.trim()
-  if (trimmedValue.length === 0) return true
-  return (
-    trimmedValue.charAt(0) === trimmedValue.charAt(0).toUpperCase() ||
-    'First letter must be uppercase'
-  )
-})
 </script>
 
 <style scoped>
